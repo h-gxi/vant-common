@@ -1,0 +1,56 @@
+{
+    "editor.tabSize": 2,
+    "files.exclude": {
+        "**/node_modules": true
+    },
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    },
+    "workbench.startupEditor": "none",
+    "emmet.syntaxProfiles": {
+        "vue-html": "html",
+        "vue": "html"
+    },
+    "files.associations": {
+        "*.vue": "vue",
+        "*.json": "jsonc",
+        "*.cs": "csharp"
+    },
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+    "vetur.format.defaultFormatter.js": "prettier-eslint",
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        "vue"
+    ],
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+    "editor.formatOnSave": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "css.validate": true,
+    "less.validate": true,
+    "scss.validate": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll.tslint": "explicit",
+        "source.fixAll.stylelint": "explicit"
+    },
+    "vetur.validation.template": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "window.zoomLevel": 0,
+    "editor.accessibilitySupport": "off",
+}
