@@ -1,6 +1,6 @@
 <template>
   <div class="m-list--item" @click="onClick">
-    <slot :item="item" :index="index" />
+    <slot :item="item" :index="index" :group="item.group" />
   </div>
 </template>
 

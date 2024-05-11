@@ -53,6 +53,22 @@ export default defineComponent({
       if (props.formatter) {
         _list = props.formatter(_list)
       }
+      if (props.groupBy) {
+        const groupArr = _list.reduce((result, currentItem) => {
+          const groupKey = typeof props.groupBy === 'function' ? props.groupBy(currentItem) : currentItem[props.groupBy]
+          // 初始化分组数组（如果尚未创建）
+          if (!result[groupKey]) {
+            result[groupKey] = []
+            currentItem['group'] = groupKey
+          }
+          // 将当前项添加到对应分组
+          result[groupKey].push(currentItem)
+          return result
+        }, {})
+        _list = Object.values(groupArr).reduce((acc, curr) => {
+          return acc.concat(curr)
+        }, [])
+      }
       return _list
     })
 

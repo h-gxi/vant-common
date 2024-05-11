@@ -18,5 +18,7 @@ export const listProps = {
   /** 格式化数据 */
   formatter: { type: Function, default: null },
   /** 过滤显示数据 */
-  filter: { type: Function, default: null }
+  filter: { type: Function, default: null },
+  /** 分组字段 */
+  groupBy: { type: String, default: '' }
 }
