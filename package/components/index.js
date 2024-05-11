@@ -1,13 +1,15 @@
-import baseComponets from './base'
+import BaseComponets from './base'
 import TableComponents from './table'
 import SetpsComponents from './setps'
 import AddressComponents from './address'
+import ListComponents from './list'
 
 const components = [
-  ...baseComponets,
+  ...BaseComponets,
   ...TableComponents,
   ...SetpsComponents,
-  ...AddressComponents
+  ...AddressComponents,
+  ...ListComponents
 ]
 
 const componentNames = []
@@ -28,4 +30,5 @@ export * from './base'
 export * from './table'
 export * from './setps'
 export * from './address'
+export * from './list'
 
