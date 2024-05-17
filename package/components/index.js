@@ -1,4 +1,5 @@
 import BaseComponets from './base'
+import Advanced from './advanced'
 import TableComponents from './table'
 import SetpsComponents from './setps'
 import AddressComponents from './address'
@@ -6,6 +7,7 @@ import ListComponents from './list'
 
 const components = [
   ...BaseComponets,
+  ...Advanced,
   ...TableComponents,
   ...SetpsComponents,
   ...AddressComponents,
@@ -27,6 +29,7 @@ export default (app) => {
 }
 
 export * from './base'
+export * from './advanced'
 export * from './table'
 export * from './setps'
 export * from './address'
