@@ -63,7 +63,6 @@ export default defineComponent({
     const swipeIndex = ref(0)
 
     const swipeChage = (index) => {
-      console.log('index :>> ', index)
       swipeIndex.value = index
     }
 

@@ -38,11 +38,6 @@ export const navbarProps = {
     type: Number,
     default: 99
   },
-  /** 是否返回APP首页 */
-  backHome: {
-    type: Boolean,
-    default: false
-  },
   /** 返回按钮绑定方法，return false 停止触发click-left事件 */
   clickLeft: {
     type: Function,

@@ -32,9 +32,9 @@ export default defineComponent({
     const isWeiXin = computed(() => /MicroMessenger/i.test(navigator.userAgent))
 
     const onClickLeft = () => {
-      const { backHome, clickLeft } = props
+      const { clickLeft } = props
       if (clickLeft) {
-        const res = props.clickLeft({ backHome })
+        const res = props.clickLeft()
         if (res === false) {
           return
         }
