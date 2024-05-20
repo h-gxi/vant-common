@@ -1,7 +1,8 @@
 <template>
   <van-nav-bar
-    v-if="!isWeiXin"
+    v-if="isShow"
     class="m-nav-bar"
+    :title="title"
     :left-text="leftText"
     :right-text="rightText"
     :left-arrow="leftArrow"
@@ -9,11 +10,18 @@
     :fixed="fixed"
     :placeholder="placeholder"
     :z-index="zIndex"
-    safe-area-inset-top
+    :safe-area-inset-top="safeAreaInsetTop"
     @click-left="onClickLeft"
+    @click-right="onClickRight"
   >
-    <template #title>
-      {{ title }}
+    <template v-if="$slots.title" #title>
+      <slot name="title" />
+    </template>
+    <template v-if="$slots.left" #left>
+      <slot name="left" />
+    </template>
+    <template v-if="$slots.right" #right>
+      <slot name="right" />
     </template>
   </van-nav-bar>
 </template>
@@ -27,9 +35,14 @@ const name = 'm-nav-bar'
 export default defineComponent({
   name,
   props: navbarProps,
-  emits: ['click-left'],
+  emits: ['click-left', 'click-right'],
   setup(props, { emit, slots }) {
-    const isWeiXin = computed(() => /MicroMessenger/i.test(navigator.userAgent))
+    const isShow = computed(() => {
+      if (props.show === 'auto') {
+        return !/MicroMessenger/i.test(navigator.userAgent)
+      }
+      return props.show || true
+    })
 
     const onClickLeft = () => {
       const { clickLeft } = props
@@ -41,9 +54,15 @@ export default defineComponent({
       }
       emit('click-left')
     }
+
+    const onClickRight = () => {
+      emit('click-right')
+    }
+
     return {
-      isWeiXin,
-      onClickLeft
+      isShow,
+      onClickLeft,
+      onClickRight
     }
   }
 })

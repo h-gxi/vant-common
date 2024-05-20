@@ -1,4 +1,9 @@
 export const navbarProps = {
+  /** 是否显示组件，默认auto微信小程序端隐藏显示 */
+  show: {
+    type: [Boolean, String],
+    default: 'auto'
+  },
   /** 标题 */
   title: {
     type: String,
@@ -37,6 +42,11 @@ export const navbarProps = {
   zIndex: {
     type: Number,
     default: 99
+  },
+  /** 是否开启[顶部安全区适配] */
+  safeAreaInsetTop: {
+    type: Boolean,
+    default: true
   },
   /** 返回按钮绑定方法，return false 停止触发click-left事件 */
   clickLeft: {

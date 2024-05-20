@@ -5,6 +5,8 @@
       <m-table-column prop="name" label="Name" :min-width="120" />
       <m-table-column prop="address" label="Address" :min-width="180" />
     </m-table>
+
+    <m-nav-bar title="标题" />
   </div>
 </template>
 
