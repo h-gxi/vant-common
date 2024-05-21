@@ -50,8 +50,6 @@ export default {
 | color | 通知文本颜色 | _string_ | `#1989fa` |
 | background | 滚动条背景 | _string_ | `#ecf9ff` |
 | left-icon | 左侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `volume-o` |
-| delay | 动画延迟时间 (s) | _number \| string_ | `1` |
-| speed | 滚动速率 (px/s) | _number \| string_ | `60` |
 | scrollable | 是否在长度溢出时滚动播放 | _boolean_ | `false` |
 | autoplay | 自动轮播间隔，单位为 ms | _number \| string_ | `4000` |
 
