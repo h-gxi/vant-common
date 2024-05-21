@@ -2,7 +2,7 @@
 
 ### 介绍
 
-通知栏自动轮播内容，Noticebar+Swipe组件完成。
+通知栏自动轮播内容，Noticebar + Swipe组件封装。
 
 ## 代码演示
 
