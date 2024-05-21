@@ -71,7 +71,8 @@ export default defineComponent({
     return {
       isSlotsLoaded,
       styleObj,
-      headerRef
+      headerRef,
+      resize
     }
   }
 })
