@@ -1,7 +1,7 @@
 {
   "name": "vant-common",
   "description": "基于vant3封装的自定义组件库，适用于H5开发迭代，降低开发维护成本。",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "author": "一如既往 <h_gxi@foxmail.com>",
   "type": "module",
   "files": [

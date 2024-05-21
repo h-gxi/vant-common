@@ -41,7 +41,7 @@ export default defineComponent({
       if (props.show === 'auto') {
         return !/MicroMessenger/i.test(navigator.userAgent)
       }
-      return props.show || true
+      return props.show
     })
 
     const onClickLeft = () => {
