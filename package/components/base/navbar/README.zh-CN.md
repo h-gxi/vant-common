@@ -108,21 +108,6 @@ export default {
 </m-nav-bar>
 ```
 
-### 禁用按钮
-
-通过 `left-disabled` 或 `right-disabled` 属性来禁用两侧的按钮。按钮被禁用时透明度降低，且无法点击。
-
-```html
-<m-nav-bar
-  title="标题"
-  left-text="返回"
-  right-text="按钮"
-  left-arrow
-  left-disabled
-  right-disabled
-/>
-```
-
 ## API
 
 ### Props
