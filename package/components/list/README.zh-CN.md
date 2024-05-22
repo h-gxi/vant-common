@@ -226,7 +226,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { listProps } from 'vant-common';
+import type { ListProps } from 'vant-common';
 ```
 
 ## 主题定制

@@ -75,7 +75,7 @@ export default {
 | inactive-icon | 未激活状态图标 | _string_ | - |
 | active-color | 激活状态颜色 | _string_ | `#3c9cff` |
 | inactive-color | 未激活状态颜色 | _string_ | `#969799` |
-| iconSize | 图标大小 | _number_ | `17` |
+| icon-size | 图标大小 | _number_ | `17` |
 
 ### StepItem Props
 
@@ -95,5 +95,5 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { stepsProps, stepsItemProps } from 'vant-common';
+import type { StepsProps, StepsItemProps } from 'vant-common';
 ```
