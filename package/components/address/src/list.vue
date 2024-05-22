@@ -1,7 +1,7 @@
 <template>
   <div class="m-address">
     <m-header>
-      <m-nav-bar :title="title" />
+      <m-nav-bar :title="title" @click-left="$router.back()" />
       <van-search v-model="filterText" :show-action="filterText.length>0" placeholder="搜索" shape="round" />
       <div class="gray-divider" />
       <div class="m-address-breadcrumb">

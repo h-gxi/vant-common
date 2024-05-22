@@ -1,7 +1,7 @@
 <template>
   <div class="m-address">
     <m-header>
-      <m-nav-bar :title="title" />
+      <m-nav-bar :title="title" @click-left="$router.back()" />
       <div class="gray-divider" />
     </m-header>
 
