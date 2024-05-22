@@ -136,8 +136,7 @@ export default defineComponent({
       formatList,
       ...toRefs(state),
       onRefresh,
-      onLoad,
-      onClick
+      onLoad
     }
   }
 })
