@@ -4,6 +4,18 @@
 
 该组件使用场景为选择发送对象时，多层级组织架构切换显示，可选择部门或人员。
 
+### 引入
+
+通过以下方式来全局注册组件，更多注册方式请参考[组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce)。
+
+```js
+import { createApp } from 'vue';
+import { Address, AddressSelect } from 'vant-common';
+
+const app = createApp();
+app.use(Address);
+app.use(AddressSelect);
+```
 
 ## 代码演示
 

@@ -4,6 +4,18 @@
 
 表格组件，支持排序、固定列，横向滑动查看。
 
+### 引入
+
+通过以下方式来全局注册组件，更多注册方式请参考[组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce)。
+
+```js
+import { createApp } from 'vue';
+import { Table, TableColumn } from 'vant-common';
+
+const app = createApp();
+app.use(Table);
+app.use(TableColumn);
+```
 
 ## 代码演示
 

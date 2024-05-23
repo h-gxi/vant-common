@@ -4,6 +4,18 @@
 
 头部组件用于固定在页面顶部显示，自动计算Header高度。
 
+### 引入
+
+通过以下方式来全局注册组件，更多注册方式请参考[组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce)。
+
+```js
+import { createApp } from 'vue';
+import { Header } from 'vant-common';
+
+const app = createApp();
+app.use(Header);
+```
+
 ## 代码演示
 
 ### 基础用法

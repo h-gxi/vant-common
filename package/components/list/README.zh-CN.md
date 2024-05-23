@@ -4,6 +4,19 @@
 
 滚动加载，当列表即将滚动到底部时，会触发事件并加载更多列表项，下拉刷新列表。
 
+### 引入
+
+通过以下方式来全局注册组件，更多注册方式请参考[组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce)。
+
+```js
+import { createApp } from 'vue';
+import { List, ListCell } from 'vant-common';
+
+const app = createApp();
+app.use(List);
+app.use(ListCell);
+```
+
 ## 代码演示
 
 ### 基础用法

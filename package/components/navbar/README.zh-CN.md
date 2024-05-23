@@ -4,6 +4,18 @@
 
 为页面提供导航功能，常用于页面顶部，微信小程序端中默认隐藏导航栏显示。
 
+### 引入
+
+通过以下方式来全局注册组件，更多注册方式请参考[组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce)。
+
+```js
+import { createApp } from 'vue';
+import { NavBar } from 'vant-common';
+
+const app = createApp();
+app.use(NavBar);
+```
+
 ## 代码演示
 
 ### 基础用法

@@ -4,6 +4,18 @@
 
 通知栏自动轮播内容，Noticebar + Swipe组件封装。
 
+### 引入
+
+通过以下方式来全局注册组件，更多注册方式请参考[组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce)。
+
+```js
+import { createApp } from 'vue';
+import { NoticebarSwipe } from 'vant-common';
+
+const app = createApp();
+app.use(NoticebarSwipe);
+```
+
 ## 代码演示
 
 ### 基础用法

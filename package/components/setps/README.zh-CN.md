@@ -4,6 +4,18 @@
 
 步骤条常用于表单分步完成时使用，提供横向和纵向两种布局方式。
 
+### 引入
+
+通过以下方式来全局注册组件，更多注册方式请参考[组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce)。
+
+```js
+import { createApp } from 'vue';
+import { Setps, SetpsItem } from 'vant-common';
+
+const app = createApp();
+app.use(Setps);
+app.use(SetpsItem);
+```
 
 ## 代码演示
 
