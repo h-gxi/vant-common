@@ -178,11 +178,3 @@ export default {
 | 事件名     | 说明                       | 回调参数        |
 | ---------- | -------------------------- | --------------- |
 | sort-change | 当表格的排序条件发生变化的时候会触发该事件 | _(data: {prop: string, order: any }) => void_ |
-
-### 类型定义
-
-组件导出以下类型定义：
-
-```ts
-import type { TableProps, TableColumnProps } from 'vant-common';
-```

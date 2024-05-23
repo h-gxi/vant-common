@@ -89,11 +89,3 @@ export default {
 | 事件名     | 说明                       | 回调参数        |
 | ---------- | -------------------------- | --------------- |
 | click-step | 点击步骤的标题或图标时触发 | _index: number_ |
-
-### 类型定义
-
-组件导出以下类型定义：
-
-```ts
-import type { StepsProps, StepsItemProps } from 'vant-common';
-```

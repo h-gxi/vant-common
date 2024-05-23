@@ -221,14 +221,6 @@ export default {
 | ------ | ---------------------------------- | -------- |
 | click   | 点击 `m-list-cell` 组件时触发 | _item: object_        |
 
-### 类型定义
-
-组件导出以下类型定义：
-
-```ts
-import type { ListProps } from 'vant-common';
-```
-
 ## 主题定制
 
 ### 样式变量

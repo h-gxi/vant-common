@@ -59,11 +59,3 @@ export default {
 | ------ | ---------------------------- | ------------------- |
 | click  | 点击通知栏时触发             | _event: MouseEvent_ |
 | remove  | 关闭通知栏时触发            | _event: MouseEvent_ |
-
-### 类型定义
-
-组件导出以下类型定义：
-
-```ts
-import type { NoticebarSwipeProps } from 'vant-common';
-```

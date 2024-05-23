@@ -113,10 +113,3 @@ const onSave = (data) => {
 | ---------- | -------------------------- | --------------- |
 | on-save | 保存已修改时触发，开启多选时返回数组对象 | _(data: Array\|Object) => void_ |
 
-### 类型定义
-
-组件导出以下类型定义：
-
-```ts
-import type { AddressProps } from 'vant-common';
-```

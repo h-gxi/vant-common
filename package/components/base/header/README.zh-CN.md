@@ -77,11 +77,3 @@ export default defineComponent({
 | 方法名 | 说明                 | 参数 | 返回值 |
 | ------ | -------------------- | ---- | ------ |
 | resize  | 重置高度 | -    | -      |
-
-### 类型定义
-
-组件导出以下类型定义：
-
-```ts
-import type { HeaderProps } from 'vant-common';
-```
