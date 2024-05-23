@@ -77,7 +77,8 @@ import { useAddressStore } from '../store'
 import { addressProps } from './props'
 const addressStore = useAddressStore()
 
-defineOptions({ name: 'MAddress' })
+const name = 'm-address'
+defineOptions({ name })
 const emit = defineEmits(['onSave'])
 const props = defineProps(addressProps)
 

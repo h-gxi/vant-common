@@ -1,8 +1,4 @@
-import List from './src/list.vue'
-import ListCell from './src/cell.vue'
+import List from './src/list'
+import ListCell from './src/list-cell'
 
-export default [
-  { name: 'list', component: List },
-  { name: 'list-cell', component: ListCell }
-]
-
+export { List, ListCell }

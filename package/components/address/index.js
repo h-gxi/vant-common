@@ -1,10 +1,6 @@
-import Address from './src/list.vue'
-import Select from './src/select.vue'
-
-export default [
-  { name: 'address', component: Address },
-  { name: 'address-select', component: Select }
-]
+import Address from './src/list'
+import AddressSelect from './src/select'
 
 export { useAddressStore } from './store'
 
+export { Address, AddressSelect }

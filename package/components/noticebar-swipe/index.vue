@@ -35,7 +35,7 @@
 import { ref, computed, defineComponent } from 'vue'
 import { useParent } from '@vant/use'
 import { noticebarSwipeProps } from './props'
-import { HEADER_KEY } from '../../base/header/index.vue'
+import { HEADER_KEY } from '../header/index.vue'
 
 const name = 'm-noticebar-swipe'
 
@@ -98,3 +98,4 @@ export default defineComponent({
 })
 </script>
 
+../header/index.vue

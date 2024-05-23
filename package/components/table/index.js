@@ -1,7 +1,4 @@
-import Table from './src/table.vue'
-import TableColumn from './src/table-column.vue'
+import Table from './src/table'
+import TableColumn from './src/table-column'
 
-export default [
-  { name: 'table', component: Table },
-  { name: 'table-column', component: TableColumn }
-]
+export { Table, TableColumn }

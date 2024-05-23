@@ -29,7 +29,8 @@ import { useAddressStore } from '../store'
 import { addressProps } from './props'
 const addressStore = useAddressStore()
 
-defineOptions({ name: 'MAddressSelect' })
+const name = 'm-address-select'
+defineOptions({ name })
 defineProps(addressProps)
 
 const getImage = computed(() => addressStore.getImage)

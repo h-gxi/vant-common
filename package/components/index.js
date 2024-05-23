@@ -1,37 +1,24 @@
-import BaseComponets from './base'
-import Advanced from './advanced'
-import TableComponents from './table'
-import SetpsComponents from './setps'
-import AddressComponents from './address'
-import ListComponents from './list'
+import Header from './header/index'
+import NavBar from './navbar/index'
+import NoticebarSwipe from './noticebar-swipe/index'
+import { Setps, SetpsItem } from './setps/index'
+import { List, ListCell } from './list/index'
+import { Address, AddressSelect } from './address/index'
+import { Table, TableColumn } from './table/index'
 
-const components = [
-  ...BaseComponets,
-  ...Advanced,
-  ...TableComponents,
-  ...SetpsComponents,
-  ...AddressComponents,
-  ...ListComponents
+const Components = [
+  Header,
+  NavBar,
+  NoticebarSwipe,
+  Setps,
+  SetpsItem,
+  List,
+  ListCell,
+  Address,
+  AddressSelect,
+  Table, TableColumn
 ]
 
-const componentNames = []
+export default Components
 
-const registerComponent = (app, name, component) => {
-  app.component(`m-${name}`, component)
-  componentNames.push(`m-${name}`)
-}
-
-export default (app) => {
-  components.forEach((m) => {
-    registerComponent(app, m.name, m.component)
-  })
-  console.log('componentNames :>> ', componentNames)
-}
-
-export * from './base'
-export * from './advanced'
-export * from './table'
-export * from './setps'
-export * from './address'
-export * from './list'
-
+export { Header, NavBar, NoticebarSwipe, Setps, SetpsItem, List, ListCell, Address, AddressSelect, Table, TableColumn }

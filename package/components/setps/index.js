@@ -1,7 +1,4 @@
-import Setps from './src/setps.vue'
-import SetpsItem from './src/setps-item.vue'
+import Setps from './src/setps'
+import SetpsItem from './src/setps-item'
 
-export default [
-  { name: 'setps', component: Setps },
-  { name: 'setps-item', component: SetpsItem }
-]
+export { Setps, SetpsItem }
