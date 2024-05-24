@@ -1,0 +1,64 @@
+{
+  "name": "vant-common",
+  "version": "1.0.0",
+  "description": "基于vant3封装的自定义组件库，适用于H5开发迭代，降低开发维护成本。",
+  "main": "lib/vant-common.js",
+  "module": "es/index.js",
+  "style": "lib/index.css",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "es"
+  ],
+  "scripts": {
+    "dev": "vant-cli dev",
+    "test": "vant-cli test",
+    "lint": "vant-cli lint",
+    "build": "vant-cli build",
+    "prepare": "husky install",
+    "release": "vant-cli release",
+    "build-site": "vant-cli build-site"
+  },
+  "keywords": [
+    "vant",
+    "vant-common"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/han1982/vant-common.git",
+    "directory": "packages/vant-common"
+  },
+  "homepage": "https://gitee.com/han1982",
+  "author": "一如既往 <h_gxi@foxmail.com>",
+  "license": "MIT",
+  "nano-staged": {
+    "*.md": "prettier --write",
+    "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
+    "*.{ts,tsx,js,vue}": "eslint --fix"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vant/cli": "^7.0.0",
+    "vue": "^3.3.4",
+    "sass": "^1.49.7"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@vant"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "browserslist": [
+    "Chrome >= 51",
+    "iOS >= 10"
+  ]
+}
