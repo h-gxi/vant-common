@@ -10,7 +10,7 @@ export default {
       publicPath: '/vant-common/',
     },
     namedExport: false,
-    packageManager: 'npm'
+    packageManager: 'npm',
   },
   site: {
     title: 'vant-common',
@@ -37,11 +37,15 @@ export default {
         ],
       },
       {
-        title: '基础组件',
+        title: '自定义组件',
         items: [
           {
-            path: 'demo-button',
-            title: 'DemoButton 按钮',
+            path: 'header',
+            title: 'Header 头部',
+          },
+          {
+            path: 'navbar',
+            title: 'Navbar 导航栏',
           },
         ],
       },
