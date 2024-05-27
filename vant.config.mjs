@@ -51,6 +51,10 @@ export default {
             path: 'noticebar-swipe',
             title: 'NoticebarSwipe 滚动通知栏',
           },
+          {
+            path: 'setps',
+            title: 'Steps 步骤条',
+          },
         ],
       },
     ],
