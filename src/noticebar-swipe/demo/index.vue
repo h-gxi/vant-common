@@ -4,7 +4,7 @@
   </demo-block>
 
   <demo-block title="自定义样式">
-    <m-noticebar-swipe v-model="noticeBars2" color="#1989fa" background="#ecf9ff" left-icon="info-o" @click="onClickNotice" />
+    <m-noticebar-swipe v-model="noticeBars2" color="#ed6a0c" background="#fffbe8" left-icon="info-o" @click="onClickNotice" />
   </demo-block>
 </template>
 

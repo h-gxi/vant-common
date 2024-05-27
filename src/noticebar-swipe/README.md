@@ -48,7 +48,7 @@ export default {
 通过 `color` 属性设置文本颜色，通过 `background` 属性设置背景色。
 
 ```html
-<m-noticebar-swipe v-model="noticeBars" color="#1989fa" background="#ecf9ff" left-icon="info-o" @click="onClickNotice" />
+<m-noticebar-swipe v-model="noticeBars" color="#ed6a0c" background="#fffbe8" left-icon="info-o" @click="onClickNotice" />
 ```
 
 ## API
@@ -59,8 +59,8 @@ export default {
 | --- | --- | --- | --- |
 | v-model | 绑定通知栏的内容 `[{title,html}]` | _array_ | - |
 | value | 显示内容集合，v-model/value 二选一，使用value时触发@remove事件 | _array_ | - |
-| color | 通知文本颜色 | _string_ | `#ed6a0c` |
-| background | 滚动条背景 | _string_ | `#fffbe8` |
+| color | 通知文本颜色 | _string_ | `#1989fa` |
+| background | 滚动条背景 | _string_ | `#ecf9ff` |
 | left-icon | 左侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `volume-o` |
 | scrollable | 是否在长度溢出时滚动播放 | _boolean_ | `false` |
 | autoplay | 自动轮播间隔，单位为 ms | _number \| string_ | `4000` |

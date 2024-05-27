@@ -24,7 +24,7 @@ app.use(SetpsItem);
 `active` 属性表示当前步骤的索引，从 0 起计。
 
 ```html
-<m-setps :active="active" active-color="#3c9cff">
+<m-setps :active="active">
   <m-setps-item title="上传成绩单" />
   <m-setps-item title="成绩单设置" />
   <m-setps-item title="预览成绩单" />
@@ -47,7 +47,7 @@ export default {
 可以通过 `active-icon` 和 `active-color` 属性设置激活状态下的图标和颜色。
 
 ```html
-<m-setps :active="0" active-icon="success" active-color="#3c9cff">
+<m-setps :active="0" active-icon="success" active-color="#ed6a0c">
   <m-setps-item title="上传成绩单" />
   <m-setps-item title="成绩单设置" />
   <m-setps-item title="预览成绩单" />

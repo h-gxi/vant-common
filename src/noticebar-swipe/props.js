@@ -12,12 +12,12 @@ export const noticebarSwipeProps = {
   /** 文本颜色 */
   color: {
     type: String,
-    default: '#ed6a0c'
+    default: '#1989fa'
   },
   /** 滚动条背景 */
   background: {
     type: String,
-    default: '#fffbe8'
+    default: '#ecf9ff'
   },
   /** 左侧图标名称或图片链接，可选值见 Icon 组件 */
   leftIcon: {
