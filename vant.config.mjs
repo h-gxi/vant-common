@@ -63,6 +63,10 @@ export default {
             path: 'address',
             title: 'Address 通讯录',
           },
+          {
+            path: 'table',
+            title: 'Table 表格',
+          },
         ],
       },
     ],

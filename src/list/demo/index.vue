@@ -29,7 +29,6 @@
 </template>
 
 <script setup>
-// import { ref } from 'vue'
 import { Icon, PullRefresh, List, Cell, Empty } from 'vant';
 import MList from '../index';
 import MListCell from '../../list-cell/index';
