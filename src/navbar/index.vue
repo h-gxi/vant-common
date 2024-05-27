@@ -28,16 +28,12 @@
 
 <script>
 import { computed, defineComponent } from 'vue'
-import { NavBar  } from 'vant';
 import { navbarProps } from './props'
 
 const name = 'm-nav-bar'
 
 export default defineComponent({
   name,
-  components: {
-    'van-nav-bar': NavBar
-  },
   props: navbarProps,
   emits: ['click-left', 'click-right'],
   setup(props, { emit }) {

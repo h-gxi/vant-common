@@ -27,26 +27,13 @@
   </demo-block>
 </template>
 
-<script>
-import {Icon, Toast  } from 'vant';
+<script setup>
+import { Icon, NavBar, Toast  } from 'vant';
 import MNavBar from '../index.vue';
 import 'vant/lib/index.css';
+window.app.use(NavBar).use(Icon)
 
-
-export default {
-  components: {
-    'van-icon': Icon,
-    [MNavBar.name]: MNavBar
-  },
-  setup () {
-    const onClickLeft = () => history.back();
-    const onClickRight = () => Toast('按钮');
-  
-    return {
-      onClickLeft,
-      onClickRight
-    }
-  }
-}
+const onClickLeft = () => history.back();
+const onClickRight = () => Toast('按钮');
 </script>
 
