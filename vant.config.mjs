@@ -55,6 +55,10 @@ export default {
             path: 'setps',
             title: 'Steps 步骤条',
           },
+          {
+            path: 'list',
+            title: 'List 列表',
+          },
         ],
       },
     ],

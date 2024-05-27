@@ -36,8 +36,8 @@
 <script setup>
 import { ref } from 'vue'
 import { Icon  } from 'vant';
-import MSetps from '../setps.vue';
-import MSetpsItem from '../../setps-item/setps-item.vue';
+import MSetps from '../index';
+import MSetpsItem from '../../setps-item/index';
 import 'vant/lib/index.css';
 window.app.use(Icon)
 
