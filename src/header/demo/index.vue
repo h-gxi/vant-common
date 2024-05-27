@@ -11,5 +11,5 @@
 </template>
 
 <script setup>
-import MHeader from '../index.vue';
+import MHeader from '../index';
 </script>

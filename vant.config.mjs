@@ -59,6 +59,10 @@ export default {
             path: 'list',
             title: 'List 列表',
           },
+          {
+            path: 'address',
+            title: 'Address 通讯录',
+          },
         ],
       },
     ],

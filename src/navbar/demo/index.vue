@@ -29,7 +29,7 @@
 
 <script setup>
 import { Icon, NavBar, Toast  } from 'vant';
-import MNavBar from '../index.vue';
+import MNavBar from '../index';
 import 'vant/lib/index.css';
 window.app.use(NavBar).use(Icon)
 
