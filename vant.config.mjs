@@ -7,7 +7,7 @@ export default {
       removeSourceFile: true,
     },
     site: {
-      publicPath: '/vant-common/',
+      publicPath: '/',
     },
     namedExport: false,
     packageManager: 'npm',
