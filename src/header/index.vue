@@ -24,8 +24,8 @@ export default defineComponent({
 
     const offsetHeight = ref(46);
     const headerRef = ref(null);
-
-    const isSlotsLoaded = computed(() => slots.default().length > 0);
+    
+    const isSlotsLoaded = computed(() => slots.default && slots.default().length > 0);
 
     const styleObj = computed(() => {
       let style = '';
