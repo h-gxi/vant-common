@@ -17,7 +17,7 @@
           </div>
         </div>
       </lazy-component>
-      <van-empty v-if="checkedUsers.length === 0" image="images/mobile-nodata.png" image-size="200" :description="emptyMsg" />
+      <van-empty v-if="checkedUsers.length === 0" image="https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-nodata.png" image-size="200" :description="emptyMsg" />
     </div>
     <div class="van-safe-area-bottom" />
   </div>

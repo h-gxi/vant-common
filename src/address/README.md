@@ -114,7 +114,7 @@ const onSave = (data) => {
 | title | `m-nav-bar` 导航栏标题 | _string_ | - |
 | hideSelect | 隐藏左下角已选择区域 | _boolean_ | `false` |
 | multiple | 是否多选 | _boolean_ | `false` |
-| leafIcon | 叶子节点图标 | _string_ | `images/mobile-init-image.png` |
+| leafIcon | 叶子节点图标 | _string_ | `https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-init-image.png` |
 | emptyMsg | 列表数据空文案 | _string_ | `暂无成员` |
 | filterMsg | 搜索列表空文案 | _string_ | `请输入部门名称/用户姓名搜索` |
 | suffixText | 已选择对象后缀 | _string_ | `人` |

@@ -32,7 +32,7 @@
               <van-icon :class="{checked:item.checked}" :name="item.checkedAll ? 'success' : 'minus'" />
             </template>
           </van-checkbox>
-          <img v-lazy="'images/mobile-school.png'">
+          <img v-lazy="'https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-school.png'">
           <div class="label" @click="onClick(item)">
             <span>{{ item.name }}</span>
           </div>
@@ -42,7 +42,7 @@
         </template>
       </lazy-component>
       <van-loading v-if="loading && dataNode.length === 0" size="24px" vertical>加载中...</van-loading>
-      <van-empty v-if="!loading && dataNode.length === 0" image="images/mobile-nodata.png" image-size="200" :description="emptyText" />
+      <van-empty v-if="!loading && dataNode.length === 0" image="https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-nodata.png" image-size="200" :description="emptyText" />
     </div>
 
     <div class="m-address-action-bar">

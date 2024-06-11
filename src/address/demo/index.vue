@@ -4,7 +4,7 @@
     :title="props.title"
     :hide-select="props.hideSelect"
     :multiple="props.multiple"
-    :leaf-icon="props.leafIcon || 'images/mobile-init-image.png'"
+    :leaf-icon="props.leafIcon || 'https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-init-image.png'"
     :empty-msg="props.emptyMsg || '暂无成员'"
     :filter-msg="props.filterMsg || '请输入部门名称/用户姓名搜索'"
     :suffix-text="props.suffixText || '人'"
@@ -120,7 +120,7 @@ const props = ref({
   addressActionParms: {}, // 通讯录组件接口参数
   title: '接收班级',
   selectTile: '已选择班级',
-  leafIcon: 'images/mobile-school.png', // 叶子节点图标
+  leafIcon: 'https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-school.png', // 叶子节点图标
   emptyMsg: '暂无班级', // 列表数据空文案
   filterMsg: '请输入部门名称/用户姓名搜索', // 搜索列表空文案
   suffixText: '班级', // 已选择对象后缀

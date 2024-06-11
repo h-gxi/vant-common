@@ -4,7 +4,7 @@
       class="m-list"
       :offset="150"
       :query-method="queryMethod"
-      image="images/mobile-nodata.png"
+      image="https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-nodata.png"
       @click="onClick"
     >
       <m-list-cell class="m-item">

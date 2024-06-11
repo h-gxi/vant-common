@@ -17,7 +17,7 @@ export const addressProps = {
   /** 叶子节点图标 */
   leafIcon: {
     type: String,
-    default: 'images/mobile-init-image.png'
+    default: 'https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-init-image.png'
   },
   /** 列表数据空文案 */
   emptyMsg: {
