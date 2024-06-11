@@ -28,10 +28,11 @@
 </template>
 
 <script setup>
-import { Icon, NavBar, Toast  } from 'vant';
+import { Toast  } from 'vant';
 import MNavBar from '../index';
-import 'vant/lib/index.css';
-window.app.use(NavBar).use(Icon)
+
+import { useVant } from '../../utils/index'
+useVant()
 
 const onClickLeft = () => history.back();
 const onClickRight = () => Toast('按钮');

@@ -29,11 +29,11 @@
 </template>
 
 <script setup>
-import { Icon, PullRefresh, List, Cell, Empty } from 'vant';
 import MList from '../index';
 import MListCell from '../../list-cell/index';
-import 'vant/lib/index.css';
-window.app.use(Icon).use(PullRefresh).use(List).use(Cell).use(Empty)
+
+import { useVant } from '../../utils/index'
+useVant()
 
 const queryMethod = ()=> {
   return new Promise((resolve) => {

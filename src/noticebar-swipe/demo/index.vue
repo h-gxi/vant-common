@@ -10,10 +10,12 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Icon, NoticeBar, Swipe, SwipeItem, Toast  } from 'vant';
+import { Toast  } from 'vant';
 import MNoticebarSwipe from '../index';
-import 'vant/lib/index.css';
-window.app.use(Icon).use(NoticeBar).use(Swipe).use(SwipeItem)
+
+
+import { useVant } from '../../utils/index'
+useVant()
 
 const noticeBars = ref([
   {

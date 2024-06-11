@@ -35,11 +35,11 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Icon  } from 'vant';
 import MSetps from '../index';
 import MSetpsItem from '../../setps-item/index';
-import 'vant/lib/index.css';
-window.app.use(Icon)
+
+import { useVant } from '../../utils/index'
+useVant()
 
 const active = ref(1);
 </script>

@@ -17,6 +17,7 @@ npm install vant-common --save
 ```bash
 // Export VantCommon components by default
 import vantCommon from 'vant-common'
+import 'vant-common/lib/index.css'
 
 // 全部注册Vant组件
 import Vant, { Lazyload } from 'vant'
