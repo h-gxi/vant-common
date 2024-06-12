@@ -10,6 +10,8 @@
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "lib": ["esnext", "dom"],
+    "allowJs": true,
+    "outDir": "./lib",
     "noImplicitThis": true,
     "types": ["vue/jsx", "csstype", "node"]
   },
