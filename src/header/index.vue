@@ -6,14 +6,23 @@
   </div>
 </template>
 
-<script>
-import { ref, computed, defineComponent, nextTick, onMounted } from 'vue';
+<script lang="ts">
+import { ref, computed, defineComponent, nextTick, onMounted, type ExtractPropTypes } from 'vue';
 import { useChildren } from '@vant/use';
 import { useRect } from '@vant/use';
-import { headerProps } from './props';
 
 const name = 'm-header';
 export const HEADER_KEY = Symbol(name);
+
+export const headerProps = {
+  /** 指定header高度 */
+  height: {
+    type: [String, Number],
+    default: null,
+  },
+}
+
+export type HeaderProps = ExtractPropTypes<typeof headerProps>;
 
 export default defineComponent({
   name,
@@ -23,7 +32,7 @@ export default defineComponent({
     const { linkChildren } = useChildren(HEADER_KEY);
 
     const offsetHeight = ref(46);
-    const headerRef = ref(null);
+    const headerRef = ref<HTMLElement>();
     
     const isSlotsLoaded = computed(() => slots.default && slots.default().length > 0);
 
@@ -46,16 +55,16 @@ export default defineComponent({
     /**
      * 重置header高度
      */
-    const resize = () => {
+    const resize = ():void => {
       nextTick(() => {
-        offsetHeight.value = headerRef.value?.offsetHeight;
+        offsetHeight.value = headerRef.value?.offsetHeight as any;
         emit('onResize', offsetHeight.value);
       });
     };
 
-    linkChildren({
-      resize,
-    });
+    linkChildren({ 
+      resize 
+    } as any);
 
     onMounted(() => {
       if (!props.height) {

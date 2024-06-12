@@ -31,13 +31,16 @@
   </van-notice-bar>
 </template>
 
-<script>
-import { ref, computed, defineComponent } from 'vue'
+<script lang="ts">
+import { ref, computed, defineComponent, type ExtractPropTypes } from 'vue'
 import { useParent } from '@vant/use'
-import { noticebarSwipeProps } from './props'
-import { HEADER_KEY } from '../header/index.vue'
+import { noticebarSwipeProps as _noticebarSwipeProps } from './props'
+import { HEADER_KEY } from '../header/index'
 
 const name = 'm-noticebar-swipe'
+
+export const noticebarSwipeProps = _noticebarSwipeProps
+export type NoticebarSwipeProps = ExtractPropTypes<typeof noticebarSwipeProps>;
 
 export default defineComponent({
   name,
@@ -59,10 +62,10 @@ export default defineComponent({
     })
     const visible = computed(() => swipeItems.value.length > 0)
 
-    const swipeRef = ref(null)
+    const swipeRef: any = ref<HTMLElement>();
     const swipeIndex = ref(0)
 
-    const swipeChage = (index) => {
+    const swipeChage = (index: number) => {
       swipeIndex.value = index
     }
 
@@ -73,16 +76,16 @@ export default defineComponent({
         swipeItems.value.splice(swipeIndex.value, 1)
       }
       if (swipeIndex.value > 0) {
-        swipeRef.value.swipeTo(swipeIndex.value--)
+        swipeRef.value?.swipeTo(swipeIndex.value--)
       }
 
       if (!visible.value) {
         // 刷新header高度
-        parent?.resize()
+        (parent as any)?.resize()
       }
     }
 
-    const onClick = (index) => {
+    const onClick = (index: number) => {
       emit('click', index)
     }
 

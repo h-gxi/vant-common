@@ -4,13 +4,16 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
+<script lang="ts">
+import { defineComponent, type ExtractPropTypes } from 'vue'
 import { useChildren } from '@vant/use'
-import { stepsProps } from './props'
+import { stepsProps as _stepsProps } from './props'
 
 const name = 'm-setps'
 export const STEPS_KEY = Symbol(name)
+
+export const stepsProps = _stepsProps
+export type StepsProps = ExtractPropTypes<typeof stepsProps>;
 
 export default defineComponent({
   name,
@@ -19,12 +22,12 @@ export default defineComponent({
   setup(props, { emit }) {
     const { linkChildren } = useChildren(STEPS_KEY)
 
-    const onClickStep = (index) => emit('clickStep', index)
+    const onClickStep = (index: number) => emit('clickStep', index)
 
     linkChildren({
       props,
       onClickStep
-    })
+    } as any)
 
     return {}
   }

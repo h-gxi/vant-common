@@ -4,10 +4,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { useParent } from '@vant/use'
-import { LIST_KEY } from '../list/list.vue'
+import { LIST_KEY } from '../list/index'
 
 const name = 'm-list-cell'
 
@@ -23,15 +23,15 @@ export default defineComponent({
       }
       return
     }
-    const item = computed(() => parent.getCellItem(index.value))
+    const item = computed(() => (parent as any).getCellItem(index.value))
 
-    const onClick = () => parent.onClick(item.value)
+    const onClick = () => (parent as any).onClick(item.value)
 
     return {
       index,
       item,
       onClick
-    }
+    } as any
   }
 })
 </script>

@@ -11,12 +11,23 @@
   </div>
 </template>
 
-<script>
-import { ref, reactive, toRefs, computed, watch, defineComponent } from 'vue'
+<script lang="ts">
+import { ref, reactive, toRefs, computed, watch, defineComponent, type ExtractPropTypes } from 'vue'
 import { useChildren } from '@vant/use'
-import { listProps } from './props'
+import { listProps as _listProps } from './props'
 const name = 'm-list'
 export const LIST_KEY = Symbol(name)
+
+export const listProps = _listProps
+
+export type ListProps = ExtractPropTypes<typeof listProps>;
+
+export type State = {
+  finished: boolean
+  refreshing: boolean
+  pageIndex: number
+  list: {[prop:string]:any}[]
+}
 
 export default defineComponent({
   name,
@@ -25,7 +36,8 @@ export default defineComponent({
   setup(props, { emit }) {
     const { linkChildren } = useChildren(LIST_KEY)
     const loading = ref(false)
-    const state = reactive({
+
+    const state: State = reactive({
       finished: false,
       refreshing: false,
       pageIndex: 1,
@@ -79,7 +91,7 @@ export default defineComponent({
         queryParams['pageSize'] = props.pageSize
 
         props.queryMethod(queryParams)
-          .then(res => {
+          .then((res: any) => {
             console.log('res :>> ', res)
             state.pageIndex++
             if (res.total === 0) { // 返回总条数0
@@ -118,8 +130,8 @@ export default defineComponent({
       onRefresh()
     })
 
-    const onClick = (item) => emit('click', item)
-    const getCellItem = (index) => {
+    const onClick = (item: any) => emit('click', item)
+    const getCellItem = (index: number) => {
       return formatList.value[index]
     }
 
@@ -127,7 +139,7 @@ export default defineComponent({
       props,
       onClick,
       getCellItem
-    })
+    } as any)
 
     return {
       loading,

@@ -1,4 +1,4 @@
-import AddressSelect from './select.vue'
+import AddressSelect from './index.vue'
 
 AddressSelect.install = function(Vue) {
   Vue.component(AddressSelect.name, AddressSelect)

@@ -1,4 +1,4 @@
-import Address from './list.vue'
+import Address from './index.vue'
 
 Address.install = function(Vue) {
   Vue.component(Address.name, Address)

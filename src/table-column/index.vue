@@ -14,14 +14,17 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import _ from 'lodash'
-import { computed, defineComponent } from 'vue'
+import { computed, defineComponent, type ExtractPropTypes } from 'vue'
 import { useParent } from '@vant/use'
-import { tableColumnProps } from '../table/props'
-import { TABLE_KEY } from '../table/table.vue'
+import { tableColumnProps as _tableColumnProps } from '../table/props'
+import { TABLE_KEY } from '../table/index'
 
 const name = 'm-table-column'
+
+export const tableColumnProps = _tableColumnProps
+export type TableColumnProps = ExtractPropTypes<typeof tableColumnProps>;
 
 export default defineComponent({
   name,
@@ -36,23 +39,23 @@ export default defineComponent({
       return
     }
 
-    if (index === 0) {
-      parent.clearColumn()
+    if (index.value === 0) {
+      (parent as any).clearColumn()
     }
 
     let left = 0
     if (props.fixed) {
-      const list = parent.columns.value.filter(m => m.fixed)
-      list.forEach((e) => {
+      const list = (parent as any).columns.value.filter((m: any) => m.fixed)
+      list.forEach((e: any) => {
         left = left + e.minWidth
       })
     }
-    parent.addColumn({ ...props, left, order: '' })
+    (parent as any).addColumn({ ...props, left, order: '' })
 
-    const order = computed(() => parent.columns.value.find(m => m.prop === props.prop)?.order || '')
+    const order = computed(() => (parent as any).columns.value.find((m: any) => m.prop === props.prop)?.order || '')
 
     const isSticky = computed(() => {
-      const node = _.findLast(parent.columns.value, m => m.fixed)
+      const node = _.findLast((parent as any).columns.value, m => m.fixed)
       if (node) {
         return node.prop === props.prop
       }
@@ -63,7 +66,7 @@ export default defineComponent({
       const style = {
         width: `${props.minWidth}px`,
         paddingLeft: '12px'
-      }
+      } as any
       if (props.fixed) {
         style['left'] = `${left}px`
       }
@@ -81,7 +84,7 @@ export default defineComponent({
       } else if (order.value === 'descending') {
         type = 'ascending'
       }
-      parent.setOrder(props.sortable, props.prop, type)
+      (parent as any).setOrder(props.sortable, props.prop, type)
     }
     // const onAscending = () => {
     //   parent.setOrder(props.sortable, props.prop, order.value === 'ascending' ? '' : 'ascending')
@@ -94,7 +97,7 @@ export default defineComponent({
       isSticky,
       styleObj,
       onSortable
-    }
+    } as any
   }
 })
 </script>

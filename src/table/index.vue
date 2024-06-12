@@ -11,14 +11,17 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import _ from 'lodash'
-import { ref, reactive, computed, defineComponent, nextTick, onActivated } from 'vue'
+import { ref, reactive, computed, defineComponent, nextTick, onActivated, type ExtractPropTypes } from 'vue'
 import { useChildren, useScrollParent, useEventListener } from '@vant/use'
-import { tableProps } from './props'
+import { tableProps as _tableProps } from './props'
 
 const name = 'm-table'
 export const TABLE_KEY = Symbol(name)
+
+export const tableProps = _tableProps
+export type TableProps = ExtractPropTypes<typeof tableProps>;
 
 export default defineComponent({
   name,
@@ -33,7 +36,7 @@ export default defineComponent({
     const tableData = computed(() => {
       let array = _.cloneDeep(props.data || [])
       if (state.prop && state.order) {
-        array = array.sort((a, b) => {
+        array = array.sort((a: any, b: any) => {
           /** 处理空字符串比0小 */
           const _a = a[state.prop] === '' ? -1 : a[state.prop]
           const _b = b[state.prop] === '' ? -1 : b[state.prop]
@@ -49,17 +52,17 @@ export default defineComponent({
       return array
     })
 
-    const columns = ref([])
+    const columns: any = ref([])
 
-    const addColumn = (e) => {
+    const addColumn = (e: never) => {
       columns.value.push(e)
     }
     const clearColumn = () => {
       columns.value = []
     }
     /** 排序功能 */
-    const setOrder = (sortable, prop, order) => {
-      columns.value.forEach(e => {
+    const setOrder = (sortable: any, prop: any, order: any) => {
+      columns.value.forEach((e: any) => {
         if (e.prop === prop) {
           e.order = order
         } else {
@@ -77,19 +80,19 @@ export default defineComponent({
       }
     }
 
-    const isSticky = (item) => {
-      const node = _.findLast(columns.value, m => m.fixed)
+    const isSticky = (item: any) => {
+      const node = _.findLast(columns.value, (m: any) => m.fixed)
       if (node) {
         return node.prop === item.prop
       }
       return false
     }
 
-    const styleObj = (item) => {
+    const styleObj = (item: any) => {
       const style = {
         width: `${item.minWidth}px`,
         paddingLeft: '12px'
-      }
+      } as any
       if (item.fixed) {
         style['left'] = `${item.left}px`
       }
@@ -103,7 +106,7 @@ export default defineComponent({
       return style
     }
 
-    const getCellValue = (row, item, i) => {
+    const getCellValue = (row: any, item: any, i: any) => {
       if (item.formatter) {
         return item.formatter(row, item, row[item.prop], i) || ''
       }
@@ -123,7 +126,7 @@ export default defineComponent({
 
     const check = () => {
       nextTick(() => {
-        isScrolling.value = scroller.value.scrollLeft > 0
+        isScrolling.value = (scroller.value as any).scrollLeft > 0
       })
     }
 
@@ -139,7 +142,7 @@ export default defineComponent({
       addColumn,
       clearColumn,
       setOrder
-    })
+    } as any)
 
     return {
       tableRef,
@@ -149,7 +152,7 @@ export default defineComponent({
       isSticky,
       styleObj,
       getCellValue
-    }
+    } as any
   }
 })
 </script>

@@ -1,6 +1,12 @@
+import { type PropType } from 'vue';
+
+export type TableValue = {
+  [prop:string]: any
+}
+
 export const tableProps = {
   data: {
-    type: Array,
+    type: Array as PropType<TableValue[]>,
     default: null
   }
 }

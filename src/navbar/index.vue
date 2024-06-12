@@ -26,11 +26,15 @@
   </van-nav-bar>
 </template>
 
-<script>
-import { computed, defineComponent } from 'vue'
-import { navbarProps } from './props'
+<script lang="ts">
+import { computed, defineComponent, type ExtractPropTypes } from 'vue'
+import { navbarProps as _navbarProps } from './props'
 
 const name = 'm-nav-bar'
+
+export const navbarProps = _navbarProps
+
+export type NavbarProps = ExtractPropTypes<typeof navbarProps>;
 
 export default defineComponent({
   name,
@@ -41,7 +45,7 @@ export default defineComponent({
       if (props.show === 'auto') {
         return !/MicroMessenger/i.test(navigator.userAgent)
       }
-      return props.show
+      return props.show as boolean
     })
 
     const onClickLeft = () => {

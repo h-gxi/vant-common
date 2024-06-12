@@ -15,14 +15,17 @@
   </div>
 </template>
 
-<script>
-import { ref, defineComponent, computed, onMounted } from 'vue'
+<script lang="ts">
+import { ref, defineComponent, computed, onMounted, type ExtractPropTypes } from 'vue'
 import { useParent } from '@vant/use'
 import { useRect } from '@vant/use'
-import { stepsItemProps } from '../setps/props'
-import { STEPS_KEY } from '../setps/setps.vue'
+import { stepsItemProps as _stepsItemProps } from '../setps/props'
+import { STEPS_KEY, type StepsProps } from '../setps/index'
 
 const name = 'm-setps-item'
+
+export const stepsItemProps = _stepsItemProps
+export type StepsItemProps = ExtractPropTypes<typeof stepsItemProps>;
 
 export default defineComponent({
   name,
@@ -38,7 +41,7 @@ export default defineComponent({
     }
 
     const mSetpsItemRef = ref()
-    const parentProps = parent.props
+    const parentProps = (parent as any).props as StepsProps
     const size = ref({
       width: 0,
       height: 0
@@ -65,7 +68,7 @@ export default defineComponent({
     const lineStyle = computed(() => {
       const style = {
         background: isFinish.value ? parentProps.activeColor : parentProps.inactiveColor
-      }
+      } as any
       if (parentProps.direction === 'horizontal') {
         style.width = size.value.width + 'px'
         style.left = size.value.width / 2 + 'px'
@@ -84,7 +87,7 @@ export default defineComponent({
       color: getStatus() === 'waiting' ? parentProps.inactiveColor : parentProps.activeColor
     }))
 
-    const onClickStep = () => parent.onClickStep(index.value)
+    const onClickStep = () => (parent as any).onClickStep(index.value)
 
     return {
       index,
@@ -97,7 +100,7 @@ export default defineComponent({
       circleStyle,
       contentStyle,
       onClickStep
-    }
+    } as any
   }
 })
 

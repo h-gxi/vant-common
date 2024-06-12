@@ -1,12 +1,19 @@
+import { type PropType } from 'vue';
+
+export type NoticebarSwipeValue = {
+  title: string,
+  [prop:string]: any
+}
+
 export const noticebarSwipeProps = {
   /** 双向绑定列表 {title} */
   modelValue: {
-    type: Array,
+    type:  Array as PropType<NoticebarSwipeValue[]>,
     default: null
   },
   /** 列表数据 v-model/value 二选一，使用value时触发@remove事件*/
   value: {
-    type: Array,
+    type: Array as PropType<NoticebarSwipeValue[]>,
     default: null
   },
   /** 文本颜色 */

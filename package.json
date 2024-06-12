@@ -1,6 +1,6 @@
 {
   "name": "vant-common",
-  "version": "0.1.9-beta.2",
+  "version": "0.1.9-beta.3",
   "description": "基于vant3封装的自定义组件库，适用于H5开发迭代，降低开发维护成本。",
   "main": "lib/vant-common.js",
   "module": "es/index.js",
@@ -50,14 +50,18 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.4",
+    "@types/node": "^18.19.33",
     "@vant/cli": "^7.0.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.3",
     "pinia": "^2.1.7",
+    "sass": "^1.49.7",
+    "typescript": "^5.4.5",
     "vant": "^3.6.3",
-    "vue": "^3.3.4",
-    "sass": "^1.49.7"
+    "vue": "^3.3.4"
   },
+  "web-types": "lib/web-types.json",
   "eslintConfig": {
     "root": true,
     "extends": [
