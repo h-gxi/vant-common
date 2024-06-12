@@ -31,19 +31,20 @@ export default defineComponent({
   props: tableColumnProps,
   emits: [],
   setup(props) {
-    const { parent, index } = useParent(TABLE_KEY)
+    const { parent } = useParent(TABLE_KEY)
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
         console.error('[Vant] <m-table> must be a child component of <m-table>.')
       }
       return
     }
+    
+    // 0.1.9-beta.3 clearColumn()会导致渲染死循环问题
+    // if (index === 0) {
+    //   (parent as any).clearColumn()
+    // }
 
-    if (index.value === 0) {
-      (parent as any).clearColumn()
-    }
-
-    let left = 0
+    let left = 0;
     if (props.fixed) {
       const list = (parent as any).columns.value.filter((m: any) => m.fixed)
       list.forEach((e: any) => {
