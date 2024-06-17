@@ -6,13 +6,13 @@
 
 ## 使用说明
 
-1. 安装依赖
+### 安装依赖
 
 ```bash
 npm install vant-common --save
 ```
 
-2. 引用组件方式
+### 引入组件
 
 ```bash
 // Export VantCommon components by default
@@ -32,3 +32,4 @@ app.use(Lazyload, {
 })
 app.mount('#app')
 ```
+
