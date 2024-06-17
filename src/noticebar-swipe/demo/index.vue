@@ -19,7 +19,11 @@ useVant()
 
 const noticeBars = ref([
   {
-    title: '“通知公告”功能介绍及使用案例',
+    title: '“通知公告”功能介绍及使用案例1',
+    html: '<img  src="images/notice-guide.png" style="width: 100%;">'
+  },
+  {
+    title: '“通知公告”功能介绍及使用案例2',
     html: '<img  src="images/notice-guide.png" style="width: 100%;">'
   }
 ])

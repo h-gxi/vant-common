@@ -2,7 +2,7 @@
 
 ### 介绍
 
-头部组件用于固定在页面顶部显示，自动计算Header高度。
+头部组件用于固定在页面顶部显示，自动计算Header高度，内容区域无需padding-top。
 
 ### 引入
 
@@ -20,7 +20,7 @@ app.use(Header);
 
 ### 基础用法
 
-头部自动预留header等高区域，下面内容无需padding-top。
+头部自动预留header等高区域，下面内容区域无需padding-top。
 
 ```html
 <m-header>

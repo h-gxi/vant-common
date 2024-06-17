@@ -30,6 +30,10 @@ export default {
             path: 'quickstart',
             title: '快速上手',
           },
+          {
+            path: 'changelog',
+            title: '更新日志'
+          }
         ],
       },
       {

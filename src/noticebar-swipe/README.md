@@ -2,7 +2,7 @@
 
 ### 介绍
 
-通知栏自动轮播内容，Noticebar + Swipe组件封装。
+通知栏自动轮播内容，Noticebar + Swipe组件封装，配合Header组件使用，隐藏显示重新计算Header高度。
 
 ### 引入
 
