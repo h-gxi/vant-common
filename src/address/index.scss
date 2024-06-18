@@ -1,4 +1,3 @@
-
 .m-address {
   .van-search__action {
     color: var(--van-primary-color);
@@ -9,7 +8,7 @@
   }
   &-breadcrumb {
     padding: 12px;
-    min-height: 40px;
+    min-height: 20px;
     background-color: #FEFFFF;
 
     &__title {
@@ -24,9 +23,10 @@
       color: #999;
     }
   }
-  &-list {
-    padding-left: 10px;
-    padding-right: 10px;
+  &-list, &-select-list {
+    padding: 10px;
+    padding-top: 5px;
+    background-color: #FEFFFF;
   }
   &-cell {
     display: flex;
@@ -88,10 +88,5 @@
       height: 38px;
       flex: 1;
     }
-  }
-
-  // select.vue
-  &-select-list {
-    padding: 10px 10px;
   }
 }

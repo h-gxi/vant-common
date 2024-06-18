@@ -2,7 +2,7 @@
 
 ### 介绍
 
-该组件使用场景为选择发送对象时，多层级组织架构切换显示，可选择部门或人员。
+该组件使用场景为选择发送对象时，多层级组织架构切换显示，可选择部门或人员，选择对象为叶子节点数据，支持单选和多选模式。
 
 ### 引入
 
@@ -22,85 +22,111 @@ app.use(AddressSelect);
 ### 基础用法
 
 新增通讯录页面中使用组件。
-`m-address` 组织架构列表显示， `m-address-select` 已选择部门或人员显示，组件中已包含标题导航栏显示，通过 `title` 属性设置标题。
+`m-address` 组织架构列表显示， `m-address-select` 已选择部门或人员显示。
 
 ```html
 <m-address
   v-if="$route.query.page!=='select'"
   ref="mAddressRef"
-  :title="props.title"
-  :hide-select="props.hideSelect"
-  :multiple="props.multiple"
-  :leaf-icon="props.leafIcon || 'images/mobile-init-image.png'"
-  :empty-msg="props.emptyMsg || '暂无成员'"
-  :filter-msg="props.filterMsg || '请输入部门名称/用户姓名搜索'"
-  :suffix-text="props.suffixText || '人'"
+  multiple
   @on-save="onSave"
 />
 <m-address-select
   v-if="$route.query.page==='select'"
-  :title="props.selectTile"
-  :leaf-icon="props.leafIcon || 'images/mobile-init-image.png'"
-  :empty-msg="props.emptyMsg || '暂无成员'"
 />
 ```
 
 ```js
 <script setup>
-import { ref, computed, watch, defineProps, nextTick } from 'vue'
-import { usePageStore } from '@/store'
-const { api, router } = $xzx
-const pageStore = usePageStore()
-
-defineProps({
-  reload: {
-    type: String,
-    default: ''
-  }
-})
-
-const props = computed(() => pageStore.props || {
-  selectKey: 'selectedValue' // 表单中绑定字段名
-})
+import { ref, onMounted } from 'vue'
 
 const mAddressRef = ref(null)
-watch(() => pageStore.formParms[props.value.selectKey], (val) => {
-  let checkedKeys = []
-  if (Array.isArray(val)) {
-    checkedKeys = [...val]
-  } else {
-    checkedKeys = [val]
-  }
-  const initOptions = {
-    rootTitle: props.value.addressRootTitle || '全部',
-    actionFunc: props.value.addressActionFunc,
-    actionParms: props.value.addressActionParms,
-    getImageFunc: api.imageManage.getImage,
-    data: null,
-    defaultCheckedKeys: checkedKeys
-  }
-  nextTick(() => {
-    if (mAddressRef.value) {
-      console.log('address watch :>> ', initOptions)
-      mAddressRef.value.reload(initOptions)
-    }
-  })
-}, { immediate: true })
 
-const onSave = (data) => {
-  if (Array.isArray(data)) {
-    const ids = data.map(m => m.id)
-    if (pageStore.formParms[props.value.selectKey] !== undefined) {
-      pageStore.formParms[props.value.selectKey] = [...ids]
+// 绑定数据结构
+const data = [
+    {
+        "id": "3a0481ab-946b-0ac9-2973-2d6e61dd838c",
+        "name": "测试数据",
+        "type": 0,
+        "photo": "",
+        "parentId": null,
+        "sex": 0,
+        "deptId": null,
+        "deptName": null,
+        "children": [
+            {
+                "id": "3a0481ab-97a4-5b9f-abb6-a6cee5bcd3d8",
+                "name": "1年级",
+                "type": 0,
+                "photo": "",
+                "parentId": "3a0481ab-946b-0ac9-2973-2d6e61dd838c",
+                "sex": 0,
+                "deptId": null,
+                "deptName": null,
+                "children": [
+                    {
+                        "id": "3a0481ab-9846-f5a6-d6b4-ed4972557a15",
+                        "name": "1班",
+                        "type": 2,
+                        "photo": "",
+                        "parentId": "3a0481ab-97a4-5b9f-abb6-a6cee5bcd3d8",
+                        "sex": 0,
+                        "deptId": null,
+                        "deptName": null,
+                        "children": [
+                            {
+                                "name": "学生1",
+                                "type": 1,
+                                "photo": "",
+                                "parentId": "3a0481ab-9846-f5a6-d6b4-ed4972557a15",
+                                "sex": 0,
+                                "deptId": null,
+                                "deptName": null,
+                                "children": [],
+                                "id": "3a0a8c44-1080-d40c-9600-128f7a49d973"
+                            },
+                            {
+                                "name": "学生2",
+                                "type": 1,
+                                "photo": "",
+                                "parentId": "3a0481ab-9846-f5a6-d6b4-ed4972557a15",
+                                "sex": 1,
+                                "deptId": null,
+                                "deptName": null,
+                                "children": [],
+                                "id": "3a0d2958-f618-5a32-8882-07cdefce2b6e"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
-    props.value.selectedNodes = data // 传递选中节点数据
-  } else {
-    if (pageStore.formParms[props.value.selectKey] !== undefined) {
-      pageStore.formParms[props.value.selectKey] = data?.id
-    }
-    props.value.selectedNode = data // 传递选中节点数据
+]
+
+const getClassAddressSelectList = async ()=> {
+  return new Promise((resolve) => {
+    resolve(data)
+  })
+}
+
+const initOptions = {
+  rootTitle: '全部',
+  actionFunc: getClassAddressSelectList, // 通讯录组件接口地址
+  actionParms: {}, // 通讯录组件接口参数
+  getImageFunc: null,
+  data: null,
+  defaultCheckedKeys: []
+}
+
+onMounted(() => {
+  if (mAddressRef.value) {
+    mAddressRef.value.reload(initOptions)
   }
-  router.back()
+})
+
+const onSave = (data) => { 
+  console.log('data :>> ', data);
 }
 </script>
 ```
@@ -111,9 +137,9 @@ const onSave = (data) => {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| title | `m-nav-bar` 导航栏标题 | _string_ | - |
 | hideSelect | 隐藏左下角已选择区域 | _boolean_ | `false` |
-| multiple | 是否多选 | _boolean_ | `false` |
+| sticky | 粘性布局，使用粘性布局时，滚动到顶部时会自动吸顶 | _boolean_ | `false` |
+| multiple | 是否多选，开启多选时支持批量选择操作 | _boolean_ | `false` |
 | leafIcon | 叶子节点图标 | _string_ | `https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-init-image.png` |
 | emptyMsg | 列表数据空文案 | _string_ | `暂无成员` |
 | filterMsg | 搜索列表空文案 | _string_ | `请输入部门名称/用户姓名搜索` |

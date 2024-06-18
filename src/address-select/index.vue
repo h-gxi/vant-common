@@ -1,9 +1,6 @@
 <template>
   <div class="m-address">
-    <m-header>
-      <m-nav-bar :title="title" @click-left="$router.back()" />
-      <div class="gray-divider" />
-    </m-header>
+    <div class="gray-divider" />
 
     <div class="m-address-select-list">
       <lazy-component v-for="(item,index) in checkedUsers" :key="index" class="m-address-cell">

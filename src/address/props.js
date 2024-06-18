@@ -1,15 +1,15 @@
 export const addressProps = {
-  /** 标题 */
-  title: {
-    type: String,
-    default: ''
-  },
   /** 隐藏左下角已选择区域 */
   hideSelect: {
     type: Boolean,
     default: false
   },
-  /** 是否多选 */
+  /** 粘性布局，使用粘性布局时，滚动到顶部时会自动吸顶 */
+  sticky: {
+    type: Boolean,
+    default: false
+  },
+  /** 是否多选，开启多选时支持批量选择操作 */
   multiple: {
     type: Boolean,
     default: false

@@ -1,7 +1,6 @@
 <template>
-  <div class="m-address">
-    <m-header>
-      <m-nav-bar :title="title" @click-left="$router.back()" />
+  <div ref="container" class="m-address">
+    <van-sticky :container="container" :position="sticky?'top':'bottom'">
       <van-search v-model="filterText" :show-action="filterText.length>0" placeholder="搜索" shape="round" />
       <div class="gray-divider" />
       <div class="m-address-breadcrumb">
@@ -10,9 +9,9 @@
           <span v-else class="m-address-breadcrumb__label">{{ item.title }}</span>
         </template>
       </div>
-    </m-header>
+    </van-sticky>
 
-    <div class="m-address-list van-safe-area-bottom">
+    <div class="m-address-list">
       <lazy-component v-for="(item,index) in dataNode" :key="index" class="m-address-cell">
         <template v-if="item.type===1">
           <van-checkbox v-model="item.checked" :name="item.id" @click="onChangeChecked(item)">
@@ -44,6 +43,7 @@
       <van-loading v-if="loading && dataNode.length === 0" size="24px" vertical>加载中...</van-loading>
       <van-empty v-if="!loading && dataNode.length === 0" image="https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-nodata.png" image-size="200" :description="emptyText" />
     </div>
+    <div class="van-safe-area-bottom" />
 
     <div class="m-address-action-bar">
       <div class="m-address-action-bar__fixed van-safe-area-bottom">
@@ -75,8 +75,6 @@ import _ from 'lodash'
 import { ref, computed, watch, defineOptions, defineProps, defineEmits, defineExpose } from 'vue'
 import { useAddressStore } from './store'
 import { addressProps } from './props'
-import MHeader from '../header/index'
-import MNavBar from '../navbar/index'
 const addressStore = useAddressStore()
 
 const name = 'm-address'
@@ -84,7 +82,7 @@ defineOptions({ name })
 const emit = defineEmits(['onSave'])
 const props = defineProps(addressProps)
 
-const { title, hideSelect, multiple, leafIcon, emptyMsg, filterMsg, suffixText } = props
+const { hideSelect, sticky, multiple, leafIcon, emptyMsg, filterMsg, suffixText } = props
 
 const filterText = ref('')
 const emptyText = computed(() => {
@@ -93,6 +91,7 @@ const emptyText = computed(() => {
 })
 const disabled = ref(false)
 const loading = ref(true)
+const container = ref(null);
 
 const getImage = computed(() => addressStore.getImage)
 
