@@ -7,9 +7,10 @@
         </button>
         <template v-if="cancelText">
           <div class="m-action-sheet__gap"></div>
-          <button type="button" class="m-action-sheet__item" @click="onClose()">
+          <button type="button" class="m-action-sheet__cancel" @click="onClose()">
             {{ cancelText }}
           </button>
+          <div class="m-action-sheet__bottom"></div>
         </template>
       </div>
     </van-popup>
