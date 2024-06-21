@@ -67,6 +67,10 @@ export default {
             path: 'table',
             title: 'Table 表格',
           },
+          {
+            path: 'action-sheet',
+            title: 'ActionSheet 动作面板',
+          },
         ],
       },
     ],
