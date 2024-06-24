@@ -71,6 +71,10 @@ export default {
             path: 'action-sheet',
             title: 'ActionSheet 动作面板',
           },
+          {
+            path: 'action-bar',
+            title: 'ActionSheet 底部动作栏',
+          },
         ],
       },
     ],

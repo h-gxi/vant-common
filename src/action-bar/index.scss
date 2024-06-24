@@ -1,0 +1,76 @@
+:root {
+  --m-action-bar-height: 55px;
+  --m-action-bar-background-color: #fff;
+  --m-action-bar-padding: var(--van-padding-md);
+  --m-action-bar-icon-size: 22px;
+  --m-action-bar-icon-width: 112px;
+  --m-action-bar-icon-height: 100%;
+  --m-action-bar-icon-text-color: var(--van-gray-8);
+  --m-action-bar-icon-font-size: var(--van-font-size-sm);
+  --m-action-bar-icon-background-color: #fff;
+  --m-action-bar-button-width: 151px;
+  --m-action-bar-button-height: 42px;
+  --m-action-bar-button-font-size: var(--van-font-size-lg);
+  --m-action-bar-button-font-weight: var(--van-font-weight-bold);
+  --m-action-bar-button-border-radius: 21px;
+}
+.m-action-bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  box-sizing: content-box;
+  height: var(--m-action-bar-height);
+  background: var(--m-action-bar-background-color);
+}
+
+.m-action-bar-item {
+  position: relative;
+  flex: 1;
+  &:first-child {
+    &.m-action-bar-button {
+      padding-left: var(--m-action-bar-padding);
+    }
+  }
+  &:last-child {
+    &.m-action-bar-button {
+      padding-right: var(--m-action-bar-padding);
+    }
+  }
+}
+
+.m-action-bar-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: var(--m-action-bar-icon-width);
+  height: var(--m-action-bar-icon-height);
+  color: var(--m-action-bar-icon-text-color);
+  font-size: var(--m-action-bar-icon-font-size);
+  line-height: 1;
+  text-align: center;
+  background: var(--m-action-bar-icon-background-color);
+  cursor: pointer;
+
+  &__icon {
+    font-size: var(--m-action-bar-icon-size) !important;
+  }
+  &__text {
+    margin-top: 5px;
+  }
+}
+
+.m-action-bar-button {
+  min-width: var(--m-action-bar-button-width);
+  height: var(--m-action-bar-button-height);
+  
+  border: none;
+  .van-button--round {
+    border-radius: var(--m-action-bar-button-border-radius);
+    font-weight: var(--m-action-bar-button-font-weight);
+    font-size: var(--m-action-bar-button-font-size);
+  }
+}
