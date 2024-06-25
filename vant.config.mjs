@@ -60,6 +60,10 @@ export default {
             title: 'List 列表',
           },
           {
+            path: 'list-card',
+            title: 'ListCard 列表卡片',
+          },
+          {
             path: 'address',
             title: 'Address 通讯录',
           },

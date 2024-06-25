@@ -1,0 +1,57 @@
+.m-list--card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+
+  &__header {
+    height: 38px;
+    padding: 20px;
+    padding-bottom: 8px;
+    .header-title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1;
+      color: #4A4A4A;
+    }
+    .header-label {
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1;
+      color: #9B9B9B;
+    }
+  }
+
+  &__content {
+    margin-top: 8px;
+    margin-bottom: 16px;
+    padding: 0 20px;
+    font-size: 14px;
+  }
+
+  &__toolbar {
+    position: relative;
+    padding: 16px 20px 20px 20px;
+    font-size: 14px;
+    line-height: 1;
+    color: #9B9B9B;
+    display: flex;
+    &::after {
+      position: absolute;
+      box-sizing: border-box;
+      content: " ";
+      pointer-events: none;
+      right: 0;
+      top: 0;
+      left: 0;
+      border-bottom: 1px solid #F3F3F3;
+    }
+    .left {
+      flex: 1;
+    }
+    .right {
+      width: 80px;
+      text-align: right;
+    }
+  }
+}
