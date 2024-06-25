@@ -4,6 +4,15 @@
       <m-action-bar-item type="button" text="保存修改" @click="onClick" />
     </m-action-bar>
   </demo-block>
+  <demo-block title="朴素按钮">
+    <m-action-bar>
+      <m-action-bar-item type="button" text="取消回执" plain @click="onClick">
+        <div class="foolter">
+          05:00后无法取消
+        </div>
+      </m-action-bar-item>
+    </m-action-bar>
+  </demo-block>
   <demo-block title="不同类型按钮">
     <m-action-bar>
       <m-action-bar-item type="icon" icon="shop-o" text="保存草稿" @click="onClick" />
@@ -35,7 +44,13 @@ const onClick = () => {
 
 <style lang="sass">
 .demo-action-bar .m-action-bar {
-    position: relative;
-    padding-bottom: 0;
+  position: relative;
+}
+.foolter {
+  display: flex;
+  justify-content: center;
+  padding-top: 12px; 
+  font-size: 12px;
+  color: #4A4A4A;
 }
 </style>

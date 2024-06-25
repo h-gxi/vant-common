@@ -1,8 +1,9 @@
 <template>
   <div class="m-action-bar__placeholder" :style="styleObj">
-    <div ref="rootRef" class="m-action-bar van-safe-area-bottom">
+    <div ref="rootRef" class="m-action-bar">
       <slot />
     </div>
+    <div class="van-safe-area-bottom"></div>
   </div>
 </template>
 

@@ -44,6 +44,30 @@ export default {
 };
 ```
 
+### 朴素按钮
+类型`button`按钮，通过 plain 属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色。
+支持`slot`默认插槽来显示底部额外内容。
+
+```html
+<m-action-bar>
+  <m-action-bar-item type="button" text="取消回执" plain @click="onClick">
+    <div class="foolter">
+      05:00后无法取消
+    </div>
+  </m-action-bar-item>
+</m-action-bar>
+```
+
+```css
+.foolter {
+  display: flex;
+  justify-content: center;
+  padding-top: 12px; 
+  font-size: 12px;
+  color: #4A4A4A;
+}
+```
+
 ### 不同类型按钮
 
 动作栏分为两种按钮类型，通过`type`属性指定按钮类型 `icon` | `button`。
@@ -80,6 +104,7 @@ export default {
 | class-prefix | 类名前缀，用于使用自定义图标 | string |    `van-icon`    |
 | dot | 是否显示图标右上角小红点 | boolean |    `false`    |
 | disabled | 是否禁止按钮 | boolean |    `false`    |
+| plain | 是否为朴素按钮 | boolean |    `false`    |
 | text | 按钮文字 | string |    -    |
 | to | 点击后跳转的目标路由对象，等同于 vue-router 的 to 属性 | string \| object |    -    |
 
@@ -97,9 +122,10 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --m-action-bar-height | _55px_ | - |
 | --m-action-bar-background-color | _#fff_ | - |
 | --m-action-bar-padding | _var(--van-padding-md)_ | - |
+| --m-action-bar-padding-top | _var(--van-padding-xs)_ | - |
+| --m-action-bar-padding-bottom | _var(--van-padding-xs)_ | - |
 | --m-action-bar-icon-size | _22px_ | - |
 | --m-action-bar-icon-width | _112px_ | - |
 | --m-action-bar-icon-height | _100%_ | - |
