@@ -65,10 +65,9 @@
 
 .m-action-bar-button {
   min-width: var(--m-action-bar-button-width);
-  height: var(--m-action-bar-button-height);
-  
   border: none;
   .van-button--round {
+    height: var(--m-action-bar-button-height);
     border-radius: var(--m-action-bar-button-border-radius);
     font-weight: var(--m-action-bar-button-font-weight);
     font-size: var(--m-action-bar-button-font-size);
