@@ -113,3 +113,24 @@ export default {
 | ------ | -------- | ---- | ------ |
 | open | 显示 | -    | -      |
 | close | 关闭 | -    | -      |
+
+## 主题定制
+
+### 样式变量
+
+组件提供了下列 CSS 变量，可用于自定义样式。
+
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --m-action-sheet-max-height | _80%_ | - |
+| --m-action-sheet-item-text-color | _#000_ | - |
+| --m-action-sheet-item-padding | _16px_ | - |
+| --m-action-sheet-item-font-size | _16px_ | - |
+| --m-action-sheet-item-background | _#fff_ | - |
+| --m-action-sheet-item-after-color | _#F3F3F3_ | - |
+| --m-action-sheet-item-active-color | _#E8E8E8_ | - |
+| --m-action-sheet-item-line-height | _52px_ | - |
+| --m-action-sheet-cancel-text-color | _#000_ | - |
+| --m-action-sheet-cancel-padding-top | _10px_ | - |
+| --m-action-sheet-cancel-padding-color | _#F3F3F3_ | - |
+| --m-action-sheet-cancel-padding-bottom | _15px_ | - |
