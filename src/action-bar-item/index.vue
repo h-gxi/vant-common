@@ -4,7 +4,7 @@
     <span class="m-action-bar-icon__text">{{ text }}</span>
   </div>
   <div v-if="type === 'button'" class="m-action-bar-item m-action-bar-button" @click="onClick">
-    <van-button type="primary" block round>{{ text }}</van-button>
+    <van-button type="primary" :disabled="disabled" block round>{{ text }}</van-button>
   </div>
 </template>
 
@@ -28,7 +28,9 @@ const actionBarIiemProps = extend({}, routeProps, {
   /** 是否显示图标右上角小红点 */
   dot: Boolean,
   /** 按钮文字 */
-  text: String
+  text: String,
+  /** 是否禁用按钮 */
+  disabled: Boolean
 });
 export type ActionBarIiemProps = ExtractPropTypes<typeof actionBarIiemProps>;
 
