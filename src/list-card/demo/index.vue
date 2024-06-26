@@ -61,6 +61,19 @@
           分享
         </template>
       </m-list-card>
+      <m-list-card 
+        title="假期安全责任书，各位同学请查收" 
+        label="发布于  2024-6-26 11:00" 
+        content="尊敬的各位家长：假期将至"
+      >
+        <template #avatar>
+          <van-image
+            width="18px"
+            height="18px"
+            src="https://unpkg.com/@vant/assets@1.0.8/cat.jpeg"
+          />
+        </template>
+      </m-list-card>
     </div>
   </demo-block>
 </template>

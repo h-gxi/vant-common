@@ -23,7 +23,7 @@
       <div class="m-list--card__content" :class="contentClass">
         {{ content }}
       </div>
-      <div class="m-list--card__toolbar">
+      <div v-if="isShowToolbar" class="m-list--card__toolbar">
         <div class="toolbar-left">
           <slot name="toolbar-left">
             <span class="toolbar-left__span">{{ toolbarLeft }}</span>
@@ -38,7 +38,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, type ExtractPropTypes } from 'vue';
+import { computed, defineComponent, type ExtractPropTypes } from 'vue';
 
 const name = 'm-list-card';
 
@@ -69,7 +69,8 @@ export default defineComponent({
   name,
   props: listCardProps,
   emits: ['click', 'header-icon', 'toolbar-right'],
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
+    const isShowToolbar = computed(()=> props.toolbarLeft || slots['toolbar-left'] || slots['toolbar-right'])
     const onClick = (event: MouseEvent) => {
       emit('click', event)
     }
@@ -80,6 +81,7 @@ export default defineComponent({
       emit('toolbar-right', event)
     }
     return {
+      isShowToolbar,
       onClick,
       onHeaderIcon,
       onToolbarRight
