@@ -2,7 +2,7 @@
 
 ### 介绍
 
-列表卡片内容风格展示数据，很多页面应用场景中广泛被使用。
+列表内容卡片风格展示，很多页面应用场景中被广泛使用。
 
 ### 引入
 
@@ -19,6 +19,101 @@ app.use(ListCard);
 ## 代码演示
 
 ### 基础用法
+`m-list-card` 组件通过属性、插槽方式可灵活使用在不同场景之中，左边为头像区域，右边分为上中下三个区域布局。
+
+```html
+<div class="demo-list">
+  <m-list-card 
+    title="假期安全责任书，各位同学请查收" 
+    label="发布于  2024-6-26 11:00" 
+    content="尊敬的各位家长：假期将至，为使学生们过一个安全、健康而有意义的假期，切实保护学生的安全。"
+    right-icon="share-o"
+    right-text="分享"
+    @click="onClick"
+    @header-icon="onHeaderIcon"
+    @toolbar-right="onToolbarRight"
+  >
+    <template #avatar>
+      <van-image
+        width="18px"
+        height="18px"
+        src="https://unpkg.com/@vant/assets@1.0.8/cat.jpeg"
+      />
+    </template>
+    <template #toolbar-left>
+      <div><van-icon name="comment-circle-o" style="margin-right: 4px;" /><span>已读</span><span style="color: black;margin-left: 2px;">20</span></div>
+      <div style="margin-left: 12px;"><span>未读</span><span style="color: black;margin-left: 2px;">12</span></div>
+      <div style="margin-left: 12px;"><span>已确认</span><span style="color: black;margin-left: 2px;">12</span></div>
+    </template>
+    <template #toolbar-right>
+      <div style="color: #FFA000;">
+        <van-icon name="bullhorn-o" style="margin-right: 4px;" />
+        提醒
+      </div>
+    </template>
+  </m-list-card>
+  <m-list-card 
+    title="假期安全责任书，各位同学请查收" 
+    content="尊敬的各位家长：假期将至"
+    toolbar-left="2024-6-25 17:19"
+  >
+    <template #avatar>
+      <van-image
+        width="18px"
+        height="18px"
+        src="https://unpkg.com/@vant/assets@1.0.8/cat.jpeg"
+      />
+    </template>
+    <template #right>
+      <van-image
+        width="58px"
+        height="32px"
+        src="https://unpkg.com/@vant/assets@1.0.8/cat.jpeg"
+      />
+    </template>
+    <template #label>
+      王老师 
+      <span>
+        <van-icon name="manager" color="#4587FA" />
+        <van-tag color="#EBF3FF" text-color="#4587FA" style="font-size: 10px;border-radius: 2px;">班主任</van-tag>
+      </span> 
+    </template>
+    <template #toolbar-right>
+      <van-icon name="guide-o" style="margin-right: 4px;" />
+      分享
+    </template>
+  </m-list-card>
+  <m-list-card 
+    title="假期安全责任书，各位同学请查收" 
+    label="发布于  2024-6-26 11:00" 
+    content="尊敬的各位家长：假期将至"
+  >
+    <template #avatar>
+      <van-image
+        width="18px"
+        height="18px"
+        src="https://unpkg.com/@vant/assets@1.0.8/cat.jpeg"
+      />
+    </template>
+  </m-list-card>
+</div>
+```
+
+```js
+import { Toast } from 'vant';
+
+const onClick = ()=> {
+  Toast('点击了卡片');
+}
+const onHeaderIcon = ()=> {
+  Toast('点击了分享按钮');
+}
+const onToolbarRight = ()=> {
+  Toast('点击了提醒按钮');
+}
+```
+
+### 使用LIST组件
 
 `m-list-card` 组件可以搭配 `m-list` 组件使用。
 
@@ -34,180 +129,39 @@ app.use(ListCard);
   <m-list-cell class="m-item">
     <template #default="{item,index}">
       <div v-show="index != 0" class="gray-divider" />
-      <van-cell :border="false">
-        <template #title>
-          <div class="cell-title">
-            {{ item.name }}
+      <m-list-card 
+        title="假期安全责任书，各位同学请查收" 
+        label="发布于  2024-6-26 11:00" 
+        content="尊敬的各位家长：假期将至，为使学生们过一个安全、健康而有意义的假期，切实保护学生的安全。"
+        right-icon="share-o"
+        right-text="分享"
+        @click="onClick"
+        @header-icon="onHeaderIcon"
+        @toolbar-right="onToolbarRight"
+      >
+        <template #avatar>
+          <van-image
+            width="18px"
+            height="18px"
+            src="https://unpkg.com/@vant/assets@1.0.8/cat.jpeg"
+          />
+        </template>
+        <template #toolbar-left>
+          <div><van-icon name="comment-circle-o" style="margin-right: 4px;" /><span>已读</span><span style="color: black;margin-left: 2px;">20</span></div>
+          <div style="margin-left: 12px;"><span>未读</span><span style="color: black;margin-left: 2px;">12</span></div>
+          <div style="margin-left: 12px;"><span>已确认</span><span style="color: black;margin-left: 2px;">12</span></div>
+        </template>
+        <template #toolbar-right>
+          <div style="color: #FFA000;">
+            <van-icon name="bullhorn-o" style="margin-right: 4px;" />
+            提醒
           </div>
         </template>
-        <template #value>
-          <div class="cell-value">
-            {{ item.value }}
-          </div>
-        </template>
-      </van-cell>
+      </m-list-card>
     </template>
   </m-list-cell>
 </m-list>
 ```
-
-```js
-import { ref, computed } from 'vue';
-import axios from 'axios';
-
-export default {
-  setup() {
-    const searchKey = ref('') // 远程搜索关键字
-
-    const queryMethod = (params) => axios.get('/api/homework/page-list', params)
-
-    /** 参数值改变时自动刷新列表数据 */
-    const queryModel = computed(() => {
-      const data = {}
-      if (searchKey.value) {
-        data['title'] = searchKey.value
-      }
-      return data
-    })
-
-    const onClick = (item) => {
-      router.push({ name: 'detail', params: { id: item.id }})
-    };
-
-    return {
-      queryMethod,
-      onClick
-    };
-  },
-};
-```
-
-### 格式化数据
-
-格式化数据一般用于前端修改返回结果使用，设置 `formatter` 属性，`return` 返回格式化后数据列表。
-
-```html
-<m-list
-  class="m-list"
-  :query-method="queryMethod"
-  :formatter="formatter"
-  @click="onClick"
->
-  <!-- ... -->
-</m-list>
-```
-
-```js
-import { ref } from 'vue';
-
-export default {
-  setup() {
-    const formatter = (data) => {
-      const res = data.map(item => {
-        item['date'] = item.publishTime.split(' ')[0]
-        return item
-      })
-      return res
-    }
-
-    return {
-      formatter
-    };
-  },
-};
-```
-
-### 过滤数据
-
-过滤数据一般用于前端过滤使用，设置 `filter` 属性，`return` 返回过滤后数据列表。
-
-```html
-<m-list
-  class="m-list"
-  :query-method="queryMethod"
-  :filter="filter"
-  @click="onClick"
->
-  <!-- ... -->
-</m-list>
-```
-
-```js
-import { ref } from 'vue';
-
-export default {
-  setup() {
-    const searchKey = ref('') // 搜索关键字
-
-    /** 前端过滤只能在页面已加载列表数据中过滤，后台数据过滤清使用远程过滤方式 */
-    const filter = (data) => {
-      if (searchKey.value) {
-        return data.filter(m => m.name.indexOf(searchKey.value) !== -1)
-      }
-      return data
-    }
-
-    return {
-      filter
-    };
-  },
-};
-```
-
-### 分组数据
-
-分组数据，设置 `group-by` 属性进行分组显示，每分组第一条记录包含`group`属性。
-
-```html
-<m-list
-  class="m-list"
-  :offset="150"
-  :query-method="queryMethod"
-  :query-model="queryModel"
-  :formatter="formatter"
-  :group-by="item=>item.date"
-  @click="onClick"
->
-  <m-list-cell class="m-item">
-    <template #default="{item,group}">
-      <div v-if="group" class="date" @click.stop="">{{ group }}</div>
-      <van-cell-group inset class="cell-group">
-        <van-cell :border="false" style="height: 100%">
-          <template #title>
-            <div class="cell-title">
-              <span>{{ item.title }}</span>
-            </div>
-            <div class="cell-content">
-              <span>{{ item.content }}</span>
-            </div>
-          </template>
-        </van-cell>
-      </van-cell-group>
-    </template>
-  </m-list-cell>
-</m-list>
-```
-
-```js
-import { ref } from 'vue';
-
-export default {
-  setup() {
-    const formatter = (data) => {
-      const res = data.map(item => {
-        item['date'] = item.publishTime.split(' ')[0]
-        return item
-      })
-      return res
-    }
-
-    return {
-      formatter
-    };
-  },
-};
-```
-
 
 ## API
 
@@ -215,23 +169,22 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| offset | 滚动条与底部距离小于 offset 时触发 `query-method` 回调函数 | _number \| string_ | `250` |
-| loading-text | 加载过程中的提示文案 | _string_ | `加载中...` |
-| direction | 滚动触发加载的方向，可选值为 `up` | _string_ | `down` |
-| image | 暂无数据时显示图片 | _string_ | - |
-| image-size | 图片大小 | _number_ | `200` |
-| page-size | 分页大小，每次加载数据条数 | _number_ | `10` |
-| query-method | 加载数据时触发回调函数，返回 Promise | _(action: Object) => Promise\<Array\>_ | - |
-| query-model | `query-method` 查询参数 | _Object_ | - |
-| formatter | 格式化数据 | _(value) => any_ | - |
-| filter | 过滤数据，前端过滤 | _(value) => any_ | - |
-| group-by | 分组字段 | _(action: Object) => string \| string_ | - |
+| right-icon | 右上角按钮图标 | string_ | - |
+| right-text | 右上角按钮文字 | _string_ | - |
+| class-prefix | 类名前缀，用于使用自定义图标 | _string_ | `van-icon` |
+| title | 标题文字 | _string_ | - |
+| label | 标签文字 | _string_ | - |
+| content | 正文 | _string_ | - |
+| toolbar-left | 底部左边文字 | _string_ | - |
+| content-class | 正文样式，默认`van-multi-ellipsis--l2` 文字超出2行出现省略号表示 | _string_ | `van-multi-ellipsis--l2` |
 
 ### Events
 
 | 事件名 | 说明                               | 回调参数 |
 | ------ | ---------------------------------- | -------- |
-| click   | 点击 `m-list-cell` 组件时触发 | _item: object_        |
+| click   | 点击卡片时触发 | _event: MouseEvent_        |
+| header-icon   | 点击右上角按钮时触发 | _event: MouseEvent_        |
+| toolbar-right   | 点击右下角按钮时触发 | _event: MouseEvent_      |
 
 ## 主题定制
 
@@ -241,7 +194,17 @@ export default {
 
 | 名称                         | 默认值                    | 描述 |
 | ---------------------------- | ------------------------- | ---- |
-| --van-list-text-color        | _var(--van-text-color-2)_ | -    |
-| --van-list-text-font-size    | _var(--van-font-size-md)_ | -    |
-| --van-list-text-line-height  | _50px_                    | -    |
-| --van-list-loading-icon-size | _16px_                    | -    |
+| --m-list-card-background-color        | _#fff_ | -    |
+| --m-list-card-margin-bottom        | _16px_ | -    |
+| --m-list-card-box-shadow        | _0px 0px 10px 0px rgba(0,0,0,0.08)_ | -    |
+| --m-list-card-border-radius        | _10px_ | -    |
+| --m-list-card-padding-right        | _20px_ | -    |
+| --m-list-card-left-padding-right        | _8px_ | -    |
+| --m-list-card-left-padding-left        | _12px_ | -    |
+| --m-list-card-left-padding-top        | _20px_ | -    |
+| --m-list-card-header-title-color        | _var(--van-gray-8)_ | -    |
+| --m-list-card-header-label-color        | _var(--van-gray-7)_ | -    |
+| --m-list-card-header-title-font-size        | _16px_ | -    |
+| --m-list-card-header-title-font-weight        | _600_ | -    |
+| --m-list-card-header-icon-label-font-size        | _12px_ | -    |
+| --m-list-card-right-weight        | _70px_ | -    |
