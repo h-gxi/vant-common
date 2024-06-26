@@ -7,6 +7,9 @@
         content="尊敬的各位家长：假期将至，为使学生们过一个安全、健康而有意义的假期，切实保护学生的安全。"
         right-icon="share-o"
         right-text="分享"
+        @click="onClick"
+        @header-icon="onHeaderIcon"
+        @toolbar-right="onToolbarRight"
       >
         <template #avatar>
           <van-image
@@ -29,7 +32,7 @@
       </m-list-card>
       <m-list-card 
         title="假期安全责任书，各位同学请查收" 
-        content="尊敬的各位家长：假期将至，为使学生们过一个安全、健康而有意义的假期，切实保护学生的安全。"
+        content="尊敬的各位家长：假期将至"
         toolbar-left="2024-6-25 17:19"
       >
         <template #avatar>
@@ -67,8 +70,17 @@ import MListCard from '../index';
 
 import { useVant } from '../../utils/index'
 useVant()
+import { Toast } from 'vant';
 
-
+const onClick = ()=> {
+  Toast('点击了卡片');
+}
+const onHeaderIcon = ()=> {
+  Toast('点击了分享按钮');
+}
+const onToolbarRight = ()=> {
+  Toast('点击了提醒按钮');
+}
 </script>
 
 <style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="m-list--card">
+  <div class="m-list--card" @click.stop="onClick">
     <div class="m-list--card__left">
       <slot name="avatar"></slot>
     </div>
@@ -13,14 +13,14 @@
         </div>
         <div class="right">
           <slot name="right">
-            <span class="header-icon">
-              <van-icon :name="rightIcon" :class-prefix="prefix" />
-              <label>{{ rightText }}</label> 
+            <span class="header-icon" @click.stop="onHeaderIcon">
+              <van-icon :name="rightIcon" :class-prefix="classPrefix" />
+              <label>{{ rightText }}</label>
             </span>
           </slot>
         </div>
       </div>
-      <div class="m-list--card__content van-multi-ellipsis--l2">
+      <div class="m-list--card__content" :class="contentClass">
         {{ content }}
       </div>
       <div class="m-list--card__toolbar">
@@ -29,7 +29,9 @@
             <span class="toolbar-left__span">{{ toolbarLeft }}</span>
           </slot>
         </div>
-        <div class="right"><slot name="toolbar-right" /></div>
+        <div class="right" @click.stop="onToolbarRight">
+          <slot name="toolbar-right" />
+        </div>
       </div>
     </div>
   </div>
@@ -54,15 +56,34 @@ const listCardProps = {
   /** 正文 */
   content: String,
   /** 底部左边文字 */
-  toolbarLeft: String
+  toolbarLeft: String,
+  /** 正文样式 */
+  contentClass: {
+    type: String,
+    default: 'van-multi-ellipsis--l2'
+  }
 };
 export type ListCardProps = ExtractPropTypes<typeof listCardProps>;
 
 export default defineComponent({
   name,
   props: listCardProps,
-  setup() {
-    return {} as any;
+  emits: ['click', 'header-icon', 'toolbar-right'],
+  setup(props, { emit }) {
+    const onClick = (event: MouseEvent) => {
+      emit('click', event)
+    }
+    const onHeaderIcon = (event: MouseEvent) => {
+      emit('header-icon', event)
+    }
+    const onToolbarRight = (event: MouseEvent) => {
+      emit('toolbar-right', event)
+    }
+    return {
+      onClick,
+      onHeaderIcon,
+      onToolbarRight
+    } as any;
   },
 });
 </script>
