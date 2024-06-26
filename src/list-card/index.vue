@@ -13,11 +13,10 @@
         </div>
         <div class="right">
           <slot name="right">
-            <van-icon
-              :name="rightIcon"
-              :class-prefix="prefix"
-              class="header-icon"
-            />
+            <span class="header-icon">
+              <van-icon :name="rightIcon" :class-prefix="prefix" />
+              <label>{{ rightText }}</label> 
+            </span>
           </slot>
         </div>
       </div>
@@ -25,8 +24,12 @@
         {{ content }}
       </div>
       <div class="m-list--card__toolbar">
-        <div class="left">2024-6-25 17:19</div>
-        <div class="right">分享</div>
+        <div class="toolbar-left">
+          <slot name="toolbar-left">
+            <span class="toolbar-left__span">{{ toolbarLeft }}</span>
+          </slot>
+        </div>
+        <div class="right"><slot name="toolbar-right" /></div>
       </div>
     </div>
   </div>
@@ -40,6 +43,8 @@ const name = 'm-list-card';
 const listCardProps = {
   /** 右上角图标 */
   rightIcon: String,
+  /** 右上角文字 */
+  rightText: String,
   /** 类名前缀，用于使用自定义图标 */
   classPrefix: String,
   /** 标题文字 */
@@ -48,6 +53,8 @@ const listCardProps = {
   label: String,
   /** 正文 */
   content: String,
+  /** 底部左边文字 */
+  toolbarLeft: String
 };
 export type ListCardProps = ExtractPropTypes<typeof listCardProps>;
 
