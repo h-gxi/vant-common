@@ -37,7 +37,7 @@ app.use(ListCard);
       <van-image
         width="18px"
         height="18px"
-        src="https://unpkg.com/@vant/assets@1.0.8/cat.jpeg"
+        src="/images/notification-horn@2x.png"
       />
     </template>
     <template #toolbar-left>
@@ -61,14 +61,14 @@ app.use(ListCard);
       <van-image
         width="18px"
         height="18px"
-        src="https://unpkg.com/@vant/assets@1.0.8/cat.jpeg"
+        src="/images/notification-horn@2x.png"
       />
     </template>
     <template #right>
       <van-image
         width="58px"
-        height="32px"
-        src="https://unpkg.com/@vant/assets@1.0.8/cat.jpeg"
+        height="29px"
+        src="images/notviewed-highlight@2x.png"
       />
     </template>
     <template #label>
@@ -92,7 +92,7 @@ app.use(ListCard);
       <van-image
         width="18px"
         height="18px"
-        src="https://unpkg.com/@vant/assets@1.0.8/cat.jpeg"
+        src="/images/notification-horn@2x.png"
       />
     </template>
   </m-list-card>
