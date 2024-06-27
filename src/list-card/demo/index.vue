@@ -24,10 +24,8 @@
           <div style="margin-left: 12px;"><span>已确认</span><span style="color: black;margin-left: 2px;">12</span></div>
         </template>
         <template #toolbar-right>
-          <div style="color: #FFA000;">
-            <van-icon name="bullhorn-o" style="margin-right: 4px;" />
-            提醒
-          </div>
+          <van-icon name="bullhorn-o" style="margin-right: 6px;" />
+          <span class="m-margin-l-6">提醒</span>
         </template>
       </m-list-card>
       <m-list-card 

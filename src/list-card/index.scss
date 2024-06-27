@@ -11,7 +11,9 @@
   --m-list-card-header-label-color: var(--van-gray-7);
   --m-list-card-header-title-font-size: 16px;
   --m-list-card-header-title-font-weight: 600;
-  --m-list-card-header-icon-label-font-size: 14px;
+  --m-list-card-label-font-size: 14px;
+  --m-list-card-label-line-height: 16px;
+  --m-list-card-content-font-size: 14px;
   --m-list-card-right-weight: 70px;
 }
 
@@ -50,7 +52,7 @@
       padding-right: var(--m-list-card-padding-right);
       color: var(--m-list-card-header-title-color);
       label {
-        font-size: var(--m-list-card-header-icon-label-font-size);
+        font-size: var(--m-list-card-label-font-size);
         margin-left: 4px;
       }
     }
@@ -62,8 +64,8 @@
     }
     .header-label {
       margin-top: 8px;
-      font-size: 14px;
-      line-height: 1;
+      font-size: var(--m-list-card-label-font-size);
+      line-height: var(--m-list-card-label-line-height);
       color: var(--m-list-card-header-label-color);
     }
     .left {
@@ -75,15 +77,15 @@
   &__content {
     margin-top: 8px;
     margin-bottom: 16px;
-    font-size: 14px;
+    font-size: var(--m-list-card-content-font-size);
     padding-right: var(--m-list-card-padding-right);
   }
 
   &__toolbar {
     position: relative;
     height: 50px;
-    font-size: 14px;
-    line-height: 1;
+    font-size: var(--m-list-card-label-font-size);
+    line-height: var(--m-list-card-label-line-height);
     color: var(--m-list-card-header-label-color);
     display: flex;
     align-items: center;
@@ -102,22 +104,20 @@
     .toolbar-left {
       flex: 1;
       overflow: hidden;
-      // font-size: 12px;
-      line-height: 16px;
       display: flex;
       align-items: center;
       .van-icon {
         font-size: 16px;
       }
-      // &__span {
-      //   font-size: 14px;
-      // }
     }
   }
   &__header, &__toolbar {
     .right {
       width: var(--m-list-card-right-weight);
-      text-align: right;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      color: var(--van-warning-color);
     }
   }
 }

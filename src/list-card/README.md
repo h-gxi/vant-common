@@ -148,14 +148,12 @@ const onToolbarRight = ()=> {
         </template>
         <template #toolbar-left>
           <div><van-icon name="comment-circle-o" style="margin-right: 4px;" /><span>已读</span><span style="color: black;margin-left: 2px;">20</span></div>
-          <div style="margin-left: 12px;"><span>未读</span><span style="color: black;margin-left: 2px;">12</span></div>
-          <div style="margin-left: 12px;"><span>已确认</span><span style="color: black;margin-left: 2px;">12</span></div>
+          <div style="margin-left: 16px;"><span>未读</span><span style="color: black;margin-left: 2px;">12</span></div>
+          <div style="margin-left: 16px;"><span>已确认</span><span style="color: black;margin-left: 2px;">12</span></div>
         </template>
         <template #toolbar-right>
-          <div style="color: #FFA000;">
-            <van-icon name="bullhorn-o" style="margin-right: 4px;" />
-            提醒
-          </div>
+          <van-icon name="bullhorn-o" style="margin-right: 6px;" />
+          <span class="m-margin-l-6">提醒</span>
         </template>
       </m-list-card>
     </template>
@@ -206,5 +204,7 @@ const onToolbarRight = ()=> {
 | --m-list-card-header-label-color        | _var(--van-gray-7)_ | -    |
 | --m-list-card-header-title-font-size        | _16px_ | -    |
 | --m-list-card-header-title-font-weight        | _600_ | -    |
-| --m-list-card-header-icon-label-font-size        | _12px_ | -    |
+| --m-list-card-label-font-size        | _14px_ | -    |
+| --m-list-card-label-line-height        | _16px_ | -    |
+| --m-list-card-content-font-size        | _14px_ | -    |
 | --m-list-card-right-weight        | _70px_ | -    |
