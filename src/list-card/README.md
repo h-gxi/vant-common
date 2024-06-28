@@ -29,6 +29,7 @@ app.use(ListCard);
     content="尊敬的各位家长：假期将至，为使学生们过一个安全、健康而有意义的假期，切实保护学生的安全。"
     right-icon="share-o"
     right-text="分享"
+    toolbar-right-color="#ffa000"
     @click="onClick"
     @header-icon="onHeaderIcon"
     @toolbar-right="onToolbarRight"
@@ -135,6 +136,7 @@ const onToolbarRight = ()=> {
         content="尊敬的各位家长：假期将至，为使学生们过一个安全、健康而有意义的假期，切实保护学生的安全。"
         right-icon="share-o"
         right-text="分享"
+        toolbar-right-color="#ffa000"
         @click="onClick"
         @header-icon="onHeaderIcon"
         @toolbar-right="onToolbarRight"
@@ -175,6 +177,7 @@ const onToolbarRight = ()=> {
 | content | 正文 | _string_ | - |
 | toolbar-left | 底部左边文字 | _string_ | - |
 | content-class | 正文样式，默认`van-multi-ellipsis--l2` 文字超出2行出现省略号表示 | _string_ | `van-multi-ellipsis--l2` |
+| toolbar-right-color | 底部右边字体颜色 | _string_ | - |
 
 ### Events
 

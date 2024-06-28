@@ -1,5 +1,5 @@
 <template>
-  <div class="m-list--card" @click.stop="onClick">
+  <div class="m-list--card" @click="onClick">
     <div class="m-list--card__left">
       <slot name="avatar"></slot>
     </div>
@@ -29,7 +29,7 @@
             <span class="toolbar-left__span">{{ toolbarLeft }}</span>
           </slot>
         </div>
-        <div class="right" @click.stop="onToolbarRight">
+        <div class="right" :style="toolbarRightStyle" @click.stop="onToolbarRight">
           <slot name="toolbar-right" />
         </div>
       </div>
@@ -38,7 +38,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, type ExtractPropTypes } from 'vue';
+import { computed, defineComponent, type ExtractPropTypes, type CSSProperties } from 'vue';
 
 const name = 'm-list-card';
 
@@ -61,7 +61,9 @@ const listCardProps = {
   contentClass: {
     type: String,
     default: 'van-multi-ellipsis--l2'
-  }
+  },
+  /** 底部右边字体颜色 */
+  toolbarRightColor: String
 };
 export type ListCardProps = ExtractPropTypes<typeof listCardProps>;
 
@@ -70,7 +72,16 @@ export default defineComponent({
   props: listCardProps,
   emits: ['click', 'header-icon', 'toolbar-right'],
   setup(props, { emit, slots }) {
-    const isShowToolbar = computed(()=> props.toolbarLeft || slots['toolbar-left'] || slots['toolbar-right'])
+    const isShowToolbar = computed(() => props.toolbarLeft || slots['toolbar-left'] || slots['toolbar-right'])
+    const toolbarRightStyle = computed(() => {
+      if (props.toolbarRightColor) {
+        const style: CSSProperties = {
+          color: props.toolbarRightColor
+        };
+        return style
+      }
+      return ''
+    })
     const onClick = (event: MouseEvent) => {
       emit('click', event)
     }
@@ -82,6 +93,7 @@ export default defineComponent({
     }
     return {
       isShowToolbar,
+      toolbarRightStyle,
       onClick,
       onHeaderIcon,
       onToolbarRight

@@ -7,6 +7,7 @@
         content="尊敬的各位家长：假期将至，为使学生们过一个安全、健康而有意义的假期，切实保护学生的安全。"
         right-icon="share-o"
         right-text="分享"
+        toolbar-right-color="#ffa000"
         @click="onClick"
         @header-icon="onHeaderIcon"
         @toolbar-right="onToolbarRight"
