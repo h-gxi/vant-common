@@ -14,7 +14,7 @@ import { useRect } from '@vant/use';
 const name = 'm-header';
 export const HEADER_KEY = Symbol(name);
 
-export const headerProps = {
+const headerProps = {
   /** 指定header高度 */
   height: {
     type: [String, Number],

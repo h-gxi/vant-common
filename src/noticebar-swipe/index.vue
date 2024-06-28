@@ -34,12 +34,10 @@
 <script lang="ts">
 import { ref, computed, defineComponent, type ExtractPropTypes } from 'vue'
 import { useParent } from '@vant/use'
-import { noticebarSwipeProps as _noticebarSwipeProps } from './props'
+import { noticebarSwipeProps } from './props'
 import { HEADER_KEY } from '../header/index'
 
 const name = 'm-noticebar-swipe'
-
-export const noticebarSwipeProps = _noticebarSwipeProps
 export type NoticebarSwipeProps = ExtractPropTypes<typeof noticebarSwipeProps>;
 
 export default defineComponent({

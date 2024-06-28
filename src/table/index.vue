@@ -15,12 +15,10 @@
 import _ from 'lodash'
 import { ref, reactive, computed, defineComponent, nextTick, onActivated, type ExtractPropTypes } from 'vue'
 import { useChildren, useScrollParent, useEventListener } from '@vant/use'
-import { tableProps as _tableProps } from './props'
+import { tableProps } from './props'
 
 const name = 'm-table'
 export const TABLE_KEY = Symbol(name)
-
-export const tableProps = _tableProps
 export type TableProps = ExtractPropTypes<typeof tableProps>;
 
 export default defineComponent({

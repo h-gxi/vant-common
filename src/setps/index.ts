@@ -6,7 +6,7 @@ export const Setps = withInstall(_Setps);
 
 export default Setps;
 
-export { stepsProps, STEPS_KEY } from './index.vue';
+export { STEPS_KEY } from './index.vue';
 export type { StepsProps } from './index.vue';
 
 declare module 'vue' {

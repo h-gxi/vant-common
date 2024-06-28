@@ -7,12 +7,10 @@
 <script lang="ts">
 import { defineComponent, type ExtractPropTypes } from 'vue'
 import { useChildren } from '@vant/use'
-import { stepsProps as _stepsProps } from './props'
+import { stepsProps } from './props'
 
 const name = 'm-setps'
 export const STEPS_KEY = Symbol(name)
-
-export const stepsProps = _stepsProps
 export type StepsProps = ExtractPropTypes<typeof stepsProps>;
 
 export default defineComponent({

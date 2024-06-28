@@ -6,7 +6,7 @@ export const List = withInstall(_List);
 
 export default List;
 
-export { listProps, LIST_KEY } from './index.vue';
+export { LIST_KEY } from './index.vue';
 export type { ListProps } from './index.vue';
 
 declare module 'vue' {

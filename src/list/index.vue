@@ -14,11 +14,9 @@
 <script lang="ts">
 import { ref, reactive, toRefs, computed, watch, defineComponent, type ExtractPropTypes } from 'vue'
 import { useChildren } from '@vant/use'
-import { listProps as _listProps } from './props'
+import { listProps } from './props'
 const name = 'm-list'
 export const LIST_KEY = Symbol(name)
-
-export const listProps = _listProps
 
 export type ListProps = ExtractPropTypes<typeof listProps>;
 

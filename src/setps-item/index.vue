@@ -19,12 +19,10 @@
 import { ref, defineComponent, computed, onMounted, type ExtractPropTypes } from 'vue'
 import { useParent } from '@vant/use'
 import { useRect } from '@vant/use'
-import { stepsItemProps as _stepsItemProps } from '../setps/props'
+import { stepsItemProps } from '../setps/props'
 import { STEPS_KEY, type StepsProps } from '../setps/index'
 
 const name = 'm-setps-item'
-
-export const stepsItemProps = _stepsItemProps
 export type StepsItemProps = ExtractPropTypes<typeof stepsItemProps>;
 
 export default defineComponent({

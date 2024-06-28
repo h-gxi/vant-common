@@ -18,12 +18,10 @@
 import _ from 'lodash'
 import { computed, defineComponent, type ExtractPropTypes } from 'vue'
 import { useParent } from '@vant/use'
-import { tableColumnProps as _tableColumnProps } from '../table/props'
+import { tableColumnProps } from '../table/props'
 import { TABLE_KEY } from '../table/index'
 
 const name = 'm-table-column'
-
-export const tableColumnProps = _tableColumnProps
 export type TableColumnProps = ExtractPropTypes<typeof tableColumnProps>;
 
 export default defineComponent({

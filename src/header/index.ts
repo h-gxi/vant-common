@@ -6,7 +6,7 @@ export const Header = withInstall(_Header);
 
 export default Header;
 
-export { headerProps, HEADER_KEY } from './index.vue';
+export { HEADER_KEY } from './index.vue';
 export type { HeaderProps } from './index.vue';
 
 declare module 'vue' {

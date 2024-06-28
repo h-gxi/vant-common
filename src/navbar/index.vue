@@ -28,11 +28,9 @@
 
 <script lang="ts">
 import { computed, defineComponent, type ExtractPropTypes } from 'vue'
-import { navbarProps as _navbarProps } from './props'
+import { navbarProps } from './props'
 
 const name = 'm-nav-bar'
-
-export const navbarProps = _navbarProps
 
 export type NavbarProps = ExtractPropTypes<typeof navbarProps>;
 

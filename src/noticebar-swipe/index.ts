@@ -6,7 +6,6 @@ export const NoticebarSwipe = withInstall(_NoticebarSwipe);
 
 export default NoticebarSwipe;
 
-export { noticebarSwipeProps } from './index.vue';
 export type { NoticebarSwipeProps } from './index.vue';
 
 declare module 'vue' {
