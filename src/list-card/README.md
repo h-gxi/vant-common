@@ -187,6 +187,16 @@ const onToolbarRight = ()=> {
 | header-icon   | 点击右上角按钮时触发 | _event: MouseEvent_        |
 | toolbar-right   | 点击右下角按钮时触发 | _event: MouseEvent_      |
 
+### Slots
+
+| 名称  | 说明               |
+| ----- | ------------------ |
+| avatar | 自定义左侧头像图标         |
+| label  | 自定义header-label |
+| right  | 自定义header-icon |
+| toolbar-left  | 自定义toolbar-left |
+| toolbar-right  | 自定义toolbar-right |
+
 ## 主题定制
 
 ### 样式变量
