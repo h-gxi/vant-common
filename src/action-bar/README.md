@@ -108,11 +108,18 @@ export default {
 | text | 按钮文字 | string |    -    |
 | to | 点击后跳转的目标路由对象，等同于 vue-router 的 to 属性 | string \| object |    -    |
 
-### Events
+### ActionBarIiemEvents
 
 | 事件名    | 说明                 | 回调参数             |
 | --------- | -------------------- | -------------------- |
 | click | 点击按钮，且按钮状态不为加载或禁用时触发 | event: MouseEvent |
+
+### ActionBarIiemSlots
+
+| 名称  | 说明               |
+| ----- | ------------------ |
+| icon | `'icon'`按钮类型时，自定义图标         |
+| text  | `'icon'`按钮类型时，自定义按钮文字 |
 
 ## 主题定制
 

@@ -1,7 +1,9 @@
 <template>
   <div v-if="type === 'icon'" class="m-action-bar-item m-action-bar-icon" @click="onClick">
-    <van-icon :name="icon" :dot="dot" :class-prefix="prefix" class="m-action-bar-icon__icon" />
-    <span class="m-action-bar-icon__text">{{ text }}</span>
+    <slot name="icon">
+      <van-icon :name="icon" :dot="dot" :class-prefix="prefix" class="m-action-bar-icon__icon" />
+    </slot>
+    <span class="m-action-bar-icon__text"><slot name="text">{{ text }}</slot></span>
   </div>
   <div v-if="type === 'button'" class="m-action-bar-item m-action-bar-button" @click="onClick">
     <van-button type="primary" :disabled="disabled" :plain="plain" block round>{{ text }}</van-button>
