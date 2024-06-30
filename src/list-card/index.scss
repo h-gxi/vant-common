@@ -11,6 +11,7 @@
   --m-list-card-header-label-color: var(--van-gray-7);
   --m-list-card-header-title-font-size: 16px;
   --m-list-card-header-title-font-weight: 600;
+  --m-list-card-header-title-line-height: 18px;
   --m-list-card-label-font-size: 14px;
   --m-list-card-label-line-height: 16px;
   --m-list-card-content-font-size: 14px;
@@ -45,7 +46,6 @@
 
   &__header {
     display: flex;
-    height: 38px;
     margin-top: 20px;
     margin-bottom: 8px;
     .header-icon {
@@ -59,7 +59,7 @@
     .header-title {
       font-size: var(--m-list-card-header-title-font-size);
       font-weight: var(--m-list-card-header-title-font-weight);
-      line-height: 1;
+      line-height: var(--m-list-card-header-title-line-height);
       color: var(--m-list-card-header-title-color);
     }
     .header-label {
@@ -75,10 +75,13 @@
   }
 
   &__content {
-    margin-top: 8px;
+    margin-top: 4px;
     margin-bottom: 16px;
     font-size: var(--m-list-card-content-font-size);
     padding-right: var(--m-list-card-padding-right);
+    &.hide-toobar {
+      margin-bottom: 20px;
+    }
   }
 
   &__toolbar {
@@ -115,7 +118,6 @@
     .right {
       width: var(--m-list-card-right-weight);
       display: inline-flex;
-      align-items: center;
       justify-content: flex-end;
     }
   }
