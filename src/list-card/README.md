@@ -217,6 +217,7 @@ const onToolbarRight = ()=> {
 | --m-list-card-header-label-color        | _var(--van-gray-7)_ | -    |
 | --m-list-card-header-title-font-size        | _16px_ | -    |
 | --m-list-card-header-title-font-weight        | _600_ | -    |
+| --m-list-card-header-title-line-height        | _18px_ | -    |
 | --m-list-card-label-font-size        | _14px_ | -    |
 | --m-list-card-label-line-height        | _16px_ | -    |
 | --m-list-card-content-font-size        | _14px_ | -    |
