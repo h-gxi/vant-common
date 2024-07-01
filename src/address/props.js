@@ -14,6 +14,11 @@ export const addressProps = {
     type: Boolean,
     default: false
   },
+  /** 节点图标 */
+  icon: {
+    type: String,
+    default: 'https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-school.png'
+  },
   /** 叶子节点图标 */
   leafIcon: {
     type: String,
@@ -23,6 +28,11 @@ export const addressProps = {
   emptyMsg: {
     type: String,
     default: '暂无成员'
+  },
+  /** 列表数据空图片 */
+  emptyImage: {
+    type: String,
+    default: 'https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-nodata.png'
   },
   /** 搜索列表空文案 */
   filterMsg: {

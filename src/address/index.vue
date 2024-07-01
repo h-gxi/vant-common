@@ -31,7 +31,7 @@
               <van-icon :class="{checked:item.checked}" :name="item.checkedAll ? 'success' : 'minus'" />
             </template>
           </van-checkbox>
-          <img v-lazy="'https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-school.png'">
+          <img v-if="icon" v-lazy="icon">
           <div class="label" @click="onClick(item)">
             <span>{{ item.name }}</span>
           </div>
@@ -41,7 +41,7 @@
         </template>
       </lazy-component>
       <van-loading v-if="loading && dataNode.length === 0" size="24px" vertical>加载中...</van-loading>
-      <van-empty v-if="!loading && dataNode.length === 0" image="https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-nodata.png" image-size="200" :description="emptyText" />
+      <van-empty v-if="!loading && dataNode.length === 0" :image="emptyImage" image-size="200" :description="emptyText" />
     </div>
     <div class="van-safe-area-bottom" />
 
@@ -57,7 +57,6 @@
           class="m-address-action-bar__btn"
           round
           block
-          color="#F29103"
           type="primary"
           :disabled="disabled"
           native-type="submit"
@@ -82,7 +81,7 @@ defineOptions({ name })
 const emit = defineEmits(['onSave'])
 const props = defineProps(addressProps)
 
-const { hideSelect, sticky, multiple, leafIcon, emptyMsg, filterMsg, suffixText } = props
+const { hideSelect, sticky, multiple, icon, leafIcon, emptyMsg, emptyImage, filterMsg, suffixText } = props
 
 const filterText = ref('')
 const emptyText = computed(() => {
