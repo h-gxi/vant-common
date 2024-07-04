@@ -95,6 +95,13 @@ export default {
 
 ## API
 
+### ActionBarProps
+
+| 参数   | 说明     | 类型               | 默认值 |
+| ------ | -------- | ------------------ | ------ |
+| container | 容器对应的 HTML 节点 | Element |    -    |
+| offset-bottom | 吸底时与底部的距离，支持 px vw vh rem 单位，默认 px | string |    -    |
+
 ### ActionBarIiemProps
 
 | 参数   | 说明     | 类型               | 默认值 |
