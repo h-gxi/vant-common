@@ -16,10 +16,6 @@
   --m-action-bar-button-border-radius: 21px;
 }
 .m-action-bar {
-  // position: fixed;
-  // right: 0;
-  // bottom: 0;
-  // left: 0;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -28,6 +24,12 @@
   padding-bottom: var(--m-action-bar-padding-bottom);
   background: var(--m-action-bar-background-color);
   z-index: 9;
+  &.fixed {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 .m-action-bar-item {
