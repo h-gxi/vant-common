@@ -48,7 +48,7 @@ export default {
 通过 `color` 属性设置文本颜色，通过 `background` 属性设置背景色。
 
 ```html
-<m-noticebar v-model="noticeBars" color="#ed6a0c" background="#fffbe8" left-icon="info-o" @click="onClickNotice" />
+<m-noticebar v-model="noticeBars2" color="#2f54eb" background="#ecf9ff" left-icon="volume-o" @click="onClickNotice" />
 ```
 
 ## API
