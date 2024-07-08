@@ -1,4 +1,4 @@
-# NoticebarSwipe 滚动通知栏
+# Noticebar 滚动通知栏
 
 ### 介绍
 
@@ -10,10 +10,10 @@
 
 ```js
 import { createApp } from 'vue';
-import { NoticebarSwipe } from 'vant-common';
+import { Noticebar } from 'vant-common';
 
 const app = createApp();
-app.use(NoticebarSwipe);
+app.use(Noticebar);
 ```
 
 ## 代码演示
@@ -23,7 +23,7 @@ app.use(NoticebarSwipe);
 通过 `v-model` 属性绑定通知栏的内容，或通过 `value` 属性设置通知栏的内容。
 
 ```html
-<m-noticebar-swipe v-model="noticeBars" @click="onClickNotice" />
+<m-noticebar v-model="noticeBars" @click="onClickNotice" />
 ```
 
 ```js
@@ -48,7 +48,7 @@ export default {
 通过 `color` 属性设置文本颜色，通过 `background` 属性设置背景色。
 
 ```html
-<m-noticebar-swipe v-model="noticeBars" color="#ed6a0c" background="#fffbe8" left-icon="info-o" @click="onClickNotice" />
+<m-noticebar v-model="noticeBars" color="#ed6a0c" background="#fffbe8" left-icon="info-o" @click="onClickNotice" />
 ```
 
 ## API

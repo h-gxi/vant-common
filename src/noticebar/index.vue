@@ -9,12 +9,12 @@
     @close="onClose"
   >
     <template #right-icon>
-      <van-icon name="cross" size="16" @click="onClose" />
+      <van-icon name="cross" @click="onClose" />
     </template>
     <van-swipe
       ref="swipeRef"
       vertical
-      class="m-noticebar-swipe"
+      class="m-noticebar__swipe"
       :autoplay="autoplay"
       :touchable="false"
       :show-indicators="false"
@@ -34,15 +34,15 @@
 <script lang="ts">
 import { ref, computed, defineComponent, type ExtractPropTypes } from 'vue'
 import { useParent } from '@vant/use'
-import { noticebarSwipeProps } from './props'
+import { noticebarProps } from './props'
 import { HEADER_KEY } from '../header/index'
 
-const name = 'm-noticebar-swipe'
-export type NoticebarSwipeProps = ExtractPropTypes<typeof noticebarSwipeProps>;
+const name = 'm-noticebar'
+export type NoticebarProps = ExtractPropTypes<typeof noticebarProps>;
 
 export default defineComponent({
   name,
-  props: noticebarSwipeProps,
+  props: noticebarProps,
   emits: ['remove', 'click', 'update:modelValue'],
   setup(props, { emit }) {
     const { parent } = useParent(HEADER_KEY)

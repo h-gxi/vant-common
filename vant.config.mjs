@@ -48,8 +48,8 @@ export default {
             title: 'Navbar 导航栏',
           },
           {
-            path: 'noticebar-swipe',
-            title: 'NoticebarSwipe 滚动通知栏',
+            path: 'noticebar',
+            title: 'Noticebar 滚动通知栏',
           },
           {
             path: 'setps',

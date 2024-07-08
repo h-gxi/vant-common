@@ -1,36 +1,27 @@
 import { type PropType } from 'vue';
 
-export type NoticebarSwipeValue = {
+export type NoticebarValue = {
   title: string,
   [prop:string]: any
 }
 
-export const noticebarSwipeProps = {
+export const noticebarProps = {
   /** 双向绑定列表 {title} */
   modelValue: {
-    type:  Array as PropType<NoticebarSwipeValue[]>,
+    type:  Array as PropType<NoticebarValue[]>,
     default: null
   },
   /** 列表数据 v-model/value 二选一，使用value时触发@remove事件*/
   value: {
-    type: Array as PropType<NoticebarSwipeValue[]>,
+    type: Array as PropType<NoticebarValue[]>,
     default: null
   },
   /** 文本颜色 */
-  color: {
-    type: String,
-    default: '#1989fa'
-  },
+  color: String,
   /** 滚动条背景 */
-  background: {
-    type: String,
-    default: '#ecf9ff'
-  },
+  background: String,
   /** 左侧图标名称或图片链接，可选值见 Icon 组件 */
-  leftIcon: {
-    type: String,
-    default: 'volume-o'
-  },
+  leftIcon: String,
   /** 是否在长度溢出时滚动播放 */
   scrollable: {
     type: Boolean,

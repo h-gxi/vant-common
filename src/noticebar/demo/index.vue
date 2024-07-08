@@ -1,17 +1,17 @@
 <template>
   <demo-block title="基础用法">
-    <m-noticebar-swipe v-model="noticeBars" @click="onClickNotice" />
+    <m-noticebar v-model="noticeBars" @click="onClickNotice" />
   </demo-block>
 
   <demo-block title="自定义样式">
-    <m-noticebar-swipe v-model="noticeBars2" color="#ed6a0c" background="#fffbe8" left-icon="info-o" @click="onClickNotice" />
+    <m-noticebar v-model="noticeBars2" color="#2f54eb" background="#ecf9ff" left-icon="volume-o" @click="onClickNotice" />
   </demo-block>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { Toast  } from 'vant';
-import MNoticebarSwipe from '../index';
+import MNoticebar from '../index';
 
 
 import { useVant } from '../../utils/index'

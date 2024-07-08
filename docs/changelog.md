@@ -8,6 +8,10 @@
 
 ## 更新内容
 
+### v0.2.0-beta.14
+`2024-07-08`
+- NoticebarSwipe组件，改名为Noticebar。
+
 ### v0.2.0-beta.12
 `2024-07-04`
 - ActionBar组件，新增属性，支持粘性布局。
