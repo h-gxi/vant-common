@@ -1,5 +1,5 @@
 <template>
-  <div class="m-list--card" @click="onClick">
+  <div class="m-list--card" :class="[{ 'show-toobar__line': isShowToolbar }]" @click="onClick">
     <div class="m-list--card__left">
       <slot name="avatar"></slot>
     </div>

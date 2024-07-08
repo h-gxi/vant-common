@@ -27,6 +27,17 @@
   display: flex;
   flex-wrap: nowrap;
 
+  &.show-toobar__line::after {
+    position: absolute;
+    box-sizing: border-box;
+    content: " ";
+    pointer-events: none;
+    right: 0;
+    left: 0;
+    bottom: 54px;
+    border-bottom: 1px solid #F3F3F3;
+  }
+
   &__left {
     display: flex;
     padding-right: var(--m-list-card-left-padding-right);
@@ -94,16 +105,6 @@
     align-items: center;
     margin-bottom: 4px;
     padding-right: var(--m-list-card-padding-right);
-    &::after {
-      position: absolute;
-      box-sizing: border-box;
-      content: " ";
-      pointer-events: none;
-      right: 0;
-      top: 0;
-      left: 0;
-      border-bottom: 1px solid #F3F3F3;
-    }
     .toolbar-left {
       flex: 1;
       overflow: hidden;
