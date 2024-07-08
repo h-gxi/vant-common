@@ -140,10 +140,10 @@ const onSave = (data) => {
 | hideSelect | 隐藏左下角已选择区域 | _boolean_ | `false` |
 | sticky | 粘性布局，使用粘性布局时，滚动到顶部时会自动吸顶 | _boolean_ | `false` |
 | multiple | 是否多选，开启多选时支持批量选择操作 | _boolean_ | `false` |
-| icon | 节点图标 | _string_ | `https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-school.png` |
-| leafIcon | 叶子节点图标 | _string_ | `https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-init-image.png` |
+| icon | 节点图标 | _string_ | `https://unpkg.com/vant-common@0.2.0-beta.14/assets/mobile-school.png` |
+| leafIcon | 叶子节点图标 | _string_ | `https://unpkg.com/vant-common@0.2.0-beta.14/assets/mobile-init-image.png` |
 | emptyMsg | 列表数据空文案 | _string_ | `暂无成员` |
-| emptyImage | 列表数据空图片 | _string_ | `https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-nodata.png` |
+| emptyImage | 列表数据空图片 | _string_ | `https://unpkg.com/vant-common@0.2.0-beta.14/assets/mobile-nodata.png` |
 | filterMsg | 搜索列表空文案 | _string_ | `请输入部门名称/用户姓名搜索` |
 | suffixText | 已选择对象后缀 | _string_ | `人` |
 

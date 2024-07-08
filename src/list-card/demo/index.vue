@@ -16,7 +16,7 @@
           <van-image
             width="18px"
             height="18px"
-            src="https://unpkg.com/vant-common@0.2.0-beta.4/assets/notification-horn@2x.png"
+            src="https://unpkg.com/vant-common@0.2.0-beta.14/assets/notification-horn@2x.png"
           />
         </template>
         <template #toolbar-left>
@@ -38,14 +38,14 @@
           <van-image
             width="18px"
             height="18px"
-            src="https://unpkg.com/vant-common@0.2.0-beta.4/assets/notification-horn@2x.png"
+            src="https://unpkg.com/vant-common@0.2.0-beta.14/assets/notification-horn@2x.png"
           />
         </template>
         <template #right>
           <van-image
             width="58px"
             height="29px"
-            src="https://unpkg.com/vant-common@0.2.0-beta.4/assets/notviewed-highlight@2x.png"
+            src="https://unpkg.com/vant-common@0.2.0-beta.14/assets/notviewed-highlight@2x.png"
           />
         </template>
         <template #label>
@@ -69,7 +69,7 @@
           <van-image
             width="18px"
             height="18px"
-            src="https://unpkg.com/vant-common@0.2.0-beta.4/assets/notification-horn@2x.png"
+            src="https://unpkg.com/vant-common@0.2.0-beta.14/assets/notification-horn@2x.png"
           />
         </template>
       </m-list-card>

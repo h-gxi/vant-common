@@ -17,12 +17,12 @@ export const addressProps = {
   /** 节点图标 */
   icon: {
     type: String,
-    default: 'https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-school.png'
+    default: 'https://unpkg.com/vant-common@0.2.0-beta.14/assets/mobile-school.png'
   },
   /** 叶子节点图标 */
   leafIcon: {
     type: String,
-    default: 'https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-init-image.png'
+    default: 'https://unpkg.com/vant-common@0.2.0-beta.14/assets/mobile-init-image.png'
   },
   /** 列表数据空文案 */
   emptyMsg: {
@@ -32,7 +32,7 @@ export const addressProps = {
   /** 列表数据空图片 */
   emptyImage: {
     type: String,
-    default: 'https://unpkg.com/vant-common@0.1.9-beta.2/assets/mobile-nodata.png'
+    default: 'https://unpkg.com/vant-common@0.2.0-beta.14/assets/mobile-nodata.png'
   },
   /** 搜索列表空文案 */
   filterMsg: {
