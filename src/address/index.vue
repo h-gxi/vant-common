@@ -49,27 +49,19 @@
       <van-loading v-if="loading && dataNode.length === 0" size="24px" vertical>加载中...</van-loading>
       <van-empty v-if="!loading && dataNode.length === 0" :image="emptyImage" image-size="200" :description="emptyText" />
     </div>
-    <div class="van-safe-area-bottom" />
 
     <div class="m-address-action-bar">
-      <div class="m-address-action-bar__fixed van-safe-area-bottom">
-        <div v-if="!hideSelect && multiple" class="m-address-action-bar__select">
-          已选择：
-          <router-link to="?page=select">
-            {{ checkedUsers.length }} {{ suffixText }} <van-icon name="arrow-up" class="blue" />
-          </router-link>
+      <div class="m-address-action-bar__fixed">
+        <div class="m-address-action-bar__flex">
+          <div v-if="!hideSelect && multiple" class="m-address-action-bar__select">
+            已选择：
+            <router-link to="?page=select">
+              {{ checkedUsers.length }} {{ suffixText }} <van-icon name="arrow-up" class="blue" />
+            </router-link>
+          </div>
+          <van-button type="primary" :disabled="disabled" block round @click="onSave">确定</van-button>
         </div>
-        <van-button
-          class="m-address-action-bar__btn"
-          round
-          block
-          type="primary"
-          :disabled="disabled"
-          native-type="submit"
-          @click="onSave"
-        >
-          确定
-        </van-button>
+        <div class="van-safe-area-bottom" />
       </div>
     </div>
   </div>

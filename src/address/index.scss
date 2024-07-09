@@ -7,7 +7,7 @@
     background: #F6F7FA;
   }
   &-breadcrumb {
-    padding: 12px;
+    padding: 12px 16px;
     min-height: 20px;
     background-color: #FEFFFF;
 
@@ -24,7 +24,7 @@
     }
   }
   &-list, &-select-list {
-    padding: 10px;
+    padding: 16px;
     padding-top: 5px;
     background-color: #FEFFFF;
   }
@@ -60,9 +60,6 @@
       background-color: #bebebe;
       border-color: #bebebe;
     }
-    .van-checkbox {
-      margin-left: 8px;
-    }
   }
   &-action-bar {
     height: 50px;
@@ -71,14 +68,20 @@
       right: 0;
       bottom: 0;
       left: 0;
+      box-sizing: content-box;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 24px;
+      background: #fff;
+    }
+    &__flex {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-sizing: content-box;
-      height: 50px;
-      padding-left: 15px;
-      padding-right: 15px;
-      background: #fff;
+      .van-button {
+        width: 185px;
+      }
     }
     &__select {
       min-width: 138px;
@@ -86,10 +89,6 @@
       .blue {
         color: var(--van-blue);
       }
-    }
-    &__btn {
-      height: 38px;
-      flex: 1;
     }
   }
 }
