@@ -1,13 +1,12 @@
 <template>
   <demo-block title="基础用法">
     <m-list
-      class="m-list"
       :offset="150"
       :query-method="queryMethod"
       image="https://unpkg.com/vant-common@0.2.0-beta.14/assets/mobile-nodata.png"
       @click="onClick"
     >
-      <m-list-cell class="m-item">
+      <m-list-cell>
         <template #default="{item,index}">
           <div v-show="index != 0" class="gray-divider" />
           <van-cell :border="false">

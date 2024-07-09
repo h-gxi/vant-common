@@ -1,14 +1,12 @@
 <template>
-  <div class="m-list">
-    <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
-      <van-list v-model:loading="loading" :finished="finished" :offset="offset" :finished-text="finishedText" :loading-text="loadingText" @load="onLoad">
-        <template v-for="(item, index) in formatList" :key="index">
-          <slot />
-        </template>
-        <van-empty v-if="showImage" :image="image" :image-size="imageSize" />
-      </van-list>
-    </van-pull-refresh>
-  </div>
+  <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+    <van-list class="m-list" v-model:loading="loading" :finished="finished" :offset="offset" :finished-text="finishedText" :loading-text="loadingText" @load="onLoad">
+      <template v-for="(item, index) in formatList" :key="index">
+        <slot />
+      </template>
+      <van-empty v-if="showImage" :image="image" :image-size="imageSize" />
+    </van-list>
+  </van-pull-refresh>
 </template>
 
 <script lang="ts">
