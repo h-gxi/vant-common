@@ -77,7 +77,7 @@ export default {
           },
           {
             path: 'action-bar',
-            title: 'ActionSheet 底部动作栏',
+            title: 'ActionBar 底部动作栏',
           },
         ],
       },
