@@ -53,8 +53,8 @@
       margin-left: 8px;
     }
     .checked {
-      background-color: #F29103;
-      border-color: #F29103;
+      background-color: var(--van-primary-color);
+      border-color: var(--van-primary-color);
     }
     .remove {
       background-color: #bebebe;
