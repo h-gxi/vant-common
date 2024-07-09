@@ -1,7 +1,13 @@
 <template>
   <div ref="container" class="m-address">
     <van-sticky :container="container" :position="sticky?'top':'bottom'">
-      <van-search v-model="filterText" :show-action="filterText.length>0" placeholder="搜索" shape="round" />
+      <van-search v-model="filterText" :show-action="filterText.length>0" placeholder="搜索" shape="round">
+        <template #left-icon>
+          <slot name="search-icon">
+            <van-icon name="search" />
+          </slot>
+        </template>
+      </van-search>
       <div class="gray-divider" />
       <div class="m-address-breadcrumb">
         <template v-for="(item, index) in breadcrumbNode" :key="index">
