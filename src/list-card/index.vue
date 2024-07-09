@@ -15,7 +15,7 @@
           <slot name="right">
             <div class="header-icon" @click.stop="onHeaderIcon">
               <van-icon :name="rightIcon" :class-prefix="classPrefix" />
-              <span>{{ rightText }}</span>
+              <div class="label">{{ rightText }}</div>
             </div>
           </slot>
         </div>
