@@ -61,7 +61,6 @@
           </div>
           <van-button type="primary" :disabled="disabled" block round @click="onSave">确定</van-button>
         </div>
-        <div class="van-safe-area-bottom" />
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
   <div class="m-address">
     <div class="gray-divider" />
 
-    <div class="m-address-select-list">
+    <div class="m-address-select-list van-safe-area-bottom">
       <lazy-component v-for="(item,index) in checkedUsers" :key="index" class="m-address-cell">
         <div class="label">
           <img v-lazy="item.photo ? getImage(item.photo) : leafIcon">
@@ -16,7 +16,6 @@
       </lazy-component>
       <van-empty v-if="checkedUsers.length === 0" :image="emptyImage" image-size="200" :description="emptyMsg" />
     </div>
-    <div class="van-safe-area-bottom" />
   </div>
 </template>
 
