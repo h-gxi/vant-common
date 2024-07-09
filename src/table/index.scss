@@ -105,9 +105,9 @@
     bottom: -3px;
   }
   .ascending .sort-caret.ascending {
-    border-bottom-color: #1989fa;
+    border-bottom-color: var(--van-blue);
   }
   .descending .sort-caret.descending {
-    border-top-color: #1989fa;
+    border-top-color: var(--van-blue);
   }
 }

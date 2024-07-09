@@ -50,7 +50,7 @@
         <div v-if="!hideSelect && multiple" class="m-address-action-bar__select">
           已选择：
           <router-link to="?page=select">
-            {{ checkedUsers.length }} {{ suffixText }} <van-icon name="arrow-up" color="#1989fa" />
+            {{ checkedUsers.length }} {{ suffixText }} <van-icon name="arrow-up" class="blue" />
           </router-link>
         </div>
         <van-button

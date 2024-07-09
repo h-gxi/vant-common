@@ -83,6 +83,9 @@
     &__select {
       min-width: 138px;
       flex: 1;
+      .blue {
+        color: var(--van-blue);
+      }
     }
     &__btn {
       height: 38px;
