@@ -62,8 +62,9 @@
     .header-icon {
       padding-right: var(--m-list-card-padding-right);
       color: var(--m-list-card-header-title-color);
-      label {
+      span {
         font-size: var(--m-list-card-label-font-size);
+        line-height: var(--m-list-card-label-line-height);
         margin-left: 4px;
       }
     }

@@ -13,10 +13,10 @@
         </div>
         <div class="right">
           <slot name="right">
-            <span class="header-icon" @click.stop="onHeaderIcon">
+            <div class="header-icon" @click.stop="onHeaderIcon">
               <van-icon :name="rightIcon" :class-prefix="classPrefix" />
-              <label>{{ rightText }}</label>
-            </span>
+              <span>{{ rightText }}</span>
+            </div>
           </slot>
         </div>
       </div>
