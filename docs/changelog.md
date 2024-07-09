@@ -8,6 +8,11 @@
 
 ## 更新内容
 
+### v0.2.0-beta.15
+`2024-07-09`
+- Address组件，新增search-icon插槽，自定义搜索框图标。
+- 优化部分组件样式。
+
 ### v0.2.0-beta.14
 `2024-07-08`
 - NoticebarSwipe组件，改名为Noticebar。
