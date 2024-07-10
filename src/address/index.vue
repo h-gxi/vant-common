@@ -47,7 +47,7 @@
         </template>
       </lazy-component>
       <van-loading v-if="loading && dataNode.length === 0" size="24px" vertical>加载中...</van-loading>
-      <van-empty v-if="!loading && dataNode.length === 0" :image="emptyImage" image-size="200" :description="emptyText" />
+      <van-empty v-if="!loading && dataNode.length === 0" :image="emptyImage" :image-size="imageSize" :description="emptyText" />
     </div>
 
     <div class="m-address-action-bar">
@@ -78,7 +78,7 @@ defineOptions({ name })
 const emit = defineEmits(['onSave'])
 const props = defineProps(addressProps)
 
-const { hideSelect, sticky, multiple, icon, leafIcon, emptyMsg, emptyImage, filterMsg, suffixText } = props
+const { hideSelect, sticky, multiple, icon, leafIcon, emptyMsg, emptyImage, imageSize, filterMsg, suffixText } = props
 
 const filterText = ref('')
 const emptyText = computed(() => {

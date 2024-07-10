@@ -1,3 +1,6 @@
+import { type PropType } from 'vue';
+import { Numeric } from '../utils/index'
+
 export const listProps = {
   /** 滚动条与底部距离小于 offset 时触发load事件 */
   offset: { type: Number, default: 250 },
@@ -8,7 +11,7 @@ export const listProps = {
   /** 暂无数据时显示图片 */
   image: { type: String, default: '' },
   /** 图片大小 */
-  imageSize: { type: Number, default: 200 },
+  imageSize: [Number, String, Array] as PropType<Numeric | [Numeric, Numeric]>,
   /** 默认分页大小 */
   pageSize: { type: Number, default: 10 },
   /** 查询方法 */

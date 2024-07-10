@@ -14,7 +14,7 @@
           </div>
         </div>
       </lazy-component>
-      <van-empty v-if="checkedUsers.length === 0" :image="emptyImage" image-size="200" :description="emptyMsg" />
+      <van-empty v-if="checkedUsers.length === 0" :image="emptyImage" :image-size="imageSize" :description="emptyMsg" />
     </div>
   </div>
 </template>

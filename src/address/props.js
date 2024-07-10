@@ -34,6 +34,8 @@ export const addressProps = {
     type: String,
     default: 'https://unpkg.com/vant-common@0.2.0-beta.14/assets/mobile-nodata.png'
   },
+  /** 图片大小 */
+  imageSize: [Number, String, Array],
   /** 搜索列表空文案 */
   filterMsg: {
     type: String,

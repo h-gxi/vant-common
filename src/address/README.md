@@ -144,6 +144,7 @@ const onSave = (data) => {
 | leafIcon | 叶子节点图标 | _string_ | `https://unpkg.com/vant-common@0.2.0-beta.14/assets/mobile-init-image.png` |
 | emptyMsg | 列表数据空文案 | _string_ | `暂无成员` |
 | emptyImage | 列表数据空图片 | _string_ | `https://unpkg.com/vant-common@0.2.0-beta.14/assets/mobile-nodata.png` |
+| image-size | 图片大小，默认单位为 px | _number \| string \| Array_ | - |
 | filterMsg | 搜索列表空文案 | _string_ | `请输入部门名称/用户姓名搜索` |
 | suffixText | 已选择对象后缀 | _string_ | `人` |
 

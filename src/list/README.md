@@ -220,7 +220,7 @@ export default {
 | loading-text | 加载过程中的提示文案 | _string_ | `加载中...` |
 | direction | 滚动触发加载的方向，可选值为 `up` | _string_ | `down` |
 | image | 暂无数据时显示图片 | _string_ | - |
-| image-size | 图片大小 | _number_ | `200` |
+| image-size | 图片大小，默认单位为 px | _number \| string \| Array_ | - |
 | page-size | 分页大小，每次加载数据条数 | _number_ | `10` |
 | query-method | 加载数据时触发回调函数，返回 Promise | _(action: Object) => Promise\<Array\>_ | - |
 | query-model | `query-method` 查询参数 | _Object_ | - |
