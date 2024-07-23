@@ -1,6 +1,6 @@
 {
   "name": "vant-common",
-  "version": "0.2.0-beta.22",
+  "version": "0.2.0-beta.23",
   "description": "基于vant3封装的自定义组件库，适用于H5开发迭代，降低开发维护成本。",
   "main": "lib/vant-common.js",
   "module": "es/index.js",
