@@ -23,7 +23,7 @@
       <van-swipe-item
         v-for="(item,index) in swipeItems"
         :key="index"
-        @click="onClick(index)"
+        @click="onClick(item,index)"
       >
         {{ item.title }}
       </van-swipe-item>
@@ -83,8 +83,8 @@ export default defineComponent({
       }
     }
 
-    const onClick = (index: number) => {
-      emit('click', index)
+    const onClick = (item: any, index: number) => {
+      emit('click', item, index)
     }
 
     return {
