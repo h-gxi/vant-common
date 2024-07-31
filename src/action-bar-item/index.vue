@@ -1,5 +1,5 @@
 <template>
-  <div v-if="type === 'icon'" class="m-action-bar-item m-action-bar-icon" @click="onClick">
+  <div v-if="type === 'icon'" class="m-action-bar-item m-action-bar-icon" :class="[{inline},mClass]" @click="onClick">
     <slot name="icon">
       <van-icon :name="icon" :dot="dot" :class-prefix="prefix" class="m-action-bar-icon__icon" />
     </slot>
@@ -35,7 +35,11 @@ const actionBarIiemProps = extend({}, routeProps, {
   /** 是否禁用按钮 */
   disabled: Boolean,
   /** 朴素按钮 */
-  plain: Boolean
+  plain: Boolean,
+  /** 行内元素 */
+  inline: Boolean,
+  /** 按钮样式 */
+  mClass: String
 });
 export type ActionBarIiemProps = ExtractPropTypes<typeof actionBarIiemProps>;
 

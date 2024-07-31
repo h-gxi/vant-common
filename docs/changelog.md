@@ -8,6 +8,10 @@
 
 ## 更新内容
 
+### v0.2.2
+`2024-07-31`
+- ActionBar组件，新增inline属性，m-class设置按钮样式。
+
 ### v0.2.1
 `2024-07-30`
 - Noticebar组件，click事件中增加item返回参数。

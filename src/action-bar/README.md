@@ -93,6 +93,16 @@ export default {
 </m-action-bar>
 ```
 
+### 通知公告案例
+
+```html
+<m-action-bar>
+  <m-action-bar-item type="icon" icon="shop-o" text="草稿箱" m-class="left-5" inline @click="onClick" />
+  <m-action-bar-item type="icon" icon="envelop-o" text="收件箱" m-class="right-5" inline @click="onClick" />
+  <m-action-bar-item type="button" text="创建通知" @click="onClick" />
+</m-action-bar>
+```
+
 ## API
 
 ### ActionBarProps
@@ -113,6 +123,8 @@ export default {
 | dot | 是否显示图标右上角小红点 | boolean |    `false`    |
 | disabled | 是否禁止按钮 | boolean |    `false`    |
 | plain | 是否为朴素按钮 | boolean |    `false`    |
+| inline | 是否行内元素显示，仅icon类型图标有效 | boolean |    `false`    |
+| m-class | 按钮样式 | string |    -    |
 | text | 按钮文字 | string |    -    |
 | to | 点击后跳转的目标路由对象，等同于 vue-router 的 to 属性 | string \| object |    -    |
 

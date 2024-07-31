@@ -26,6 +26,13 @@
       <m-action-bar-item type="icon" icon="envelop-o" text="收件箱" @click="onClick" />
     </m-action-bar>
   </demo-block>
+  <demo-block title="通知公告案例">
+    <m-action-bar>
+      <m-action-bar-item type="icon" icon="shop-o" text="草稿箱" m-class="left-5" inline @click="onClick" />
+      <m-action-bar-item type="icon" icon="envelop-o" text="收件箱" m-class="right-5" inline @click="onClick" />
+      <m-action-bar-item type="button" text="创建通知" @click="onClick" />
+    </m-action-bar>
+  </demo-block>
 </template>
 
 <script setup>
@@ -52,5 +59,11 @@ const onClick = () => {
   padding-top: 12px; 
   font-size: 12px;
   color: #4A4A4A;
+}
+.left-5 {
+  padding-left: 5px;
+}
+.right-5 {
+  padding-right: 5px;
 }
 </style>
