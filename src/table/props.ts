@@ -8,6 +8,16 @@ export const tableProps = {
   data: {
     type: Array as PropType<TableValue[]>,
     default: null
+  },
+  /** 表头背景颜色 */
+  headerBgColor: {
+    type: String,
+    default: null
+  },
+  /** 显示边框 */
+  border: {
+    type: Boolean,
+    default: false
   }
 }
 

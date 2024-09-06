@@ -2,26 +2,39 @@
   overflow-x: auto;
   overflow-y: auto;
 
+  &.is-border {
+    border: 1px solid #dee0e4;
+    .m-table__row {
+      border-bottom: 1px solid #dee0e4;
+    }
+    .m-table__cell {
+      border-right: 1px solid #dee0e4;
+    }
+  }
+
   .m-table__header {
     display: inline-flex;
     align-items: center;
     background-color:#f8f8f9;
-    border-bottom: 1px solid #ebeef5;
+    border-bottom: 1px solid #dee0e4;
     word-break: break-word;
     height: 40px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #515a6e;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a4a4a;
+    line-height: 14px;
     min-width: 100%;
   }
 
   .m-table__row {
     display: inline-flex;
     align-items: stretch;
-    border-bottom: 1px solid #ebeef5;
+    border-bottom: 1px solid #dee0e4;
     word-break: break-word;
-    font-size: 13px;
-    color: #515a6e;
+    font-size: 12px;
+    font-weight: 400;
+    color: #4a4a4a;
+    line-height: 12px;
     background: #fff;
     min-width: 100%;
   }

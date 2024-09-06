@@ -171,6 +171,8 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | data | 表数据 | _Array_ | - |
+| header-bg-color | 自定义表头背景颜色 | _string_ | - |
+| border | 显示边框 | _boolean_ | `false` |
 
 
 ### TableColumn Props
@@ -190,3 +192,4 @@ export default {
 | 事件名     | 说明                       | 回调参数        |
 | ---------- | -------------------------- | --------------- |
 | sort-change | 当表格的排序条件发生变化的时候会触发该事件 | _(data: {prop: string, order: any }) => void_ |
+| cell-click | 点击单元格的时候触发该事件 | _(row: any, column: any, cell: string ) => void_ |

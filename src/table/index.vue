@@ -1,11 +1,11 @@
 <template>
-  <div ref="tableRef" :key="columns" class="m-table" :class="[{'is-scrolling':isScrolling}]" style="width: 100%;">
-    <div class="m-table__header">
+  <div ref="tableRef" :key="columns" class="m-table" :class="[{'is-scrolling':isScrolling, 'is-border':border}]" style="width: 100%;">
+    <div class="m-table__header" :style="headerStyle">
       <slot />
     </div>
     <div v-for="(row,i) in tableData" :key="i" class="m-table__row">
       <div v-for="item in columns" :key="item.prop" class="m-table__cell" :class="[{'is-sticky':item.fixed, 'is-last-column':isSticky(item)}]" :style="styleObj(item)">
-        <span class="cell" v-html="getCellValue(row,item,i)" />
+        <span class="cell" v-html="getCellValue(row,item,i)" @click="onClick(row, item)" />
       </div>
     </div>
   </div>
@@ -24,7 +24,7 @@ export type TableProps = ExtractPropTypes<typeof tableProps>;
 export default defineComponent({
   name,
   props: tableProps,
-  emits: ['sort-change'],
+  emits: ['sort-change', 'cell-click'],
   setup(props, { emit }) {
     const state = reactive({
       prop: '',
@@ -104,6 +104,13 @@ export default defineComponent({
       return style
     }
 
+    const headerStyle = computed(()=> {
+      if (props.headerBgColor) {
+        return { backgroundColor: props.headerBgColor }
+      }
+      return ''
+    })
+
     const getCellValue = (row: any, item: any, i: any) => {
       if (item.formatter) {
         return item.formatter(row, item, row[item.prop], i) || ''
@@ -115,6 +122,11 @@ export default defineComponent({
       /** 使用路由缓存时清空columns */
       columns.value = []
     })
+
+    /** 点击单元格触发 */
+    const onClick = (row: any, item: any)=> {
+      emit('cell-click', row, item, item.prop)
+    }
 
     const tableRef = ref()
     const scrollParent = useScrollParent(tableRef)
@@ -149,7 +161,9 @@ export default defineComponent({
       columns,
       isSticky,
       styleObj,
-      getCellValue
+      headerStyle,
+      getCellValue,
+      onClick
     } as any
   }
 })

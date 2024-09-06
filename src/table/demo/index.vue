@@ -1,6 +1,6 @@
 <template>
   <demo-block title="基础用法">
-    <m-table :data="tableData">
+    <m-table :data="tableData" @cell-click="onCellClick">
       <m-table-column
         v-for="(c, i) in tableColumns"
         :key="i"
@@ -19,6 +19,10 @@
 import { ref, computed } from 'vue';
 import MTable from '../index';
 import MTableColumn from '../../table-column/index';
+
+const onCellClick =(row,column,cell)=>{
+  console.log('row,column,cell :>> ', row,column,cell);
+}
 
 const tableData = ref([
   {

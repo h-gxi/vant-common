@@ -8,6 +8,12 @@
 
 ## 更新内容
 
+### v0.2.3
+`2024-09-06`
+- Table组件，新增header-bg-color属性，自定义表头背景颜色。
+- Table组件，新增border属性，是否显示表格纵向边框。
+- Table组件，新增cell-click事件，点击单元格时候触发。
+
 ### v0.2.2
 `2024-07-31`
 - ActionBar组件，新增inline属性，m-class设置按钮样式。
