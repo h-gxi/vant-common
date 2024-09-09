@@ -9,6 +9,11 @@ export const stepsProps = {
     type: String,
     default: '#3c9cff'
   },
+  /** 激活状态文字颜色 */
+  activeTextColor: {
+    type: String,
+    default: null
+  },
   /** 未激活状态颜色 */
   inactiveColor: {
     type: String,
@@ -33,6 +38,11 @@ export const stepsProps = {
   direction: {
     type: String,
     default: 'horizontal'
+  },
+  /** 步骤条样式，可选值为 thickline */
+  type: {
+    type: String,
+    default: null
   }
 }
 export const stepsItemProps = {

@@ -1,3 +1,6 @@
+:root {
+  --m-setps-item-title-active-color: #000;
+}
 .m-setps {
   display: flex;
   &--vertical {
@@ -6,6 +9,51 @@
   &--horizontal {
     flex-direction: row;
     flex: 1;
+
+    // 粗线条样式
+    &.thickline {
+      .m-setps-item--line--horizontal {
+        top: 5px;
+        height: 10px;
+      }
+      :first-child { 
+        .m-setps-item--line--horizontal {
+          border-top-left-radius: 2px;
+          border-bottom-left-radius: 2px;
+        }
+      }
+      :last-child {
+        .m-setps-item--line--horizontal {
+          border-top-right-radius: 2px;
+          border-bottom-right-radius: 2px;
+        }
+      }
+      .isActive {
+        .m-setps-item--line--horizontal {
+          border-top-right-radius: 2px;
+          border-bottom-right-radius: 2px;
+        }
+      }
+      .m-setps-item--line {
+        background: #EFF3FE;
+      }
+      .m-setps-item--wrapper__circle {
+        width: 28px;
+        height: 28px;
+        background: #FFFFFF;
+        border: 3px solid #DEE0E4;
+      }
+      .m-setps-item--wrapper__circle__text { 
+        font-weight: 500;
+        font-size: 16px;
+        color: #999999;
+        line-height: 16px;
+        text-align: left;
+      }
+      .m-setps-item--value {
+        margin-top: 12px;
+      }
+    }
   }
 }
 .m-setps-item {
@@ -35,6 +83,7 @@
   &--vertical {
     width: 1px;
     left: 10px;
+    top: 10px;
   }
 }
 .m-setps-item--wrapper {
@@ -43,7 +92,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: #fff;
+  // background-color: #fff;
 
   &--horizontal {
     width: 32px;

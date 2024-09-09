@@ -88,6 +88,7 @@ export default {
 | active-color | 激活状态颜色 | _string_ | `#3c9cff` |
 | inactive-color | 未激活状态颜色 | _string_ | `#969799` |
 | icon-size | 图标大小 | _number_ | `17` |
+| type | 步骤条样式，可选值为 thickline | _string_ | - |
 
 ### StepItem Props
 

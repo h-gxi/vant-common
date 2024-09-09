@@ -1,10 +1,10 @@
 <template>
-  <div ref="mSetpsItemRef" class="m-setps-item" :class="[`m-setps-item--${parentProps.direction}`]" @click="onClickStep">
+  <div ref="mSetpsItemRef" class="m-setps-item" :class="[`m-setps-item--${parentProps.direction}`,{isActive,isFinish}]" @click="onClickStep">
     <div v-if="showLine" class="m-setps-item--line" :class="[`m-setps-item--line--${parentProps.direction}`]" :style="[lineStyle]" />
     <div class="m-setps-item--wrapper" :class="[`m-setps-item--wrapper--${parentProps.direction}`]">
       <div class="m-setps-item--wrapper__circle" :style="[circleStyle]">
-        <van-icon v-if="isFinish" name="success" :color="parentProps.activeColor" size="12" />
-        <span v-else class="m-setps-item--wrapper__circle__text" :class="[{isActive}]">{{ index+1 }}</span>
+        <van-icon v-if="isSuccess" name="success" :color="parentProps.activeColor" size="12" />
+        <span v-else class="m-setps-item--wrapper__circle__text" :class="[{isActive}]" :style="[circleTextStyle]">{{ index+1 }}</span>
       </div>
     </div>
     <div class="m-setps-item--value" :class="[`m-setps-item--value--${parentProps.direction}`]" :style="[contentStyle]">
@@ -50,7 +50,12 @@ export default defineComponent({
       size.value.height = rect.height
     })
 
-    const showLine = computed(() => index.value + 1 < parent.children.length)
+    const showLine = computed(() => {
+      if (parentProps.type === 'thickline') {
+        return true
+      }
+      return index.value + 1 < parent.children.length
+    })
 
     const getStatus = () => {
       const active = +parentProps.active
@@ -62,6 +67,13 @@ export default defineComponent({
 
     const isActive = computed(() => getStatus() === 'process')
     const isFinish = computed(() => getStatus() === 'finish')
+    const thickline = computed(() => getStatus() === 'process' || getStatus() === 'finish')
+    const isSuccess = computed(()=> {
+      if (parentProps.type === 'thickline') {
+        return false
+      }
+      return getStatus() === 'finish'
+    })
 
     const lineStyle = computed(() => {
       const style = {
@@ -70,20 +82,47 @@ export default defineComponent({
       if (parentProps.direction === 'horizontal') {
         style.width = size.value.width + 'px'
         style.left = size.value.width / 2 + 'px'
+        if (parentProps.type === 'thickline') {
+          style.left = 0
+          style.background = thickline.value ? parentProps.activeColor : ''
+        }
       } else {
         style.height = size.value.height + 'px'
       }
       return style
     })
 
-    const circleStyle = computed(() => ({
-      backgroundColor: getStatus() === 'process' ? parentProps.activeColor : 'transparent',
-      borderColor: getStatus() === 'finish' ? parentProps.activeColor : (getStatus() === 'process' ? 'transparent' : parentProps.inactiveColor)
-    }))
+    const circleStyle = computed(() => { 
+      if (parentProps.type === 'thickline') {
+        return {
+          borderColor : thickline.value ? parentProps.activeColor : '',
+        }
+      }
+      return ({
+        backgroundColor: getStatus() === 'process' ? parentProps.activeColor : '#fff',
+        borderColor: getStatus() === 'finish' ? parentProps.activeColor : (getStatus() === 'process' ? 'transparent' : parentProps.inactiveColor)
+      })
+    })
 
-    const contentStyle = computed(() => ({
-      color: getStatus() === 'waiting' ? parentProps.inactiveColor : parentProps.activeColor
-    }))
+    const circleTextStyle = computed(()=> {
+      if (parentProps.type === 'thickline') {
+        return {
+          color : thickline.value ? parentProps.activeColor : '',
+        }
+      }
+      return ''
+    })
+
+    const contentStyle = computed(() => {
+      if (parentProps.type === 'thickline') {
+        return {
+          color: isFinish.value ? (parentProps.activeTextColor || parentProps.activeColor) : ''
+        }
+      }
+      return ({
+        color: getStatus() === 'waiting' ? parentProps.inactiveColor : (parentProps.activeTextColor || parentProps.activeColor)
+      })
+    })
 
     const onClickStep = () => (parent as any).onClickStep(index.value)
 
@@ -94,8 +133,10 @@ export default defineComponent({
       showLine,
       isActive,
       isFinish,
+      isSuccess,
       lineStyle,
       circleStyle,
+      circleTextStyle,
       contentStyle,
       onClickStep
     } as any

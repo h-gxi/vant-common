@@ -1,5 +1,5 @@
 <template>
-  <div class="m-setps" :class="[`m-setps--${direction}`]">
+  <div class="m-setps" :class="[`m-setps--${direction}`,type]">
     <slot />
   </div>
 </template>
