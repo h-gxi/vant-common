@@ -116,7 +116,7 @@ export default defineComponent({
     const contentStyle = computed(() => {
       if (parentProps.type === 'thickline') {
         return {
-          color: isFinish.value ? (parentProps.activeTextColor || parentProps.activeColor) : ''
+          color: thickline.value ? (parentProps.activeTextColor || parentProps.activeColor) : ''
         }
       }
       return ({
