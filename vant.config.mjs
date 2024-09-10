@@ -10,14 +10,14 @@ export default {
       publicPath: '/vant-common/',
     },
     namedExport: false,
-    packageManager: 'npm'
+    packageManager: 'npm',
   },
   site: {
     title: 'vant-common',
     logo: 'https://unpkg.com/@vant/assets@1.0.8/logo.png',
-    description: '基于vant3封装的自定义组件库，适用于H5开发迭代，降低开发维护成本。',
-    versions: [
-    ],
+    description:
+      '基于vant3封装的自定义组件库，适用于H5开发迭代，降低开发维护成本。',
+    versions: [],
     nav: [
       {
         title: '开发指南',
@@ -32,8 +32,8 @@ export default {
           },
           {
             path: 'changelog',
-            title: '更新日志'
-          }
+            title: '更新日志',
+          },
         ],
       },
       {
@@ -78,6 +78,10 @@ export default {
           {
             path: 'action-bar',
             title: 'ActionBar 底部动作栏',
+          },
+          {
+            path: 'popup',
+            title: 'Popup 弹出层',
           },
         ],
       },
