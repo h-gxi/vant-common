@@ -87,6 +87,10 @@ export default {
             path: 'popup-radio',
             title: 'PopupRadio 弹出层单选项',
           },
+          {
+            path: 'form-checkbox',
+            title: 'FormCheckbox 表单多选项',
+          },
         ],
       },
     ],

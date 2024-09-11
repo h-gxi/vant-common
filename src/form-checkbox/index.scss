@@ -1,0 +1,93 @@
+:root {
+  --m-form-checkbox-content-toolbar-padding: 16px 0;
+  --m-form-checkbox-content-toolbar-margin-bottom: 16px;
+  --m-form-checkbox-content-icon-size: 16px;
+  --m-form-checkbox-content-item-background: #f1f2f6;
+  --m-form-checkbox-content-item-color: #999999;
+  --m-form-checkbox-content-item-font-size: 14px;
+}
+
+.m-form-checkbox {
+  position: relative;
+
+  &-content {
+    &__toolbar {
+      position: relative;
+      display: flex;
+      padding: var(--m-form-checkbox-content-toolbar-padding);
+      margin-bottom: var(--m-form-checkbox-content-toolbar-margin-bottom);
+      .van-checkbox__icon {
+        font-size: var(--m-form-checkbox-content-icon-size);
+      }
+      .van-checkbox__label {
+        margin-left: 4px;
+        line-height: 18px;
+      }
+
+      &::after {
+        position: absolute;
+        box-sizing: border-box;
+        content: ' ';
+        pointer-events: none;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-bottom: 1px solid var(--van-border-color);
+        transform: scaleY(0.5);
+      }
+
+      .title {
+        flex: 1;
+        font-weight: 500;
+        font-size: 16px;
+        color: #000000;
+        line-height: 18px;
+        text-align: left;
+      }
+    }
+
+    &__item {
+      background: var(--m-form-checkbox-content-item-background);
+      border-radius: 18px;
+      font-weight: 400;
+      font-size: var(--m-form-checkbox-content-item-font-size);
+      color: var(--m-form-checkbox-content-item-color);
+      line-height: var(--m-form-checkbox-content-item-font-size);
+      text-align: left;
+      padding: 10px 0;
+      padding-left: 14px;
+      padding-right: 16px;
+      max-width: 76px;
+      margin-right: 10px;
+      margin-bottom: 16px;
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+
+      .van-checkbox__icon {
+        font-size: var(--m-form-checkbox-content-icon-size);
+      }
+      .van-checkbox--horizontal {
+        margin-right: 0;
+      }
+      .van-checkbox__label {
+        line-height: var(--m-form-checkbox-content-icon-size);
+        margin-left: 2px;
+      }
+      .van-icon {
+        background-color: #fff;
+      }
+      .van-checkbox__icon--checked .van-icon {
+        background-color: var(--van-checkbox-checked-icon-color);
+      }
+
+      &--checked {
+        background: #eff3fe;
+        .van-checkbox__label {
+          color: var(--van-primary-color);
+        }
+      }
+    }
+  }
+}
