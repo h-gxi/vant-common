@@ -1,4 +1,14 @@
 <template>
+  <demo-block title="基础用法">
+    <div style="padding: 0 16px; background: #fff">
+      <m-form-checkbox
+        toolbar-title="从下面选择计算等级的科目"
+        :columns="columns"
+        @change="onChange"
+      />
+    </div>
+  </demo-block>
+
   <demo-block title="配合弹窗组件使用">
     <van-cell is-link title="底部弹窗" @click="showBasicRef.open()" />
     <m-popup ref="showBasicRef" title="选择学科" @confirm="onConfirm">
@@ -45,6 +55,10 @@ const columns = [
     value: '6',
   },
 ];
+
+const onChange = (checked) => {
+  console.log('checked :>> ', checked);
+};
 
 const onConfirm = (checked) => {
   console.log('checked :>> ', checked);

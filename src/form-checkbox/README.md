@@ -2,7 +2,7 @@
 
 ### 介绍
 
-表单多选项组件，支持独立使用，一般配合表单van-field组件使用，也可以配合m-popup弹窗组件内使用。
+表单多选项组件，一般配合m-popup弹窗组件内使用，也支持单独使用组件。
 
 ### 引入
 
@@ -17,6 +17,36 @@ app.use(FormCheckbox);
 ```
 
 ## 代码演示
+
+### 基础用法
+
+组件直接使用时，需要用到 change 事件来监听选项值改变。
+
+```html
+<div style="padding: 0 16px; background: #fff">
+  <m-form-checkbox
+    toolbar-title="从下面选择计算等级的科目"
+    :columns="columns"
+    @change="onChange"
+  />
+</div>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const onChange = (checked) => {
+      console.log('checked :>> ', checked);
+    };
+
+    return {
+      onChange,
+    };
+  },
+};
+```
 
 ### 配合弹窗组件使用
 
@@ -92,9 +122,9 @@ export default {
 
 ### Events
 
-| 事件名 | 说明                                 | 回调参数     |
-| ------ | ------------------------------------ | ------------ |
-| change | 修改已选项时触发，单独使用组件时需要 | checked: any |
+| 事件名 | 说明                                     | 回调参数     |
+| ------ | ---------------------------------------- | ------------ |
+| change | 修改已选项时触发，单独使用组件时需要用到 | checked: any |
 
 ### 方法
 
