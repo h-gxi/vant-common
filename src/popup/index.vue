@@ -78,6 +78,7 @@ export default defineComponent({
       visible,
       onConfirm,
       onCancel,
+      setValue,
       open,
       close,
     };

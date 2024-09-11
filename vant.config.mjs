@@ -83,6 +83,10 @@ export default {
             path: 'popup',
             title: 'Popup 弹出层',
           },
+          {
+            path: 'popup-radio',
+            title: 'PopupRadio 弹出层单选项',
+          },
         ],
       },
     ],
