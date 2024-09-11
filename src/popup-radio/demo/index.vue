@@ -1,6 +1,11 @@
 <template>
   <demo-block title="基础用法">
-    <van-cell is-link title="基本用法" @click="showBasicRef.open()" />
+    <van-cell
+      is-link
+      title="选择班级"
+      :value="name"
+      @click="showBasicRef.open()"
+    />
     <m-popup-radio
       ref="showBasicRef"
       title="标题"
@@ -17,6 +22,7 @@ import MPopupRadio from '../index';
 import { useVant } from '../../utils/index';
 useVant();
 
+const name = ref('');
 const showBasicRef = ref(null);
 const columns = [
   {
@@ -34,7 +40,10 @@ const columns = [
 ];
 
 const onConfirm = (checked) => {
-  console.log('checked :>> ', checked);
+  const item = columns.find((m) => m.value === checked);
+  if (item) {
+    name.value = item.label;
+  }
   showBasicRef.value.close();
 };
 </script>

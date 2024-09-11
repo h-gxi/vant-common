@@ -23,7 +23,7 @@ app.use(PopupRadio);
 弹出层单选项通过 columns 属性来定义选项，columns 属性是一个由对象构成的数组，每个对象中必须包含label和value属性。
 
 ```html
-<van-cell is-link title="基本用法" @click="showBasicRef.open()" />
+<van-cell is-link title="选择班级" :value="name" @click="showBasicRef.open()" />
 <m-popup-radio
   ref="showBasicRef"
   title="标题"
@@ -38,6 +38,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
+    const name = ref('');
     const showBasicRef = ref(null);
     const columns = [
       {
@@ -54,11 +55,15 @@ export default {
       },
     ];
     const onConfirm = (checked) => {
-      console.log('checked :>> ', checked);
+      const item = columns.find((m) => m.value === checked);
+      if (item) {
+        name.value = item.label;
+      }
       showBasicRef.value.close();
     };
 
     return {
+      name,
       showBasicRef,
       columns,
       onConfirm,
