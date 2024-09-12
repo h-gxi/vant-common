@@ -1,12 +1,36 @@
 <template>
-  <div v-if="type === 'icon'" class="m-action-bar-item m-action-bar-icon" :class="[{inline},mClass]" @click="onClick">
+  <div
+    v-if="type === 'icon'"
+    class="m-action-bar-item m-action-bar-icon"
+    :class="[{ inline }, mClass]"
+    @click="onClick"
+  >
     <slot name="icon">
-      <van-icon :name="icon" :dot="dot" :class-prefix="prefix" class="m-action-bar-icon__icon" />
+      <van-icon
+        :name="icon"
+        :dot="dot"
+        :class-prefix="prefix"
+        class="m-action-bar-icon__icon"
+      />
     </slot>
-    <span class="m-action-bar-icon__text"><slot name="text">{{ text }}</slot></span>
+    <span class="m-action-bar-icon__text"
+      ><slot name="text">{{ text }}</slot></span
+    >
   </div>
-  <div v-if="type === 'button'" class="m-action-bar-item m-action-bar-button" @click="onClick">
-    <van-button type="primary" :disabled="disabled" :plain="plain" block round>{{ text }}</van-button>
+  <div
+    v-if="type === 'button'"
+    class="m-action-bar-item m-action-bar-button"
+    :class="[mClass]"
+    @click="onClick"
+  >
+    <van-button
+      type="primary"
+      :disabled="disabled"
+      :plain="plain"
+      block
+      round
+      >{{ text }}</van-button
+    >
     <slot />
   </div>
 </template>
@@ -15,11 +39,11 @@
 import { computed, defineComponent, type ExtractPropTypes } from 'vue';
 import { makeStringProp, extend } from '../utils';
 import { useRoute, routeProps } from '../composables/use-route';
-import { ACTIONBAR_KEY } from '../action-bar/index'
-import { useParent } from '@vant/use'
+import { ACTIONBAR_KEY } from '../action-bar/index';
+import { useParent } from '@vant/use';
 const name = 'm-action-bar-item';
 
-export type ActionType = 'icon' | 'button'
+export type ActionType = 'icon' | 'button';
 
 const actionBarIiemProps = extend({}, routeProps, {
   /** 按钮类型 'icon' | 'button' */
@@ -39,7 +63,7 @@ const actionBarIiemProps = extend({}, routeProps, {
   /** 行内元素 */
   inline: Boolean,
   /** 按钮样式 */
-  mClass: String
+  mClass: String,
 });
 export type ActionBarIiemProps = ExtractPropTypes<typeof actionBarIiemProps>;
 
@@ -49,25 +73,27 @@ export default defineComponent({
   emits: ['click'],
   setup(props, { emit }) {
     const route = useRoute();
-    const { parent } = useParent(ACTIONBAR_KEY)
+    const { parent } = useParent(ACTIONBAR_KEY);
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
-        console.error('[Vant] <m-action-bar> must be a child component of <m-action-bar>.')
+        console.error(
+          '[Vant] <m-action-bar> must be a child component of <m-action-bar>.',
+        );
       }
-      return
+      return;
     }
 
-    const prefix = computed(()=> props.classPrefix || 'van-icon')
+    const prefix = computed(() => props.classPrefix || 'van-icon');
 
     const onClick = (event: MouseEvent) => {
       emit('click', event);
-      route()
-    }
+      route();
+    };
 
     return {
       prefix,
-      onClick
-    } as any
-  }
-})
+      onClick,
+    } as any;
+  },
+});
 </script>
