@@ -1,6 +1,6 @@
 <template>
   <demo-block title="基础用法">
-    <m-table :data="tableData" @cell-click="onCellClick">
+    <m-table :data="tableData" @cell-click="onCellClick" border>
       <m-table-column
         v-for="(c, i) in tableColumns"
         :key="i"

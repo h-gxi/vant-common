@@ -124,12 +124,16 @@ export default defineComponent({
       if (item.fixed) {
         style['left'] = `${item.left}px`;
       }
+      // if (item.align === 'center') {
+      //   if (item.sortable) {
+      //     style.paddingLeft = `${(item.minWidth - 50) / 2}px`;
+      //   } else {
+      //     style.paddingLeft = `${item.minWidth / 2 - 15}px`;
+      //   }
+      // }
       if (item.align === 'center') {
-        if (item.sortable) {
-          style.paddingLeft = `${(item.minWidth - 50) / 2}px`;
-        } else {
-          style.paddingLeft = `${item.minWidth / 2 - 15}px`;
-        }
+        style['justify-content'] = 'center'
+        style['padding-left'] = '0'
       }
       return style;
     };
