@@ -10,6 +10,7 @@
         :min-width="c.width"
         :fixed="c.fixed"
         :align="c.align"
+        :nowrap="true"
       />
     </m-table>
   </demo-block>
@@ -20,9 +21,9 @@ import { ref, computed } from 'vue';
 import MTable from '../index';
 import MTableColumn from '../../table-column/index';
 
-const onCellClick =(row,column,cell)=>{
-  console.log('row,column,cell :>> ', row,column,cell);
-}
+const onCellClick = (row, column, cell) => {
+  console.log('row,column,cell :>> ', row, column, cell);
+};
 
 const tableData = ref([
   {

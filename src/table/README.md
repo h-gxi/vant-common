@@ -186,6 +186,7 @@ export default {
 | sortable | 对应列是否可以排序， 如果设置为 `custom`，则代表用户希望远程排序，需要监听 `Table` 的 `sort-change` 事件 | _boolean \| string_ | - |
 | align | 对齐方式 `left` \| `center` | _string_ | `left` |
 | formatter | 用来格式化内容 | _(row: any, column: any, cellValue: any, index: number) => VNode \| string_ | - |
+| nowrap | 是否在一行内显示，超出内容显示省略号 | _boolean_ | `false` |
 
 ### Table Events
 

@@ -1,60 +1,65 @@
 import { type PropType } from 'vue';
 
 export type TableValue = {
-  [prop:string]: any
-}
+  [prop: string]: any;
+};
 
 export const tableProps = {
   data: {
     type: Array as PropType<TableValue[]>,
-    default: null
+    default: null,
   },
   /** 表头背景颜色 */
   headerBgColor: {
     type: String,
-    default: null
+    default: null,
   },
   /** 显示边框 */
   border: {
     type: Boolean,
-    default: false
-  }
-}
+    default: false,
+  },
+};
 
 export const tableColumnProps = {
   prop: {
     type: String,
-    default: ''
+    default: '',
   },
   label: {
     type: String,
-    default: ''
+    default: '',
   },
   fixed: {
     type: Boolean,
-    default: false
+    default: false,
   },
   minWidth: {
     type: Number,
-    default: 80
+    default: 80,
   },
   /** 对应列是否可以排序
- * 如果设置为 'custom'，则代表用户希望远程排序，需要监听 Table 的 sort-change 事件
- */
+   * 如果设置为 'custom'，则代表用户希望远程排序，需要监听 Table 的 sort-change 事件
+   */
   sortable: {
     type: [String, Boolean],
-    default: ''
+    default: '',
   },
   /** 对齐方式 'left' | 'center' */
   align: {
     type: String,
-    default: 'left'
+    default: 'left',
   },
   /** 用来格式化内容
- * (row: any, column: any, cellValue: any, index: number) => VNode | string
- */
+   * (row: any, column: any, cellValue: any, index: number) => VNode | string
+   */
   formatter: {
     type: Function,
-    default: null
-  }
-}
+    default: null,
+  },
+  /** 是否在一行内显示 */
+  nowrap: {
+    type: Boolean,
+    default: false,
+  },
+};
