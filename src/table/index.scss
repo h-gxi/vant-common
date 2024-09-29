@@ -95,6 +95,11 @@
       right: -10px;
       box-shadow: inset 10px 0 10px -10px rgba(0, 0, 0, 0.15);
     }
+    &.is-border {
+      .is-sticky.is-last-column:before {
+        box-shadow: none;
+      }    
+    }
   }
 
   .caret-wrapper {
