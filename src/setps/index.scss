@@ -55,11 +55,15 @@
       .m-setps-item--horizontal {
         &:first-child {
           align-items: flex-start;
-          padding-left: 16px;
+          .m-setps-item--wrapper--horizontal {
+            padding-left: 16px;
+          }
         }
         &:last-child {
           align-items: flex-end;
-          padding-right: 16px;
+          .m-setps-item--wrapper--horizontal {
+            padding-right: 16px;
+          }
         }
       }
     }
