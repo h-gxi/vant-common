@@ -1,7 +1,7 @@
 :root {
   --m-form-checkbox-content-toolbar-padding: 16px 0;
   --m-form-checkbox-content-toolbar-margin-bottom: 16px;
-  --m-form-checkbox-content-icon-size: 16px;
+  --m-form-checkbox-content-icon-size: 12px;
   --m-form-checkbox-content-item-background: #f1f2f6;
   --m-form-checkbox-content-item-color: #999999;
   --m-form-checkbox-content-item-font-size: 14px;
@@ -72,8 +72,7 @@
         margin-right: 0;
       }
       .van-checkbox__label {
-        line-height: var(--m-form-checkbox-content-icon-size);
-        margin-left: 2px;
+        margin-left: 4px;
       }
       .van-icon {
         background-color: #fff;
@@ -86,6 +85,7 @@
         background: #eff3fe;
         .van-checkbox__label {
           color: var(--van-primary-color);
+          font-weight: 500;
         }
       }
     }
