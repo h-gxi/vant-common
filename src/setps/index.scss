@@ -52,6 +52,16 @@
       .m-setps-item--value {
         margin-top: 12px;
       }
+      .m-setps-item--horizontal {
+        &:first-child {
+          align-items: flex-start;
+          padding-left: 16px;
+        }
+        &:last-child {
+          align-items: flex-end;
+          padding-right: 16px;
+        }
+      }
     }
   }
 }
