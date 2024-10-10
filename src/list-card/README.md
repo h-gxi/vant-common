@@ -101,16 +101,16 @@ app.use(ListCard);
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 const onClick = ()=> {
-  Toast('点击了卡片');
+  showToast('点击了卡片');
 }
 const onHeaderIcon = ()=> {
-  Toast('点击了分享按钮');
+  showToast('点击了分享按钮');
 }
 const onToolbarRight = ()=> {
-  Toast('点击了提醒按钮');
+  showToast('点击了提醒按钮');
 }
 ```
 

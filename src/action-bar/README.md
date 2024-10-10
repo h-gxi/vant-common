@@ -29,12 +29,12 @@ app.use(ActionBarIiem);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const onClick = () => {
-      Toast('点击了按钮');
+      showToast('点击了按钮');
     }
 
     return {

@@ -29,7 +29,7 @@ app.use(ActionSheet);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -43,7 +43,7 @@ export default {
       // 默认情况下点击选项时不会自动收起
       // 可以通过 close-on-click-action 属性开启自动收起
       showBasicRef.close();
-      Toast(item.name);
+      showToast(item.name);
     };
 
     return {
@@ -66,7 +66,7 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -76,7 +76,7 @@ export default {
       { name: '选项二' },
       { name: '选项三' },
     ];
-    const onCancel = () => Toast('取消');
+    const onCancel = () => showToast('取消');
 
     return {
       showBasicRef,

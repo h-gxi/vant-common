@@ -40,10 +40,10 @@ import MActionBar from '../index';
 import MActionBarItem from '../../action-bar-item/index'
 import { useVant } from '../../utils/index'
 useVant()
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 const onClick = () => {
-  Toast('点击了按钮');
+  showToast('点击了按钮');
 }
 
 

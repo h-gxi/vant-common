@@ -94,12 +94,12 @@ export const useConfigStore = defineStore('app.config', {
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const onClickLeft = () => history.back();
-    const onClickRight = () => Toast('按钮');
+    const onClickRight = () => showToast('按钮');
     return {
       onClickLeft,
       onClickRight,

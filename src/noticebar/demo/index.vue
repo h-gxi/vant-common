@@ -10,7 +10,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Toast  } from 'vant';
+import { showToast  } from 'vant';
 import MNoticebar from '../index';
 
 
@@ -34,8 +34,8 @@ const noticeBars2 = ref([
     html: '<img  src="images/notice-guide.png" style="width: 100%;">'
   }
 ])
-const onClickNotice = (index) => {
-  Toast('点击了' + index);
+const onClickNotice = (item, index) => {
+  showToast('点击了' + index);
 }
 </script>
 

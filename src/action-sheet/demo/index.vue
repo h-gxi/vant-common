@@ -12,7 +12,7 @@ import { ref, computed } from 'vue'
 import MActionSheet from '../index';
 import { useVant } from '../../utils/index'
 useVant()
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 const showBasicRef = ref(null)
 const showCancelRef = ref(null)
@@ -24,9 +24,9 @@ const actions = computed(() => [
 
 const onSelect = (item, index) => {
   console.log('item,index :>> ', item, index);
-  Toast(item.name);
+  showToast(item.name);
 }
 
-const onCancel = () => Toast('取消');
+const onCancel = () => showToast('取消');
 
 </script>

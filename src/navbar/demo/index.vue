@@ -28,13 +28,13 @@
 </template>
 
 <script setup>
-import { Toast  } from 'vant';
+import { showToast } from 'vant';
 import MNavBar from '../index';
 
 import { useVant } from '../../utils/index'
 useVant()
 
 const onClickLeft = () => history.back();
-const onClickRight = () => Toast('按钮');
+const onClickRight = () => showToast('按钮');
 </script>
 

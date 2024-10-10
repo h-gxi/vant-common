@@ -58,7 +58,7 @@
     "pinia": "^2.1.7",
     "sass": "^1.49.7",
     "typescript": "^5.4.5",
-    "vant": "^3.6.3",
+    "vant": "^4.9.7",
     "vue": "^3.3.4"
   },
   "web-types": "lib/web-types.json",
