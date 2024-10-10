@@ -96,7 +96,6 @@ export default {
 | --m-popup-footer-btn-font-weight        | _500_               | -    |
 | --m-popup-footer-btn-line-height        | _22px_              | -    |
 | --m-popup-footer-btn-color              | _#999999_           | -    |
-| --m-popup-footer-btn-padding            | _10px 65px_         | -    |
 | --m-popup-footer-btn-height             | _42px_              | -    |
 | --m-popup-footer-btn-confirm-background | _#2f54eb_           | -    |
 | --m-popup-footer-btn-confirm-color      | _#ffffff_           | -    |

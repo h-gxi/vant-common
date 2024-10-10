@@ -15,7 +15,6 @@
   --m-popup-footer-btn-font-weight: 500;
   --m-popup-footer-btn-line-height: 22px;
   --m-popup-footer-btn-color: #999999;
-  --m-popup-footer-btn-padding: 10px 65px;
   --m-popup-footer-btn-height: 42px;
   --m-popup-footer-btn-confirm-background: var(--van-primary-color);
   --m-popup-footer-btn-confirm-color: #ffffff;
@@ -58,9 +57,13 @@
       line-height: var(--m-popup-footer-btn-line-height);
       text-align: left;
       font-style: normal;
-      padding: var(--m-popup-footer-btn-padding);
       box-sizing: border-box;
+      width: 48%;
       height: var(--m-popup-footer-btn-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
     }
     .confirm {
       background: var(--m-popup-footer-btn-confirm-background);
