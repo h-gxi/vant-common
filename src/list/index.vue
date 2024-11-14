@@ -42,12 +42,12 @@ export default defineComponent({
 
     const finishedText = computed(() => {
       if (formatList.value.length === 0 && state.finished) {
-        return '暂无数据'
+        return props.emptyText
       }
-      return '没有更多了'
+      return props.nomoreText
     })
     const showImage = computed(() => {
-      if (props.image && finishedText.value === '暂无数据') {
+      if (props.image && finishedText.value === props.emptyText) {
         return true
       }
       return false

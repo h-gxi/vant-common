@@ -119,6 +119,7 @@ export default {
 | ------ | -------- | ------------------ | ------ |
 | type | 按钮类型 `'icon'` | `'button'` | string |    `icon`    |
 | icon | 图标 | string |    -    |
+| color | 按钮颜色，支持传入 linear-gradient 渐变色 | string |    -    |
 | class-prefix | 类名前缀，用于使用自定义图标 | string |    `van-icon`    |
 | dot | 是否显示图标右上角小红点 | boolean |    `false`    |
 | disabled | 是否禁止按钮 | boolean |    `false`    |

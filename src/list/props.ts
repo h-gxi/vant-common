@@ -6,6 +6,10 @@ export const listProps = {
   offset: { type: Number, default: 250 },
   /** 加载过程中的提示文案 */
   loadingText: { type: String, default: '加载中...' },
+  /** 暂无数据的提示文案 */
+  emptyText: { type: String, default: '暂无数据' },
+  /** 没有更多了的提示文案 */
+  nomoreText: { type: String, default: '没有更多了' },
   /** 滚动触发加载的方向，可选值为up */
   direction: { type: String, default: 'down' },
   /** 暂无数据时显示图片 */

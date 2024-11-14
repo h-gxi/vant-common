@@ -9,6 +9,7 @@
       <van-icon
         :name="icon"
         :dot="dot"
+        :color="color"
         :class-prefix="prefix"
         class="m-action-bar-icon__icon"
       />
@@ -20,7 +21,8 @@
   <div
     v-if="type === 'button'"
     class="m-action-bar-item m-action-bar-button"
-    :class="[mClass]"
+    :color="color"
+    :class="mClass"
     @click="onClick"
   >
     <van-button
@@ -36,7 +38,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, type ExtractPropTypes } from 'vue';
+import { computed, defineComponent } from 'vue';
+import type { PropType, ExtractPropTypes } from 'vue';
 import { makeStringProp, extend } from '../utils';
 import { useRoute, routeProps } from '../composables/use-route';
 import { ACTIONBAR_KEY } from '../action-bar/index';
@@ -62,8 +65,10 @@ const actionBarIiemProps = extend({}, routeProps, {
   plain: Boolean,
   /** 行内元素 */
   inline: Boolean,
+  /** 按钮颜色，支持传入 linear-gradient 渐变色 */
+  color: String,
   /** 按钮样式 */
-  mClass: String,
+  mClass: null as unknown as PropType<unknown>,
 });
 export type ActionBarIiemProps = ExtractPropTypes<typeof actionBarIiemProps>;
 

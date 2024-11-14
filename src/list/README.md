@@ -218,6 +218,8 @@ export default {
 | --- | --- | --- | --- |
 | offset | 滚动条与底部距离小于 offset 时触发 `query-method` 回调函数 | _number \| string_ | `250` |
 | loading-text | 加载过程中的提示文案 | _string_ | `加载中...` |
+| empty-text | 加载过程中的提示文案 | _string_ | `暂无数据` |
+| nomore-text | 加载过程中的提示文案 | _string_ | `没有更多了` |
 | direction | 滚动触发加载的方向，可选值为 `up` | _string_ | `down` |
 | image | 暂无数据时显示图片 | _string_ | - |
 | image-size | 图片大小，默认单位为 px | _number \| string \| Array_ | - |
