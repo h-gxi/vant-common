@@ -21,7 +21,6 @@
   <div
     v-if="type === 'button'"
     class="m-action-bar-item m-action-bar-button"
-    :color="color"
     :class="mClass"
     @click="onClick"
   >
@@ -29,6 +28,7 @@
       type="primary"
       :disabled="disabled"
       :plain="plain"
+      :color="color"
       block
       round
       >{{ text }}</van-button
