@@ -1,5 +1,5 @@
 <template>
-  <div ref="rootRef" class="m-page-container" :style="{ background }">
+  <div ref="rootRef" class="m-page-container" :style="{ background, minHeight }">
     <slot />
   </div>
 </template>
@@ -12,6 +12,10 @@ export default defineComponent({
   name,
   props: {
     background: String,
+    minHeight: {
+      type: String,
+      default: '100%'
+    }
   },
   emits: [],
   setup() {
