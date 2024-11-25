@@ -37,16 +37,33 @@ export default {
         ],
       },
       {
-        title: '自定义组件',
+        title: '基础组件',
         items: [
           {
+            path: 'page-container',
+            title: 'Page 页面容器'
+          },
+          {
             path: 'header',
-            title: 'Header 头部',
+            title: 'Header 顶部区域',
           },
           {
             path: 'navbar',
             title: 'Navbar 导航栏',
           },
+          {
+            path: 'list',
+            title: 'List 列表',
+          },
+          {
+            path: 'popup',
+            title: 'Popup 弹出层',
+          },
+        ]
+      },
+      {
+        title: '自定义组件',
+        items: [
           {
             path: 'noticebar',
             title: 'Noticebar 滚动通知栏',
@@ -54,10 +71,6 @@ export default {
           {
             path: 'setps',
             title: 'Steps 步骤条',
-          },
-          {
-            path: 'list',
-            title: 'List 列表',
           },
           {
             path: 'list-card',
@@ -78,10 +91,6 @@ export default {
           {
             path: 'action-bar',
             title: 'ActionBar 底部动作栏',
-          },
-          {
-            path: 'popup',
-            title: 'Popup 弹出层',
           },
           {
             path: 'popup-radio',
