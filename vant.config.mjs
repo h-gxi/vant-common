@@ -16,8 +16,9 @@ export default {
     title: 'vant-common',
     logo: 'https://unpkg.com/@vant/assets@1.0.8/logo.png',
     description:
-      '基于vant3封装的自定义组件库，适用于H5开发迭代，降低开发维护成本。',
+      '基于vant4封装的自定义组件库，适用于H5开发迭代，降低开发维护成本。',
     versions: [],
+    headHtml: `<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/vant@4/lib/index.css" />`,
     nav: [
       {
         title: '开发指南',
@@ -41,7 +42,7 @@ export default {
         items: [
           {
             path: 'page-container',
-            title: 'Page 页面容器'
+            title: 'Page 页面容器',
           },
           {
             path: 'header',

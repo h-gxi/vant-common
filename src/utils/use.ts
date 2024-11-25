@@ -1,6 +1,6 @@
 import Vant, { Lazyload } from 'vant';
 import { createPinia } from 'pinia';
-import 'vant/lib/index.css';
+// import 'vant/lib/index.css';
 
 export const useVant = () => {
   if (!window.Vant) {
