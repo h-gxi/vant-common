@@ -1,8 +1,8 @@
-# Header 头部
+# Header 顶部区域
 
 ### 介绍
 
-头部组件用于固定在页面顶部显示，自动计算Header高度，内容区域无需padding-top。
+该组件用于固定在页面顶部显示，自动计算Header高度，内容区域无需padding-top。
 
 ### 引入
 
