@@ -6,13 +6,25 @@
     position="bottom"
   >
     <div class="m-popup">
-      <div class="m-popup-header">{{ title }}</div>
+      <div class="m-popup-header">
+        <div v-if="leftIcon" class="left">
+          <van-icon :name="leftIcon" @click="onCancel" />
+        </div>
+        <div class="title">{{ title }}</div>
+        <div class="right">
+          <slot name="header-right">
+            <van-icon name="cross" @click="onCancel" />
+          </slot>
+        </div>
+      </div>
       <div class="m-popup-content">
         <slot />
       </div>
-      <div class="m-popup-footer">
-        <div class="btn cancel" @click="onCancel">取消</div>
-        <div class="btn confirm" @click="onConfirm">确认</div>
+      <div v-if="footer" class="m-popup-footer">
+        <slot name="footer">
+          <div v-if="cancelText" class="btn cancel" @click="onCancel">{{ cancelText }}</div>
+          <div v-if="confirmText" class="btn confirm" @click="onConfirm">{{ confirmText }}</div>
+        </slot>
       </div>
     </div>
   </van-popup>
@@ -36,14 +48,49 @@ export const popupProps = {
     type: Boolean,
     default: true,
   },
+  /** 是否显示底部按钮 */
+  footer: {
+    type: Boolean,
+    default: true,
+  },
+  /** 左上角按钮 可选值 arrow-left | cross  */
+  leftIcon: {
+    type: String,
+    default: 'arrow-left',
+  },
+  /** 底部左侧按钮  */
+  cancelText: {
+    type: String,
+    default: '取消',
+  },
+  /** 底部左侧按钮回调函数  */
+  cancelFunc: {
+    type: Function,
+    default: null,
+  },
+  /** 底部右侧按钮  */
+  confirmText: {
+    type: String,
+    default: '确认',
+  },
+  /** 底部右侧按钮回调函数  */
+  confirmFunc: {
+    type: Function,
+    default: null,
+  },
+  /** 是否调用回调函数后自动关闭 */
+  autoClose: {
+    type: Boolean,
+    default: false,
+  },
 };
 export type PopupProps = ExtractPropTypes<typeof popupProps>;
 
 export default defineComponent({
   name,
   props: popupProps,
-  emits: ['confirm', 'cancel'],
-  setup(props, { emit }) {
+  emits: [],
+  setup(props) {
     const { linkChildren } = useChildren(POPUP_KEY);
     const visible = ref(false);
     const checked: any = ref(null);
@@ -53,12 +100,25 @@ export default defineComponent({
     };
 
     const onConfirm = () => {
-      emit('confirm', checked.value);
+      if (props.confirmFunc) {
+        props.confirmFunc(checked.value);
+        if (props.autoClose) {
+          close();
+        }
+      } else {
+        close();
+      }
     };
 
     const onCancel = () => {
-      close();
-      emit('cancel');
+      if (props.cancelFunc) {
+        props.cancelFunc();
+        if (props.autoClose) {
+          close();
+        }
+      } else {
+        close();
+      }
     };
 
     const open = () => {

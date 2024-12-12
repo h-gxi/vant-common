@@ -5,8 +5,9 @@
   --m-popup-header-font-weight: 500;
   --m-popup-header-padding-top: 20px;
   --m-popup-header-padding-bottom: 16px;
+  --m-popup-header-background-color: #F1F8FF;
   --m-popup-content-min-height: 168px;
-  --m-popup-content-max-height: 285px;
+  --m-popup-content-max-height: 480px;
   --m-popup-content-padding: 0 16px;
   --m-popup-footer-padding: 16px;
   --m-popup-footer-btn-radius: 21px;
@@ -14,10 +15,10 @@
   --m-popup-footer-btn-font-size: 16px;
   --m-popup-footer-btn-font-weight: 500;
   --m-popup-footer-btn-line-height: 22px;
-  --m-popup-footer-btn-color: #999999;
   --m-popup-footer-btn-height: 42px;
   --m-popup-footer-btn-confirm-background: var(--van-primary-color);
   --m-popup-footer-btn-confirm-color: #ffffff;
+  --m-popup-footer-btn-cancel-color: #9B9B9B;
 }
 
 .m-popup {
@@ -25,6 +26,7 @@
   background-color: var(--m-popup-background-color);
 
   &-header {
+    background: var(--m-popup-header-background-color);
     font-weight: var(--m-popup-header-font-weight);
     font-size: var(--m-popup-header-font-size);
     color: var(--m-popup-header-color);
@@ -33,12 +35,22 @@
     padding-bottom: var(--m-popup-header-padding-bottom);
     display: flex;
     justify-content: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    .title {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .left,.right {
+      cursor: pointer;
+    }
   }
 
   &-content {
     position: relative;
-    min-height: 168px;
-    max-height: 285px;
+    min-height: var(--m-popup-content-min-height);
+    max-height: var(--m-popup-content-max-height);
     overflow-y: auto;
     padding: 0 16px;
   }
@@ -53,17 +65,21 @@
       border: var(--m-popup-footer-btn-border);
       font-weight: var(--m-popup-footer-btn-font-weight);
       font-size: var(--m-popup-footer-btn-font-size);
-      color: var(--m-popup-footer-btn-color);
       line-height: var(--m-popup-footer-btn-line-height);
       text-align: left;
       font-style: normal;
       box-sizing: border-box;
-      width: 48%;
+      width: 100%;
       height: var(--m-popup-footer-btn-height);
       display: flex;
       align-items: center;
       justify-content: center;
-      
+      cursor: pointer;
+    }
+    .cancel {
+      border: 1px solid var(--m-popup-footer-btn-cancel-color);
+      color: var(--m-popup-footer-btn-cancel-color);
+      margin-right: 16px;
     }
     .confirm {
       background: var(--m-popup-footer-btn-confirm-background);
