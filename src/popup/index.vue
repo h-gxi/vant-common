@@ -6,7 +6,7 @@
     position="bottom"
   >
     <div class="m-popup">
-      <div class="m-popup-header">
+      <div v-if="header" class="m-popup-header">
         <div v-if="leftIcon" class="left">
           <van-icon :name="leftIcon" @click="onCancel" />
         </div>
@@ -45,6 +45,11 @@ export const popupProps = {
   },
   /** 是否显示圆角 */
   round: {
+    type: Boolean,
+    default: true,
+  },
+  /** 是否显示标题栏 */
+  header: {
     type: Boolean,
     default: true,
   },

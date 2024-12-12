@@ -117,6 +117,7 @@ export default {
 | ----- | ------------ | ------- | ------ |
 | title | 标题         | string  | -      |
 | round | 是否显示圆角 | boolean | `true` |
+| header | 是否显示标题栏 | boolean | `true` |
 | footer | 是否显示底部按钮 | boolean | `true` |
 | left-icon | 左上角按钮 可选值 arrow-left \| cross | string | `arrow-left` |
 | cancel-text | 底部左侧按钮 | string | `取消` |
