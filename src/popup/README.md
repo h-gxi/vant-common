@@ -24,7 +24,9 @@ app.use(Popup);
 
 ```html
 <van-cell is-link title="基本用法" @click="showBasicRef.open()" />
-<m-popup ref="showBasicRef" title="标题" @confirm="onConfirm" />
+<m-popup ref="showBasicRef" title="标题">
+  <span>显示内容</span>
+</m-popup>
 ```
 
 ```js
@@ -34,14 +36,74 @@ export default {
   setup() {
     const showBasicRef = ref(null);
 
+    return {
+      showBasicRef
+    };
+  },
+};
+```
+
+### 自定义标题栏
+
+标题栏左侧按钮支持替换图标，右侧按钮支持自定义插槽。
+
+```html
+<van-cell is-link title="自定义标题栏" @click="showHeaderRef.open()" />
+<m-popup ref="showHeaderRef" title="自定义标题" left-icon="cross">
+  <template #header-right>
+    <van-checkbox v-model="checked">全选</van-checkbox>
+  </template>
+  <span>显示内容</span>
+</m-popup>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const showHeaderRef = ref(null);
+    const checked = ref(false);
+
+    return {
+      showHeaderRef,
+      checked
+    };
+  },
+};
+```
+
+### 自定义按钮
+
+标题栏左侧按钮支持替换图标，右侧按钮支持自定义插槽。
+
+```html
+<van-cell is-link title="自定义按钮" @click="showButtonRef.open()" />
+<m-popup ref="showButtonRef" title="自定义按钮" cancel-text="重置" :cancel-func="onCancel" :confirm-func="onConfirm">
+  <span>显示内容</span>
+</m-popup>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const showButtonRef = ref(null);
+    
+    const onCancel = ()=> {
+      console.log('onCancel :>> 重置');
+    }
+
     const onConfirm = (checked) => {
       console.log('checked :>> ', checked);
-      showBasicRef.value.close();
+      showButtonRef.value.close();
     };
 
     return {
-      showBasicRef,
-      onConfirm,
+      showButtonRef,
+      onCancel,
+      onConfirm
     };
   },
 };
