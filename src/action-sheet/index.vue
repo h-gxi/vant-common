@@ -1,8 +1,20 @@
 <template>
   <div class="m-action-sheet">
     <van-popup v-model:show="visible" :round="round" safe-area-inset-bottom position="bottom">
+      <div v-if="title" class="m-popup-header">
+        <div v-if="leftIcon" class="left">
+          <van-icon :name="leftIcon" @click="onClose" />
+        </div>
+        <div class="title">{{ title }}</div>
+        <div class="right">
+          <slot name="header-right">
+            <van-icon name="cross" @click="onClose" />
+          </slot>
+        </div>
+      </div>
       <div class="m-action-sheet__content">
         <button v-for="(item, i) in actions" type="button" class="m-action-sheet__item" @click="onclick(item, i)">
+          <van-icon v-if="item.icon" :name="item.icon" />
           {{ item.name }}
         </button>
         <template v-if="cancelText">
@@ -24,6 +36,7 @@ const name = 'm-action-sheet';
 
 export type ActionSheetAction = {
   name?: string;
+  icon?: string;
 };
 
 export const actionSheetProps = {
@@ -31,6 +44,11 @@ export const actionSheetProps = {
   actions: {
     type: Array as PropType<ActionSheetAction[]>,
     default: [],
+  },
+  /** 标题 */
+  title: {
+    type: String,
+    default: '',
   },
   /** 取消按钮文字 */
   cancelText: {
@@ -41,6 +59,11 @@ export const actionSheetProps = {
   round: {
     type: Boolean,
     default: false
+  },
+  /** 左上角按钮图标  */
+  leftIcon: {
+    type: String,
+    default: 'arrow-left',
   },
   /** 是否在点击选项后关闭 */
   closeOnClickAction: {

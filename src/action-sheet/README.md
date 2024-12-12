@@ -55,6 +55,73 @@ export default {
 };
 ```
 
+### 展示图标
+
+使用 actions 的 icon 字段可以为选项设置图标。
+
+```html
+<van-cell is-link title="展示图标" @click="showIconRef.open()" />
+<m-action-sheet ref="showIconRef" :actions="actions" close-on-click-action @select="onSelect" />
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const showIconRef = ref(null);
+    const actions = [
+      { name: '选项一', icon: 'cart-o' },
+      { name: '选项二', icon: 'shop-o' },
+      { name: '选项三', icon: 'star-o' },
+    ];
+    const onSelect = (item, i) => {
+      showIconRef.close();
+      showToast(item.name);
+    };
+
+    return {
+      showIconRef,
+      actions,
+      onSelect,
+    };
+  },
+};
+```
+
+### 展示标题栏
+
+设置 title 属性后，显示标题栏，left-icon 属性自定义标题栏左侧图标，header-right自定义插槽修改右侧图标。
+
+```html
+<van-cell is-link title="展示取消按钮" @click="showHeaderRef.open()" />
+<m-action-sheet ref="showHeaderRef" title="我的标题" :actions="actions" close-on-click-action cancel-text="取消" @cancel="onCancel" />
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const showHeaderRef = ref(null);
+    const actions = [
+      { name: '选项一' },
+      { name: '选项二' },
+      { name: '选项三' },
+    ];
+    const onCancel = () => showToast('取消');
+
+    return {
+      showHeaderRef,
+      actions,
+      onCancel
+    };
+  },
+};
+```
+
 ### 展示取消按钮
 
 设置 cancel-text 属性后，会在底部展示取消按钮，点击后关闭当前面板并触发 cancel 事件。
@@ -94,8 +161,10 @@ export default {
 | 参数   | 说明     | 类型               | 默认值 |
 | ------ | -------- | ------------------ | ------ |
 | actions | 面板选项列表 | ActionSheetAction[] |    `[]`    |
+| title | 显示标题 | string |    -  
 | cancel-text | 取消按钮文字 | string |    -    |
 | round | 是否显示圆角 | boolean |    `false`    |
+| left-icon | 左上角按钮图标 | string |    `arrow-left`  |
 | close-on-click-action | 是否在点击选项后关闭 | boolean |    `false`    |
 
 ### Events
