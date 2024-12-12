@@ -1,5 +1,17 @@
 <template>
-  <Popup ref="popupRef" :title="title" :round="round">
+  <Popup
+    ref="popupRef" 
+    :title="title" 
+    :round="round" 
+    :header="header" 
+    :footer="footer" 
+    :left-icon="leftIcon" 
+    :cancel-text="cancelText" 
+    :cancel-func="cancelFunc" 
+    :confirm-text="confirmText"
+    :confirm-func="confirmFunc"
+    :auto-close="autoClose"
+  >
     <van-radio-group v-model="checked" @change="onChange">
       <div v-for="(item, i) in columns" :key="i" class="m-popup-radio__row">
         <div class="label">
