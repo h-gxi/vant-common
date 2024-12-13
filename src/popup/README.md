@@ -120,6 +120,7 @@ export default {
 | header | 是否显示标题栏 | boolean | `true` |
 | footer | 是否显示底部按钮 | boolean | `true` |
 | left-icon | 左上角按钮 可选值 arrow-left \| cross | string | `arrow-left` |
+| back-func | 标题栏左侧按钮回调函数 | Function | - |
 | cancel-text | 底部左侧按钮 | string | `取消` |
 | cancel-func | 底部左侧按钮回调函数 | Function | - |
 | confirm-text | 底部右侧按钮 | string | `确认` |

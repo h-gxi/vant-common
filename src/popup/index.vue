@@ -8,7 +8,7 @@
     <div class="m-popup">
       <div v-if="header" class="m-popup-header">
         <div v-if="leftIcon" class="left">
-          <van-icon :name="leftIcon" @click="onCancel" />
+          <van-icon :name="leftIcon" @click="onBack" />
         </div>
         <div class="title">{{ title }}</div>
         <div class="right">
@@ -78,6 +78,11 @@ export const popupProps = {
     type: String,
     default: '确认',
   },
+  /** 标题栏左侧按钮回调函数  */
+  backFunc: {
+    type: Function,
+    default: null,
+  },
   /** 底部右侧按钮回调函数  */
   confirmFunc: {
     type: Function,
@@ -103,6 +108,17 @@ export default defineComponent({
     const setValue = (val: any) => {
       checked.value = val;
     };
+
+    const onBack = ()=> {
+      if (props.backFunc) {
+        props.backFunc()
+        if (props.autoClose) {
+          close();
+        }
+      } else {
+        close();
+      }
+    }
 
     const onConfirm = () => {
       if (props.confirmFunc) {
@@ -141,6 +157,7 @@ export default defineComponent({
 
     return {
       visible,
+      onBack,
       onConfirm,
       onCancel,
       setValue,
