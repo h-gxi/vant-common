@@ -13,7 +13,7 @@
         <div class="title">{{ title }}</div>
         <div class="right">
           <slot name="header-right">
-            <van-icon name="cross" @click="onCancel" />
+            <van-icon name="cross" @click="close" />
           </slot>
         </div>
       </div>
