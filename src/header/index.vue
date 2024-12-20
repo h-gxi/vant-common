@@ -63,9 +63,9 @@ export default defineComponent({
       return style;
     });
 
-    const setHeight = () => {
+    const setHeight = (val: number) => {
       if (parent) {
-        (parent as any).setHeight(offsetHeight.value);
+        (parent as any).setHeight(val);
       }
     };
 
@@ -75,7 +75,7 @@ export default defineComponent({
     const resize = (): void => {
       nextTick(() => {
         offsetHeight.value = headerRef.value?.offsetHeight as any;
-        setHeight();
+        setHeight(offsetHeight.value);
         emit('onResize', offsetHeight.value);
       });
     };
@@ -90,7 +90,7 @@ export default defineComponent({
           setTimeout(() => {
             const rect = useRect(headerRef);
             offsetHeight.value = rect.height + 3;
-            setHeight();
+            setHeight(rect.height);
           }, 50);
         });
       }
