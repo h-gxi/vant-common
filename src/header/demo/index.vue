@@ -20,3 +20,11 @@ import MNavBar from '../../navbar/index';
 import { useVant } from '../../utils/index'
 useVant()
 </script>
+
+<style lang="sass">
+  .demo-header {
+    .m-header--fixed {
+      position: absolute;
+    }
+  }
+</style>
