@@ -42,8 +42,9 @@ import {
   defineComponent,
   type ExtractPropTypes,
 } from 'vue';
-import { useChildren } from '@vant/use';
+import { useChildren, useParent } from '@vant/use';
 import { listProps } from './props';
+import { PAGE_KEY } from '../page-container/index';
 const name = 'm-list';
 export const LIST_KEY = Symbol(name);
 
@@ -62,8 +63,16 @@ export default defineComponent({
   emits: ['click'],
   setup(props, { emit }) {
     const { linkChildren } = useChildren(LIST_KEY);
+    const { parent } = useParent(PAGE_KEY);
     const loading = ref(false);
     const errorCount = ref(0);
+    const offsetTop = ref(0);
+
+    if (parent) {
+      watch((parent as any).headerHeight, (value: number) => {
+        offsetTop.value = value;
+      });
+    }
 
     const state: State = reactive({
       finished: false,
@@ -176,6 +185,7 @@ export default defineComponent({
 
     return {
       loading,
+      offsetTop,
       finishedText,
       showImage,
       formatList,

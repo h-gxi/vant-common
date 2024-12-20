@@ -38,6 +38,4 @@ export const listProps = {
   groupBy: { type: [String, Function], default: '' },
   /** 是否禁用下拉刷新 */
   disabled: { type: Boolean, default: false },
-  /** 吸顶时与顶部的距离，使用sticky-header插槽 */
-  offsetTop: { type: Number, default: 0 },
 };
