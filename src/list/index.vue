@@ -63,6 +63,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const { linkChildren } = useChildren(LIST_KEY);
     const loading = ref(false);
+    const errorCount = ref(0);
 
     const state: State = reactive({
       finished: false,
@@ -115,7 +116,7 @@ export default defineComponent({
     });
 
     const onLoad = () => {
-      if (props.queryMethod) {
+      if (props.queryMethod && errorCount.value < 3) {
         const queryParams = Object.assign({}, props.queryModel);
         queryParams['pageIndex'] = state.pageIndex;
         queryParams['pageSize'] = props.pageSize;
@@ -137,7 +138,9 @@ export default defineComponent({
               state.list.push(...res.item);
             }
           })
-          .catch(() => {})
+          .catch(() => {
+            errorCount.value++;
+          })
           .finally(() => {
             loading.value = false;
             state.refreshing = false;
