@@ -1,11 +1,19 @@
 import { type PropType } from 'vue';
-import { Numeric } from '../utils/index'
+import { Numeric } from '../utils/index';
 
 export const listProps = {
   /** 滚动条与底部距离小于 offset 时触发load事件 */
   offset: { type: Number, default: 250 },
-  /** 加载过程中的提示文案 */
+  /** 下拉过程提示文案 */
+  pullingText: { type: String, default: '下拉即可刷新...' },
+  /** 释放过程提示文案 */
+  loosingText: { type: String, default: '释放即可刷新...' },
+  /** 加载过程提示文案 */
   loadingText: { type: String, default: '加载中...' },
+  /** 刷新成功提示文案 */
+  successText: { type: String, default: '刷新成功' },
+  /** 刷新成功提示展示时长(ms) */
+  successDuration: { type: Number, default: 1000 },
   /** 暂无数据的提示文案 */
   emptyText: { type: String, default: '暂无数据' },
   /** 没有更多了的提示文案 */
@@ -27,5 +35,9 @@ export const listProps = {
   /** 过滤显示数据 */
   filter: { type: Function, default: null },
   /** 分组字段 */
-  groupBy: { type: [String, Function], default: '' }
-}
+  groupBy: { type: [String, Function], default: '' },
+  /** 是否禁用下拉刷新 */
+  disabled: { type: Boolean, default: false },
+  /** 吸顶时与顶部的距离，使用sticky-header插槽 */
+  offsetTop: { type: Number, default: 0 },
+};

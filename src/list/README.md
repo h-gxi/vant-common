@@ -37,14 +37,10 @@ app.use(ListCell);
       <div v-show="index != 0" class="gray-divider" />
       <van-cell :border="false">
         <template #title>
-          <div class="cell-title">
-            {{ item.name }}
-          </div>
+          <div class="cell-title">{{ item.name }}</div>
         </template>
         <template #value>
-          <div class="cell-value">
-            {{ item.value }}
-          </div>
+          <div class="cell-value">{{ item.value }}</div>
         </template>
       </van-cell>
     </template>
@@ -58,26 +54,27 @@ import axios from 'axios';
 
 export default {
   setup() {
-    const searchKey = ref('') // 远程搜索关键字
+    const searchKey = ref(''); // 远程搜索关键字
 
-    const queryMethod = (params) => axios.get('/api/homework/page-list', params)
+    const queryMethod = (params) =>
+      axios.get('/api/homework/page-list', params);
 
     /** 参数值改变时自动刷新列表数据 */
     const queryModel = computed(() => {
-      const data = {}
+      const data = {};
       if (searchKey.value) {
-        data['title'] = searchKey.value
+        data['title'] = searchKey.value;
       }
-      return data
-    })
+      return data;
+    });
 
     const onClick = (item) => {
-      router.push({ name: 'detail', params: { id: item.id }})
+      router.push({ name: 'detail', params: { id: item.id } });
     };
 
     return {
       queryMethod,
-      onClick
+      onClick,
     };
   },
 };
@@ -104,15 +101,15 @@ import { ref } from 'vue';
 export default {
   setup() {
     const formatter = (data) => {
-      const res = data.map(item => {
-        item['date'] = item.publishTime.split(' ')[0]
-        return item
-      })
-      return res
-    }
+      const res = data.map((item) => {
+        item['date'] = item.publishTime.split(' ')[0];
+        return item;
+      });
+      return res;
+    };
 
     return {
-      formatter
+      formatter,
     };
   },
 };
@@ -138,18 +135,18 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const searchKey = ref('') // 搜索关键字
+    const searchKey = ref(''); // 搜索关键字
 
     /** 前端过滤只能在页面已加载列表数据中过滤，后台数据过滤清使用远程过滤方式 */
     const filter = (data) => {
       if (searchKey.value) {
-        return data.filter(m => m.name.indexOf(searchKey.value) !== -1)
+        return data.filter((m) => m.name.indexOf(searchKey.value) !== -1);
       }
-      return data
-    }
+      return data;
+    };
 
     return {
-      filter
+      filter,
     };
   },
 };
@@ -195,46 +192,50 @@ import { ref } from 'vue';
 export default {
   setup() {
     const formatter = (data) => {
-      const res = data.map(item => {
-        item['date'] = item.publishTime.split(' ')[0]
-        return item
-      })
-      return res
-    }
+      const res = data.map((item) => {
+        item['date'] = item.publishTime.split(' ')[0];
+        return item;
+      });
+      return res;
+    };
 
     return {
-      formatter
+      formatter,
     };
   },
 };
 ```
 
-
 ## API
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| offset | 滚动条与底部距离小于 offset 时触发 `query-method` 回调函数 | _number \| string_ | `250` |
-| loading-text | 加载过程中的提示文案 | _string_ | `加载中...` |
-| empty-text | 加载过程中的提示文案 | _string_ | `暂无数据` |
-| nomore-text | 加载过程中的提示文案 | _string_ | `没有更多了` |
-| direction | 滚动触发加载的方向，可选值为 `up` | _string_ | `down` |
-| image | 暂无数据时显示图片 | _string_ | - |
-| image-size | 图片大小，默认单位为 px | _number \| string \| Array_ | - |
-| page-size | 分页大小，每次加载数据条数 | _number_ | `10` |
-| query-method | 加载数据时触发回调函数，返回 Promise | _(action: Object) => Promise\<Array\>_ | - |
-| query-model | `query-method` 查询参数 | _Object_ | - |
-| formatter | 格式化数据 | _(value) => any_ | - |
-| filter | 过滤数据，前端过滤 | _(value) => any_ | - |
-| group-by | 分组字段 | _(action: Object) => string \| string_ | - |
+| 参数             | 说明                                                       | 类型                                   | 默认值            |
+| ---------------- | ---------------------------------------------------------- | -------------------------------------- | ----------------- |
+| offset           | 滚动条与底部距离小于 offset 时触发 `query-method` 回调函数 | _number \| string_                     | `250`             |
+| pulling-text     | 下拉过程提示文案                                           | _string_                               | `下拉即可刷新...` |
+| loosing-text     | 释放过程提示文案                                           | _string_                               | `释放即可刷新...` |
+| loading-text     | 加载过程中的提示文案                                       | _string_                               | `加载中...`       |
+| success-text     | 刷新成功提示文案                                           | _string_                               | `刷新成功`        |
+| success-duration | 刷新成功提示展示时长(ms)                                   | _number_                               | `1000`            |
+| empty-text       | 加载过程中的提示文案                                       | _string_                               | `暂无数据`        |
+| nomore-text      | 加载过程中的提示文案                                       | _string_                               | `没有更多了`      |
+| direction        | 滚动触发加载的方向，可选值为 `up`                          | _string_                               | `down`            |
+| image            | 暂无数据时显示图片                                         | _string_                               | -                 |
+| image-size       | 图片大小，默认单位为 px                                    | _number \| string \| Array_            | -                 |
+| page-size        | 分页大小，每次加载数据条数                                 | _number_                               | `10`              |
+| query-method     | 加载数据时触发回调函数，返回 Promise                       | _(action: Object) => Promise\<Array\>_ | -                 |
+| query-model      | `query-method` 查询参数                                    | _Object_                               | -                 |
+| formatter        | 格式化数据                                                 | _(value) => any_                       | -                 |
+| filter           | 过滤数据，前端过滤                                         | _(value) => any_                       | -                 |
+| group-by         | 分组字段                                                   | _(action: Object) => string \| string_ | -                 |
+| disabled         | 是否禁用下拉刷新                                           | _boolean_                              | `false`           |
 
 ### Events
 
-| 事件名 | 说明                               | 回调参数 |
-| ------ | ---------------------------------- | -------- |
-| click   | 点击 `m-list-cell` 组件时触发 | _item: object_        |
+| 事件名 | 说明                          | 回调参数       |
+| ------ | ----------------------------- | -------------- |
+| click  | 点击 `m-list-cell` 组件时触发 | _item: object_ |
 
 ## 主题定制
 
