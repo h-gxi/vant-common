@@ -89,7 +89,7 @@ export default defineComponent({
         nextTick(() => {
           setTimeout(() => {
             const rect = useRect(headerRef);
-            offsetHeight.value = rect.height + 3;
+            offsetHeight.value = rect.height;
             setHeight(rect.height);
           }, 50);
         });
