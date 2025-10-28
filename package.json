@@ -1,52 +1,78 @@
 {
   "name": "vant-common",
-  "description": "基于vant3封装的自定义组件库，适用于H5开发迭代，降低开发维护成本。",
-  "version": "0.1.9",
-  "author": "一如既往 <h_gxi@foxmail.com>",
-  "type": "module",
+  "version": "0.4.7",
+  "description": "基于vant4封装的自定义组件库，适用于H5开发迭代，降低开发维护成本。",
+  "main": "lib/vant-common.js",
+  "module": "es/index.js",
+  "style": "lib/index.css",
+  "typings": "lib/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "es",
+    "assets"
   ],
-  "main": "./lib/index.js",
-  "module": "./lib/index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "vant-cli dev",
+    "test": "vant-cli test",
+    "lint": "vant-cli lint",
+    "build": "vant-cli build",
+    "prepare": "husky install",
+    "release": "vant-cli release",
+    "site": "vant-cli build-site"
   },
-  "dependencies": {
-    "lodash": "^4.17.21",
-    "moment": "^2.29.3",
-    "pinia": "^2.1.7",
-    "vant": "^3.6.3",
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.5"
-  },
-  "devDependencies": {
-    "@babel/eslint-parser": "^7.22.15",
-    "@typescript-eslint/parser": "^6.9.0",
-    "@vitejs/plugin-vue": "^4.2.3",
-    "ace-builds": "^1.11.2",
-    "eslint": "^7.32.0",
-    "eslint-plugin-import": "^2.23.3",
-    "eslint-plugin-vue": "^9.4.0",
-    "fs-extra": "^10.1.0",
-    "less": "^4.1.3",
-    "less-loader": "^11.0.0",
-    "rollup-plugin-visualizer": "^5.8.2",
-    "sass": "^1.52.1",
-    "vite": "^4.4.5",
-    "vue-eslint-parser": "^7.6.0",
-    "vue-loader-v16": "^16.0.0-beta.5.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://gitee.com/han1982/vant-common.git"
-  },
-  "homepage": "https://gitee.com/han1982",
   "keywords": [
     "vant",
     "vant-common"
   ],
-  "license": "MIT"
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/han1982/vant-common.git",
+    "directory": "packages/vant-common"
+  },
+  "homepage": "https://gitee.com/han1982",
+  "author": "一如既往 <h_gxi@foxmail.com>",
+  "license": "MIT",
+  "nano-staged": {
+    "*.md": "prettier --write",
+    "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
+    "*.{ts,tsx,js,vue}": "eslint --fix"
+  },
+  "dependencies": {
+    "@vant/popperjs": "^1.3.0",
+    "@vant/use": "^1.6.0",
+    "@vue/shared": "^3.4.26"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.4",
+    "@types/node": "^18.19.33",
+    "@vant/cli": "^7.0.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.3",
+    "pinia": "^2.1.7",
+    "sass": "^1.49.7",
+    "typescript": "^5.4.5",
+    "vant": "^4.9.7",
+    "vue": "^3.3.4"
+  },
+  "web-types": "lib/web-types.json",
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@vant"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "browserslist": [
+    "Chrome >= 51",
+    "iOS >= 10"
+  ]
 }

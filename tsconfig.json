@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "strict": true,
+    "target": "ES2015",
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "lib": ["esnext", "dom"],
+    "allowJs": true,
+    "outDir": "./lib",
+    "noImplicitThis": true,
+    "types": ["vue/jsx", "csstype", "node"]
+  },
+  "include": ["src/**/*", "docs/**/*", "test/**/*"],
+  "exclude": ["**/node_modules", "**/.*/"]
+}

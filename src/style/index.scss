@@ -1,0 +1,258 @@
+:root,
+:host {
+  // Color Palette
+  --van-black: #000;
+  --van-white: #fff;
+  --van-gray-1: #f7f7f7; //#f6f7fa
+  --van-gray-2: #f2f3f5;
+  --van-gray-3: #ebedf0;
+  --van-gray-4: #dcdee0;
+  --van-gray-5: #c8c9cc;
+  --van-gray-6: #999999; // 提示框
+  --van-gray-7: #9b9b9b; // 标签
+  --van-gray-8: #4a4a4a; // 正文
+  --van-red: #fc2d2d; // 危险
+  --van-blue: #2f54eb; // 主色
+  --van-orange: #ffa000; // 警告
+  --van-orange-dark: #ed6a0c;
+  --van-orange-light: #fffbe8;
+  --van-green: #07c160;
+
+  // Gradient Colors
+  --van-gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+  --van-gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
+
+  // Component Colors
+  --van-primary-color: var(--van-blue);
+  --van-success-color: var(--van-green);
+  --van-danger-color: var(--van-red);
+  --van-warning-color: var(--van-orange);
+  --van-text-color: var(--van-gray-8);
+  --van-text-color-2: var(--van-gray-6);
+  --van-text-color-3: var(--van-gray-5);
+  --van-text-link-color: #576b95;
+  --van-active-color: var(--van-gray-2);
+  --van-active-opacity: 0.6;
+  --van-disabled-opacity: 0.5;
+  --van-background-color: var(--van-gray-1);
+  --van-background-color-light: var(--van-white);
+  --van-button-disabled-opacity: 0.7;
+
+  // Padding
+  --van-padding-base: 4px;
+  --van-padding-xs: 8px;
+  --van-padding-sm: 12px;
+  --van-padding-md: 16px;
+  --van-padding-lg: 24px;
+  --van-padding-xl: 32px;
+
+  // Font
+  --van-font-size-xs: 10px;
+  --van-font-size-sm: 12px;
+  --van-font-size-md: 14px;
+  --van-font-size-lg: 16px;
+  --van-font-weight-bold: 500;
+  --van-line-height-xs: 14px;
+  --van-line-height-sm: 18px;
+  --van-line-height-md: 20px;
+  --van-line-height-lg: 22px;
+  --van-base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI,
+    Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+  --van-price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial, sans-serif;
+
+  // Animation
+  --van-animation-duration-base: 0.3s;
+  --van-animation-duration-fast: 0.2s;
+  --van-animation-timing-function-enter: ease-out;
+  --van-animation-timing-function-leave: ease-in;
+
+  // Border
+  --van-border-color: var(--van-gray-3);
+  --van-border-width-base: 1px;
+  --van-border-radius-sm: 2px;
+  --van-border-radius-md: 4px;
+  --van-border-radius-lg: 8px;
+  --van-border-radius-max: 999px;
+
+  --van-overlay-background-color: rgba(0, 0, 0, 0.4);
+
+  // Toast
+  --van-toast-font-size: var(--van-font-size-lg);
+  --van-toast-border-radius: 10px;
+  --van-toast-background-color: rgba(0, 0, 0, 0.7);
+  --van-toast-default-width: 198px;
+  --van-toast-default-min-height: 106px;
+  --van-toast-default-padding: 0;
+
+  // NavBar
+  --van-nav-bar-arrow-size: 18px;
+
+  // Uploader
+  --van-uploader-size: 107px;
+  --van-uploader-icon-size: 25px;
+  --van-uploader-delete-icon-size: 22px;
+  --van-uploader-border-radius: 8px;
+
+  // Search
+  --van-search-padding: 10px var(--van-padding-md);
+  --van-search-left-icon-color: var(--van-primary-color);
+
+  // Field
+  --van-field-input-disabled-text-color: var(--van-gray-7);
+  --van-field-placeholder-text-color: var(--van-gray-7);
+
+  // step
+  --van-step-active-color: var(--van-gray-8);
+  --van-step-finish-line-color: #e3efff;
+
+  // calendar
+  --van-calendar-confirm-button-height: 42px;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  overflow: auto;
+  background: #f3f4f8;
+}
+
+#mobile {
+  height: 100%;
+  box-sizing: border-box;
+  color: var(--van-text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--van-base-font-family);
+
+  * {
+    -webkit-touch-callout: none; /*系统默认菜单被禁用*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -khtml-user-select: none; /*早期浏览器*/
+    -moz-user-select: none; /*火狐*/
+    -ms-user-select: none; /*IE10*/
+    user-select: none;
+  }
+
+  input,
+  textarea {
+    -webkit-user-select: auto; /*webkit浏览器*/
+    user-select: auto;
+  }
+}
+
+/*背景白色*/
+.m-page-container {
+  min-height: 100%;
+}
+
+/*内置颜色*/
+.m-color-blue {
+  color: var(--van-blue);
+}
+
+/*充满*/
+.m-fill-h {
+  height: 100% !important;
+}
+.m-fill-w {
+  width: 100% !important;
+}
+/*隐藏*/
+.m-hidden {
+  display: none !important;
+}
+/*水平居中*/
+.m-center-h {
+  display: flex;
+  justify-content: center;
+}
+/*垂直居中*/
+.m-center-v {
+  display: flex;
+  align-items: center;
+}
+/*块元素*/
+.m-block {
+  display: block;
+}
+
+/*分隔*/
+@for $i from 0 through 100 {
+  .m-divider-#{$i} {
+    height: #{$i}px;
+    background: #f4f5f9;
+  }
+}
+
+/*字体大小*/
+@for $i from 0 through 100 {
+  .m-font-#{$i} {
+    font-size: #{$i}px !important;
+  }
+}
+
+/*宽高*/
+@for $i from 0 through 1024 {
+  .m-w-#{$i} {
+    width: #{$i}px !important;
+  }
+  .m-h-#{$i} {
+    height: #{$i}px !important;
+  }
+}
+
+/*外边距*/
+@for $i from 0 through 50 {
+  .m-margin-#{$i} {
+    margin: #{$i}px !important;
+  }
+  .m-margin-t-#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .m-margin-b-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .m-margin-l-#{$i} {
+    margin-left: #{$i}px !important;
+  }
+  .m-margin-r-#{$i} {
+    margin-right: #{$i}px !important;
+  }
+  .m-margin-tb-#{$i} {
+    margin-top: #{$i}px !important;
+    margin-bottom: #{$i}px !important;
+  }
+  .m-margin-lr-#{$i} {
+    margin-left: #{$i}px !important;
+    margin-right: #{$i}px !important;
+  }
+}
+
+/*内边距*/
+@for $i from 0 through 50 {
+  .m-padding-#{$i} {
+    padding: #{$i}px !important;
+  }
+  .m-padding-t-#{$i} {
+    padding-top: #{$i}px !important;
+  }
+  .m-padding-b-#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+  .m-padding-l-#{$i} {
+    padding-left: #{$i}px !important;
+  }
+  .m-padding-r-#{$i} {
+    padding-right: #{$i}px !important;
+  }
+  .m-padding-lr-#{$i} {
+    padding-left: #{$i}px !important;
+    padding-right: #{$i}px !important;
+  }
+  .m-padding-tb-#{$i} {
+    padding-top: #{$i}px !important;
+    padding-bottom: #{$i}px !important;
+  }
+}
+

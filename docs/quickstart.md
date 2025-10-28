@@ -1,15 +1,19 @@
-# vant-common
+# 快速上手
 
-### 介绍
-
-基于vant4封装的自定义组件库，适用于H5开发迭代，降低开发维护成本。
-
-## 使用说明
-
-### 安装依赖
+### 安装
 
 ```bash
-npm install vant-common --save
+# 通过 npm
+npm i vant-common
+
+# 通过 yarn
+yarn add vant-common
+
+# 通过 pnpm
+pnpm add vant-common
+
+# 通过 bun
+bun add vant-common
 ```
 
 ### 引入组件
@@ -32,4 +36,3 @@ app.use(Lazyload, {
 })
 app.mount('#app')
 ```
-

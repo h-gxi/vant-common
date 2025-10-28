@@ -1,16 +1,18 @@
-.vite-ssg-temp
-
-node_modules
+*.log*
+.cache
 .DS_Store
-dist
-dist-ssr
-*.local
+.idea
 
-# lock
-yarn.lock
+# npm
+node_modules
 package-lock.json
-pnpm-lock.yaml
 
-*.log
-/src/components.d.ts
-/app
+# test
+test/coverage
+
+# dist file
+es
+lib
+dist
+**/site-dist
+changelog.generated.md
