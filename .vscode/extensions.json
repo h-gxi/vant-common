@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "hollowtree.vue-snippets",
+    "sdras.vue-vscode-snippets",
+    "xabikos.JavaScriptSnippets",
+    "akamud.vscode-javascript-snippet-pack",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "oysun.vuehelper"
+  ]
+}

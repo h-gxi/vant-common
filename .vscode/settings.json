@@ -1,0 +1,22 @@
+{
+  "files.exclude": {
+    "**/.vscode": true,
+    "dist": true,
+    "package-lock.json": true,
+    "node_modules": true
+  },
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2,
+  "prettier.endOfLine": "crlf",
+  "vue.autoInsert.dotValue": true,
+  "px-to-vw.viewportWidth": 375,
+  "prettier.semi": false,
+  "javascript.format.semicolons": "remove",
+  "typescript.format.semicolons": "remove",
+  "editor.acceptSuggestionOnCommitCharacter": false
+}
