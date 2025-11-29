@@ -4,6 +4,8 @@
 
 基于vant4封装的自定义组件库，适用于H5开发迭代，降低开发维护成本。
 
+[在线预览](https://h-gxi.github.io/vant-common/)
+
 ## 使用说明
 
 ### 安装依赖
@@ -32,4 +34,3 @@ app.use(Lazyload, {
 })
 app.mount('#app')
 ```
-

@@ -1,6 +1,6 @@
 {
   "name": "vant-common",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "description": "基于vant4封装的自定义组件库，适用于H5开发迭代，降低开发维护成本。",
   "main": "lib/vant-common.js",
   "module": "es/index.js",
@@ -18,7 +18,8 @@
     "build": "vant-cli build",
     "prepare": "husky install",
     "release": "vant-cli release",
-    "site": "vant-cli build-site"
+    "site": "vant-cli build-site",
+    "depoly": "gh-pages -d site-dist"
   },
   "keywords": [
     "vant",
@@ -33,7 +34,7 @@
     "url": "https://gitee.com/han1982/vant-common.git",
     "directory": "packages/vant-common"
   },
-  "homepage": "https://gitee.com/han1982",
+  "homepage": "https://h-gxi.github.io/vant-common",
   "author": "一如既往 <h_gxi@foxmail.com>",
   "license": "MIT",
   "nano-staged": {
@@ -53,6 +54,7 @@
     "@types/lodash": "^4.17.4",
     "@types/node": "^18.19.33",
     "@vant/cli": "^7.0.0",
+    "gh-pages": "^6.3.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.3",
     "pinia": "^2.1.7",
